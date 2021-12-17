@@ -55,7 +55,7 @@ Check this [link](?????????) to have more information about the structure of the
 
 What we want to achieve at the end of this tutorial looks like this:
 
-![Result0](/img/screenshots/result1.png)
+![Result0](/img/screenshots/Result1.png)
 
 and
 

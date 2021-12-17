@@ -47,7 +47,7 @@ explained in [Part 3](/docs/doc1.3).
 
 With these substitutions we get the following result:
 
-![](/img/screenshots/result1.png)
+![](/img/screenshots/Result1.png)
 
 and
 
