@@ -6,13 +6,14 @@ WORKDIR /app
 
 COPY package.json /app/package.json
 # Prepare the container for building React
-RUN yarn
+RUN npm install
+RUN npm install -g serve
 
 # Copy the React App to the container
 COPY . /app/
 
 # Build for production version
-RUN yarn build
+RUN npm run build
 
 EXPOSE 3001
 CMD ["serve","-s","build"]
