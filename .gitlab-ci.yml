@@ -8,8 +8,8 @@ build:
     - echo "Start building App"
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     - echo $CI_REGISTRY
-    - docker build -t $CI_REGISTRY/d063520/qanswer-doc:latest .
-    - docker push $CI_REGISTRY/d063520/qanswer-doc:latest
+    - docker build -t $CI_REGISTRY/qanswer-app/qanswer-doc:latest .
+    - docker push $CI_REGISTRY/qanswer-app/qanswer-doc:latest
     - echo "Build successfully!"
 deploy:
   stage: deploy
@@ -22,4 +22,4 @@ deploy:
     #- ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker image rm $CI_REGISTRY/d063520/qanswer-home:latest"
     - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker pull $CI_REGISTRY/d063520/qanswer-doc:latest"
     - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker rmi $(docker images -f dangling=true -q) || true"
-    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker run -p 3001:3000 -d --name qanswer-doc-container $CI_REGISTRY/d063520/qanswer-doc:latest"
+    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker run -p 3001:3000 -d --name qanswer-doc-container $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
