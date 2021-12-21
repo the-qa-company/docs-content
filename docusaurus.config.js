@@ -42,7 +42,7 @@ const config = {
             logo: {
                 alt: 'The QA Company logo',
                 src: 'img/logo2.png',
-                href: 'qanswer.eu',
+                href: 'https://qanswer.eu',
                 target: '_self',
             },
             items: [],
