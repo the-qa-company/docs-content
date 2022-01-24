@@ -6,7 +6,7 @@ sidebar_label: Create a Playground
 
 The goal of this tutorial is to construct your own digital twin!
 
-It should be able to replay to questions about yourself like: 
+It should be able to reply to questions about yourself like: 
 * "Where were you born?"
 * "What do you like to eat?"
 * "Who is your best friend?"
