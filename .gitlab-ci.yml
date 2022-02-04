@@ -23,3 +23,5 @@ deploy:
     - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker pull $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
     - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker rmi $(docker images -f dangling=true -q) || true"
     - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker run -p 3001:3000 -d --name qanswer-doc-container $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
+  only:
+    - master
