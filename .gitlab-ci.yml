@@ -14,14 +14,13 @@ build:
 deploy:
   stage: deploy
   before_script:
-    - echo "deploying..."
+   - eval $(ssh-agent -s)
+   - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
   script:
-    - echo $PROD_SERVER_IP
-    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY"
-    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker stop qanswer-doc-container || true && docker rm qanswer-doc-container || true"
-    #- ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker image rm $CI_REGISTRY/qanswer-app/qanswer-home:latest"
-    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker pull $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
-    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker rmi $(docker images -f dangling=true -q) || true"
-    - ssh -o StrictHostKeyChecking=no root@212.47.229.155 "docker run -p 3001:3000 -d --name qanswer-doc-container $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
+    - ssh root@212.47.229.155 "docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY"
+    - ssh root@212.47.229.155 "docker stop qanswer-doc-container || true && docker rm qanswer-doc-container || true"
+    - ssh root@212.47.229.155 "docker pull $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
+    - ssh root@212.47.229.155 "docker rmi $(docker images -f dangling=true -q) || true"
+    - ssh root@212.47.229.155 "docker run -p 3001:3000 -d --name qanswer-doc-container $CI_REGISTRY/qanswer-app/qanswer-doc:latest"
   only:
     - master
