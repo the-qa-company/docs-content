@@ -15,6 +15,6 @@ COPY . /app/
 # Build for production version
 RUN yarn build
 
-EXPOSE 3001
+EXPOSE 3000
 # CMD ["serve","-s","build"]
 CMD ["npx", "http-server", "-p", "3000"]
