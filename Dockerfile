@@ -7,7 +7,7 @@ WORKDIR /app
 COPY package.json /app/package.json
 # Prepare the container for building React
 RUN yarn install
-RUN yarn global add serve
+#RUN yarn global add serve
 
 # Copy the React App to the container
 COPY . /app/
@@ -16,4 +16,5 @@ COPY . /app/
 RUN yarn build
 
 EXPOSE 3001
-CMD ["serve","-s","build"]
+# CMD ["serve","-s","build"]
+RUN npx http-server -p 3001
