@@ -17,4 +17,4 @@ RUN yarn build
 
 EXPOSE 3001
 # CMD ["serve","-s","build"]
-CMD ["npx", "http-server", "-p", "3001"]
+CMD ["npx", "http-server", "-p", "3000"]
