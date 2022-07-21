@@ -5,6 +5,7 @@ sidebar_label: Create our first node
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Image from '../../src/components/Image';
 
 We want to encode the information about ourselfs into a small Knwoledge Graph ...
 
@@ -12,7 +13,7 @@ Let's do that ...
 
 ## Using rdfs:label
 
-We need a node in the graph representing ourselfs, I call it `qa:node1`. 
+We need a node in the graph representing ourselves, I call it `qa:node1`. 
 And since my name is QAnswer I want to call it like that. `rdfs:label` is the standard way to attach a name of a node using Semantic Web Standards.
 Let's do it:
 
@@ -29,14 +30,14 @@ Let's do it:
 </TabItem>
 <TabItem value='ui' label='UI'>
 
-  <img src="/img/screenshots/quick/quick1.2_(start).png" width="80%"/>
+  <Image src='/img/newUI/turtle/first-node.png' alt='First node'/>
 
 </TabItem>
 </Tabs>
 
-If you click on query we can already ask "QAnswer?" or "What is QAnswer?" and get:
+If you click on the magnifying glass icon (in the status bar) we can already ask "QAnswer?" or "What is QAnswer?" and get:
 
-<img src="/img/screenshots/quick/question1.png" width="80%"/>
+<Image src='/img/newUI/question-1.png' alt='QAnswer?'/>
 
 ## Using skos:altLabel
 
@@ -46,7 +47,7 @@ You may be called also differently. So let's add this too:
 <TabItem value='turtle' label='Turtle' default>
 
   ```turtle
-  @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
     qa:node1 rdfs:label "QAnswer" .
     qa:node1 skos:altLabel "QAnswer KG" .
@@ -57,7 +58,7 @@ You may be called also differently. So let's add this too:
 
 <TabItem value='ui' label='UI'>
 
-  <img src="/img/screenshots/quick/quick1.2.png" width="80%"/>
+  <Image src='/img/newUI/turtle/add-skos.png' alt='skos:altLabel'/>
 
 </TabItem>
 </Tabs>
@@ -96,7 +97,7 @@ All together this looks as follows:
 
 <TabItem value='ui' label='UI'>
 
-  <img src="/img/screenshots/quick/quick1.2_(end).png" width="80%"/>
+  <Image src='/img/newUI/turtle/add-you-label.png' alt='skos:altLabel "you"'/>
 
 </TabItem>
 </Tabs>
