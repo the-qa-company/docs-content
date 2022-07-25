@@ -5,7 +5,8 @@ sidebar_label: Query
 ---
 
 import Image from '../../src/components/Image';
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 You can already ask the first questions on top of your QA system, either by selecting it from the **QA System** page by clicking on the magnifying glass icon, which will redirect you to the **Ask** page.
 
@@ -17,9 +18,17 @@ You can also access it from directly from the **Ask** page by selectionning it u
 
 For the "Cocktails" QA system you could ask for example: "What is a Margarita?" or "What are the ingredients of Margarita?":
 
-<Image src='/img/newUI/cocktails/cocktails-margarita.png' alt='margarita'/>
 
-<Image src='/img/newUI/cocktails/margarita-ingredients.png' alt='margarita ingredients'/>
+<Tabs>
+  <TabItem value='q1' label='Question 1' default>
+    <Image src='/img/newUI/cocktails/margarita.png' alt='margarita'/>
+  </TabItem>
+
+  <TabItem value="q2" label="Question 2">
+    <Image src='/img/newUI/cocktails/margarita-ingredients.png' alt='margarita ingredients'/>
+  </TabItem>
+</Tabs>
+
 
 Note that for now there is no contextual information attached to the answers, like labels, descriptions, external links, maps, images and videos. How this can be achieved
 will be shown in part [Contextual information](doc1.6).
