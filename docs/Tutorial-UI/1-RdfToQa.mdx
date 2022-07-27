@@ -5,12 +5,24 @@ sidebar_label: RDF to QA
 ---
 
 import Image from '../../src/components/Image';
+import Link from '@docusaurus/Link';
+
 
 The key requirement for QAnswer is the RDF model that you provide for indexing. RDF is a flexible data model and can be used in many different ways. QAnswer
 tries to make the weakest assumptions possible on the RDF dataset it can query.
 
 :::info
-In this tutorial we are going to make a Question Answering (QA) system on top of a cocktail KB that can be found [here 🍸](/cocktails.nt).
+In this tutorial we are going to make a Question Answering (QA) system on top of a cocktail KB that can be found here:
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Link
+        target="_blank"
+        to='/cocktails.nt'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download cocktail dataset 🍸
+    </Link>
+</div>
 :::
 
 Here are some lines

@@ -4,7 +4,9 @@ title: Learning a bit ....
 sidebar_label: Learning a bit ....
 ---
 
+import Admonition from '@theme/Admonition';
 import Image from '../../src/components/Image';
+import InfoSvgIcon from '../../src/components/InfoSvgIcon';
 
 While writing down the Knwoledge Graph about myself, and asking questions, I noted that there were some problems. 
 Maybe the same happend to you! 
@@ -77,9 +79,12 @@ Bad answers are the ones for which :
 2. the answer was correct but the confidence was lesser than 50%.
 :::
 
-:::tip
-You can click on <b>Train</b> to train the model so it gets more accurate.
-:::
+<Admonition type="caution" icon={<InfoSvgIcon />
+} title="Important">
+    <p>
+        You can click on <b>Train</b> to train the model so it gets more accurate.
+    </p>
+</Admonition>
 
 
 <Image src='/img/newUI/after-training.png' alt='After training' />
