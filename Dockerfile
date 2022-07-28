@@ -1,5 +1,5 @@
-# Set the base image to node:15
-FROM node:15 as qanswer-doc-build
+# Set the base image to node:16
+FROM node:16 as qanswer-doc-build
 
 # Specify where our app will live in the container
 WORKDIR /app
