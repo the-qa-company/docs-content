@@ -1,0 +1,72 @@
+name: Build and deploy 🚀
+
+on:
+  push:
+    branches:
+      - "dev"
+      - "master"
+      - "dev_ci"
+
+jobs:
+  build:
+    name: Build app 🏗️
+    runs-on: ubuntu-latest
+    outputs:
+      digest: ${{ steps.digest_extract.outputs.digest }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login
+        run: docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+      - name: Build docker image
+        run: docker build -t ghcr.io/the-qa-company/qanswer-doc:latest .
+      - name: Push docker image
+        run: docker push ghcr.io/the-qa-company/qanswer-doc:latest | tee dockerpush_output
+      - name: Extract digest
+        id: digest_extract
+        run: echo "::set-output name=digest::$(tail -n 1 dockerpush_output | cut -d " " -f 3)"
+
+  deploy_dev:
+    name: Deploy (dev) 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/dev_ci' || github.ref == 'refs/heads/dev'
+    environment:
+      name: "doc-qanswer-dev"
+      url: https://dev.doc.qanswer.ai
+    steps:
+      - name: Deploy doc
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_ADDRESS }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          script: |
+            docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+            docker stop qanswer-doc-container-dev || true && docker rm qanswer-doc-container-dev || true
+            docker pull ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
+            docker rmi $(docker images -f dangling=true -q) || true
+            docker run -p 3002:3000 -d --name qanswer-doc-container-dev ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
+
+  deploy_master:
+    name: Deploy (master) 🚀
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    environment:
+      name: "doc-qanswer"
+      url: https://doc.qanswer.ai
+    steps:
+      - name: Deploy doc
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_ADDRESS }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script_stop: true
+          script: |
+            docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+            docker stop qanswer-doc-container || true && docker rm qanswer-doc-container || true
+            docker pull ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
+            docker rmi $(docker images -f dangling=true -q) || true
+            docker run -p 3001:3000 -d --name qanswer-doc-container ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
