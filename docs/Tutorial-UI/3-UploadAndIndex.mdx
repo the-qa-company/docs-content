@@ -7,7 +7,17 @@ sidebar_label: Upload and index
 import Image from '../../src/components/Image';
 
 :::info
-The cocktail dataset can be downloaded [here 🍸](/cocktails.nt).
+The cocktail dataset can be downloaded here:
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Link
+        target="_blank"
+        to='/cocktails.nt'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download cocktail dataset 🍸
+    </Link>
+</div>
 :::
 
 Now you are ready to upload your first dataset. On your [QA Systems page](https://app.qanswer.ai/qa-systems) click on *Add dataset*.

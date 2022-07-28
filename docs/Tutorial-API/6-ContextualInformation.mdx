@@ -1,77 +1,35 @@
 ---
 id: doc2.6
-title: 'Tutorial: Contextual information'
+title: 'Contextual information'
 sidebar_label: Contextual information
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+Up to now the result was always given by the "rdfs:label". But in an RDF dataset there are potentially many contextual information that can be shown like
+descriptions, images, maps and videos.
 
-Up to now the result was always given by the URI and "rdfs:label". But in an RDF dataset there are potentially many contextual information that can be shown like
-descriptions, images, maps and videos. To allow QAnswer to display this contextual information your ontology vocabulary has to be aligned by the one used by
+To allow QAnswer to display this contextual information your ontology vocabulary has to be aligned by the one used by
 QAnswer. This is necessary since there are different proposed vocabulary to express this type of information in the Semantic Web Community and no one became
 a standard. QAnswer is using some common properties. So let's start.
 
-The main properties that can be aligned are listed in [Requirments 3](/docs/req1.3)
-In the case of the cocktail Knowledge Base the following properties can be aligned:
+In the case of the cocktail Knowledge Base you can add the following properties:
 
-1) <http://www.w3.org/2004/02/skos/core#definition> to  <http://schema.org/description>
-2) <http://vocabulary.semantic-web.at/cocktail-ontology/image> to <http://www.wikidata.org/prop/direct/P18>
-3) <http://www.w3.org/2004/02/skos/core#exactMatch> to <http://qanswer.eu/dbpedia>
+1. Description: <http://www.w3.org/2004/02/skos/core#definition>
+2. Image: <http://vocabulary.semantic-web.at/cocktail-ontology/image>
+3. Dbpedia: <http://www.w3.org/2004/02/skos/core#exactMatch>
 
-There are two options to align the properties:
 
-## Option 1
+Let's align the vocabulary using the mapping API.
 
-The first option is to align the vocabulary using the mapping API. To get the existing mapping use the following API:
-
-<Tabs>
-<TabItem value='bash' label='cURL' default>
+## Get existing mapping
+To start we need to get the existing mapping using the following API:
 
 ```bash
 curl -X GET \
-  'https://qanswer-core1.univ-st-etienne.fr/api/dataset/mappings?dataset=cocktails' \
+  'https://app.qanswer.ai/api/dataset/mappings?dataset=cocktails' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzUx....' \
 ```
-
-</TabItem>
-
-<TabItem value='java' label='Java'>
-
-```java
-OkHttpClient client = new OkHttpClient();
-
-Request request = new Request.Builder()
-  .url("https://qanswer-core1.univ-st-etienne.fr/api/dataset/mappings?dataset=cocktails")
-  .get()
-  .addHeader("Authorization", "Bearer eyJhbGciOiJIUzUxMi......")
-  .build();
-
-Response response = client.newCall(request).execute();
-```
-
-</TabItem>
-
-<TabItem value='js' label='JavaScript'>
-
-```js
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://qanswer-core1.univ-st-etienne.fr/api/dataset/mappings?dataset=cocktails",
-  "method": "GET",
-  "headers": {
-    "Authorization": "Bearer eyJhbGciOiJIUzUx.....",
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-</TabItem>
-</Tabs>
 
 the result is:
 
@@ -126,16 +84,12 @@ the result is:
     ]
 }
 ```
-
-To update the the mappings with the above changes you can POST on the same API:
-
-
-<Tabs>
-<TabItem value='bash' label='cURL' default>
+## Update the mappings
+Now let's update the mappings with the above changes you can POST on the same API:
 
 ```bash
 curl -X POST \
-  'https://qanswer-core1.univ-st-etienne.fr/api/dataset/mappings?dataset=cocktails' \
+  'https://app.qanswer.ai/api/dataset/mappings?dataset=cocktails' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzUx.....' \
   -d '{
     "dataset": "cocktails",
@@ -192,63 +146,6 @@ curl -X POST \
     ]
 }'
 ```
-
-</TabItem>
-
-<TabItem value='java' label='Java'>
-
-```java
-OkHttpClient client = new OkHttpClient();
-
-MediaType mediaType = MediaType.parse("application/json");
-RequestBody body = RequestBody.create(mediaType, "{\n    \"dataset\": \"cocktails\",\n    \"label\": [\n        \"http://www.w3.org/2000/01/rdf-schema#label\",\n        \"http://www.w3.org/2004/02/skos/core#prefLabel\",\n        \"http://purl.org/dc/terms/title\",\n        \"http://xmlns.com/foaf/0.1/givenName\",\n        \"http://purl.org/dc/elements/1.1/title\"\n    ],\n    \"description\": [\n        \"http://www.w3.org/2000/01/rdf-schema#description\",\n        \"http://www.w3.org/2004/02/skos/core#definition\"\n    ],\n    \"image\": [\n        \"http://www.wikidata.org/prop/direct/P18\",\n        \"http://vocabulary.semantic-web.at/cocktail-ontology/image\"\n    ],\n    \"coordinate\": [\n        \"http://www.wikidata.org/prop/direct/P625\"\n    ],\n    \"osmRelation\": [\n        \"http://www.wikidata.org/prop/direct/P402\"\n    ],\n    \"youtube\": [\n        \"http://www.wikidata.org/prop/direct/P165\"\n    ],\n    \"github\": [\n        \"http://www.wikidata.org/prop/direct/P2037\"\n    ],\n    \"twitter\": [\n        \"http://www.wikidata.org/prop/direct/P2002\"\n    ],\n    \"facebook\": [\n        \"http://www.wikidata.org/prop/direct/P2013\"\n    ],\n    \"instagram\": [\n        \"http://www.wikidata.org/prop/direct/P2003\"\n    ],\n    \"homepage\": [\n        \"http://www.wikidata.org/prop/direct/P856\"\n    ],\n    \"orcid\": [\n        \"http://www.wikidata.org/prop/direct/P496\"\n    ],\n    \"doi\": [\n        \"http://www.wikidata.org/prop/direct/P356\"\n    ],\n    \"dbpedia\": [\n    \t\"http://www.w3.org/2004/02/skos/core#exactMatch\"\n\t],\n    \"geometry\": [\n        \"http://www.opengis.net/ont/geosparql#hasGeometry\"\n    ]\n}");
-Request request = new Request.Builder()
-  .url("https://qanswer-core1.univ-st-etienne.fr/api/dataset/mappings?dataset=cocktails")
-  .post(body)
-  .addHeader("Content-Type", "application/json")
-  .addHeader("Authorization", "Bearer eyJhbGciOiJIU................")
-  .build();
-
-Response response = client.newCall(request).execute();
-```
-
-</TabItem>
-
-<TabItem value='js' label='JavaScript'>
-
-```js
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://qanswer-core1.univ-st-etienne.fr/api/dataset/mappings?dataset=cocktails",
-  "method": "POST",
-  "headers": {
-    "Content-Type": "application/json",
-    "Authorization": "Bearer eyJhbGciOiJIU.....",
-  },
-  "processData": false,
-  "data": "{\n    \"dataset\": \"cocktails\",\n    \"label\": [\n        \"http://www.w3.org/2000/01/rdf-schema#label\",\n        \"http://www.w3.org/2004/02/skos/core#prefLabel\",\n        \"http://purl.org/dc/terms/title\",\n        \"http://xmlns.com/foaf/0.1/givenName\",\n        \"http://purl.org/dc/elements/1.1/title\"\n    ],\n    \"description\": [\n        \"http://www.w3.org/2000/01/rdf-schema#description\",\n        \"http://www.w3.org/2004/02/skos/core#definition\"\n    ],\n    \"image\": [\n        \"http://www.wikidata.org/prop/direct/P18\",\n        \"http://vocabulary.semantic-web.at/cocktail-ontology/image\"\n    ],\n    \"coordinate\": [\n        \"http://www.wikidata.org/prop/direct/P625\"\n    ],\n    \"osmRelation\": [\n        \"http://www.wikidata.org/prop/direct/P402\"\n    ],\n    \"youtube\": [\n        \"http://www.wikidata.org/prop/direct/P165\"\n    ],\n    \"github\": [\n        \"http://www.wikidata.org/prop/direct/P2037\"\n    ],\n    \"twitter\": [\n        \"http://www.wikidata.org/prop/direct/P2002\"\n    ],\n    \"facebook\": [\n        \"http://www.wikidata.org/prop/direct/P2013\"\n    ],\n    \"instagram\": [\n        \"http://www.wikidata.org/prop/direct/P2003\"\n    ],\n    \"homepage\": [\n        \"http://www.wikidata.org/prop/direct/P856\"\n    ],\n    \"orcid\": [\n        \"http://www.wikidata.org/prop/direct/P496\"\n    ],\n    \"doi\": [\n        \"http://www.wikidata.org/prop/direct/P356\"\n    ],\n    \"dbpedia\": [\n    \t\"http://www.w3.org/2004/02/skos/core#exactMatch\"\n\t],\n    \"geometry\": [\n        \"http://www.opengis.net/ont/geosparql#hasGeometry\"\n    ]\n}"
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-</TabItem>
-</Tabs>
-
-
-
-
-## Option 2
-
-The second option is to substitute the uris in the original Knowledge Base by the ones supported by QAnswer.
-The cocktail Knowledge Base where the above URIs are substituted can be downloaded [here](/cocktails_align.nt). The updated file can be uploaded and indexd as
-explained in [Part 3](/docs/doc1.3).
-
-
-## Result
 
 With these substitutions we get the following result:
 

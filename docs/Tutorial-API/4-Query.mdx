@@ -1,6 +1,6 @@
 ---
 id: doc2.4
-title: 'Tutorial: Query'
+title: 'Query'
 sidebar_label: Query
 ---
 import Tabs from '@theme/Tabs';
@@ -9,56 +9,15 @@ import TabItem from '@theme/TabItem';
 You can already ask the first questions on top of your dataset. For the "cocktails" dataset you could ask for example: "What is a Margarita?" or "What are the ingredients of Margarita?":
 
 
-<Tabs>
-<TabItem value='bash' label='cURL' default>
-
 ```bash
 curl -X GET \
-  'http://qanswer-core1.univ-st-etienne.fr/api/qa/full' \
+  'https://app.qanswer.ai/api/qa/full' \
    --data-urlencode 'question= what is a margerita' \
    --data-urlencode 'lang=en' \
    --data-urlencode 'kb=cocktails' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ.....' \
 ```
 
-</TabItem>
-
-<TabItem value='java' label='Java'>
-
-```java
-OkHttpClient client = new OkHttpClient();
-
-Request request = new Request.Builder()
-  .url("http://qanswer-core1.univ-st-etienne.fr/api/qa/full?question=what%20is%20a%20margerita&lang=en&kb=cocktails")
-  .get()
-  .addHeader("Authorization", "Bearer eyJhbGciOiJ......")
-  .build();
-
-Response response = client.newCall(request).execute();
-```
-
-</TabItem>
-
-<TabItem value='js' label='JavaScript'>
-
-```js
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "http://qanswer-core1.univ-st-etienne.fr/api/qa/full?question=what%20is%20a%20margerita&lang=en&kb=cocktails",
-  "method": "GET",
-  "headers": {
-    "Authorization": "Bearer eyJhbGciOiJIUzUxMi.....",
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-</TabItem>
-</Tabs>
 
 The results looks as following:
 
@@ -116,7 +75,7 @@ The results looks as following:
 
 
 It contains the generated queries with the corresponding confidence scores and the answer. Note that for now there is no contextual information attached to the answers, like labels, descriptions, external links, maps, images and videos. How this can be achieved
-will be shown in [Part 6](/docs/doc2.6).
+will be shown in part [Contextual information](/docs/doc2.6).
 
 The dataset contains some popular cocktails like: Margarita, Sex on the Beach, Long Island Iced Tea and Grasshopper.
 
