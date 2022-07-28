@@ -1,6 +1,6 @@
 ---
 id: doc2.7
-title: 'Tutorial: Additional services'
+title: 'Additional services'
 sidebar_label: Additional services
 ---
 import Tabs from '@theme/Tabs';
@@ -33,54 +33,13 @@ type / Ingredients
 
 This service can be called using the following code snippets:
 
-<Tabs>
-<TabItem value='bash' label='cURL' default>
-
 ```bash
 curl -X GET \
-  'https://qanswer-core1.univ-st-etienne.fr/api/sparqltouser/cocktails?sparql=SELECT%20DISTINCT%20?s1%20where%20{%20%0A%20%20%20%20?s1%20?p1%20%3Chttp://vocabulary.semantic-web.at/cocktail-ontology/Ingredients%3E%20.%0A%20%20%20%20?s1%20?p2%20%3Chttp://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71%3E%20.%20%0A}%0Alimit%201000&lang=en' \
+  'https://app.qanswer.ai/api/sparqltouser/cocktails?sparql=SELECT%20DISTINCT%20?s1%20where%20{%20%0A%20%20%20%20?s1%20?p1%20%3Chttp://vocabulary.semantic-web.at/cocktail-ontology/Ingredients%3E%20.%0A%20%20%20%20?s1%20?p2%20%3Chttp://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71%3E%20.%20%0A}%0Alimit%201000&lang=en' \
   -H 'Accept: */*' \
   -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi....' \
 ```
 
-</TabItem>
-
-<TabItem value='java' label='Java'>
-
-```java 
-OkHttpClient client = new OkHttpClient();
-
-Request request = new Request.Builder()
-  .url("https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&topk=5&language=en")
-  .get()
-  .addHeader("Authorization", "Bearer eyJhbGciOiJIUz...")
-  .build();
-
-Response response = client.newCall(request).execute();
-```
-
-</TabItem>
-
-<TabItem value='js' label='JavaScript'>
-
-```js
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&topk=5&language=en",
-  "method": "GET",
-  "headers": {
-    "Authorization": "Bearer eyJhbGciOiJIUz....",
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-</TabItem>
-</Tabs>
 
 the result is:
 
@@ -92,124 +51,3 @@ the result is:
     "interpretation": "type / Ingredients\n / is part of, is used by / Margarita"
 }
 ```
-
-## Summa Server
-
-The second service that is put in place is the Summa Server. The Summa Server summarizes 
-entities, i.e. extract top-k RDF facts associated to an entity. For example the summary of:
- http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71
-can be accessed as follows:
-
-<Tabs>
-<TabItem value='bash' label='cURL' default>
-
-```bash
-curl -X GET \
-  'https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&topk=5&language=en' \
-  -H 'Authorization: Bearer eyJhbGciOiJI....' \
-```
-
-</TabItem>
-
-<TabItem value='java' label='Java'>
-
-```java
-OkHttpClient client = new OkHttpClient();
-
-Request request = new Request.Builder()
-  .url("https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&topk=5&language=en")
-  .get()
-  .addHeader("Authorization", "Bearer eyJhbGciOiJIUz...")
-  .build();
-
-Response response = client.newCall(request).execute();
-```
-
-</TabItem>
-
-<TabItem value='js' label='JavaScript'>
-
-```js
-var settings = {
-  "async": true,
-  "crossDomain": true,
-  "url": "https://qanswer-core1.univ-st-etienne.fr/api/summaserver/cocktails?entity=http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71&topk=5&language=en",
-  "method": "GET",
-  "headers": {
-    "Authorization": "Bearer eyJhbGciOiJIUz....",
-  }
-}
-
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-```
-
-</TabItem>
-</Tabs>
-
-
-the result is:
-
-```json
-{
-    "subject": {
-        "uri": "http://vocabulary.semantic-web.at/cocktails/2d85fb1b-96cb-4c48-8df5-707032f34e71",
-        "label": "Margarita"
-    },
-    "facts": [
-        {
-            "predicate": {
-                "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "label": "type"
-            },
-            "object": {
-                "uri": "http://www.w3.org/2004/02/skos/core#Concept",
-                "label": "Concept"
-            }
-        },
-        {
-            "predicate": {
-                "uri": "http://purl.org/dc/terms/contributor",
-                "label": "Contributor"
-            },
-            "object": {
-                "uri": "http://resource.semantic-web.at/user/gablers",
-                "label": "http://resource.semantic-web.at/user/gablers"
-            }
-        },
-        {
-            "predicate": {
-                "uri": "http://purl.org/dc/terms/creator",
-                "label": "Creator"
-            },
-            "object": {
-                "uri": "http://localhost/user/blumauera",
-                "label": "http://localhost/user/blumauera"
-            }
-        },
-        {
-            "predicate": {
-                "uri": "http://schema.semantic-web.at/ppt/inScheme",
-                "label": "http://schema.semantic-web.at/ppt/inScheme"
-            },
-            "object": {
-                "uri": "http://vocabulary.semantic-web.at/cocktails/8d052dfc-44bf-4985-8ce3-4564570a161b",
-                "label": "All about Cocktails"
-            }
-        },
-        {
-            "predicate": {
-                "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
-                "label": "type"
-            },
-            "object": {
-                "uri": "http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail",
-                "label": "Cocktail"
-            }
-        }
-    ]
-}
-```
-
-
