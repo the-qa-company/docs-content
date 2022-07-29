@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - "dev"
-      - "master"
+      - "main"
       - "dev_ci"
 
 jobs:
@@ -48,11 +48,11 @@ jobs:
             docker rmi $(docker images -f dangling=true -q) || true
             docker run -p 3002:3000 -d --name qanswer-doc-container-dev ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
 
-  deploy_master:
-    name: Deploy (master) 🚀
+  deploy_main:
+    name: Deploy (main) 🚀
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     environment:
       name: "doc-qanswer"
       url: https://doc.qanswer.ai
