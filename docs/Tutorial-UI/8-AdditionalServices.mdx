@@ -5,8 +5,29 @@ sidebar_label: Additional services
 ---
 import Image from '../../src/components/Image';
 
-When uploading and indexing the data QAnswer also generated some additonal services. 
-We describe them here briefly  
+When uploading and indexing the data QAnswer also generated some additonal services. We describe them here briefly.
+
+## Autocompletion
+
+Once your data is uploaded you get out of the box autocompletion functionality. For example if you type on the cocktails dataset "marg" you will get:
+
+<Image src='/img/newUI/autocompletion.png' />
+
+i.e. you get suggestions for "margarita" (the cocktail) and "margaglass" (a cocktail glass). By selecting one of the suggestions you will basicaly select the concept behind it, like:
+
+<Image src='/img/newUI/autocompletion-selected.png' />
+
+By using it you will be able to search using strings and concepts.
+
+As described in [Contextual information](doc1.6) you can indicate properties that are used to associate images to entities.
+These properties will also be used to visualize images in the autosuggestion, like:
+
+<Image src='/img/newUI/autocompletion-images.png' />
+
+Similarly if you specify a property that is used to disambiguate entities you will get autosugestions like:
+
+<Image src='/img/newUI/autocompletion-disambiguation.png' />
+
 
 ## SparqlToUser
 
@@ -37,3 +58,5 @@ This service is used to display what the QA system understood:
 or to facilitate the understanding of the generated interpretations:
 
 <Image src='/img/newUI/interpretation-other.png' />
+
+
