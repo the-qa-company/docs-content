@@ -1,0 +1,48 @@
+---
+id: text1
+title: 'Upload and index'
+sidebar_label: Upload and index
+---
+
+import Image from '../../src/components/Image';
+import Link from '@docusaurus/Link';
+import Tabs from '@theme/Tabs';
+
+:::info
+In this tutorial we are going to make a Question Answering (QA) system on top of a text KB about the Simpsons that can be found here:
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Link
+        target="_blank"
+        to='/simpsonFamily.zip'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download Simpson dataset 🍩
+    </Link>
+</div>
+:::
+
+Now you are ready to upload your first dataset. On your [QA Systems page](https://app.qanswer.ai/qa-systems) click on *Add dataset*. 
+
+<Image src='/img/newUI/wizard.png' alt='Wizard'/>
+
+Let's add a free-text dataset.
+
+Now you can name your QA-System, customize its parameters and upload your files.
+
+<Tabs>
+  <TabItem value='q1' label='Creation' default>
+      <Image src='/img/newUI/simpsons/add-text-details-hidden.png' alt='Default viwe'/>
+  </TabItem>
+
+  <TabItem value="q2" label="Customize">
+      <Image src='/img/newUI/simpsons/add-text-details.png' alt='Show configs'/>
+  </TabItem>
+
+  <TabItem value='q3' label='Upload'>
+      <Image src='/img/newUI/simpsons/add-text-upload.png' alt='Upload files'/>
+  </TabItem>
+</Tabs>
+After uploading the dataset, your QA system will appear in your home page.
+
+It is now ready to be queried!
