@@ -1,0 +1,54 @@
+---
+id: text4
+title: 'Edit collection'
+sidebar_label: Edit collection
+---
+
+import Image from '../../src/components/Image';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Link from '@docusaurus/Link';
+
+It's possible to edit your document collection on the **Editing** page. You can access the **Editing** page using the button in the status bar (on top of you screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Edit* button.
+
+<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+    <img src='/img/newUI/simpsons/status-bar.png' alt='training button' width= '60%'/>
+    <img src='/img/newUI/simpsons/qa-system-edit-btn.png' alt='training button' width= '60%'/>
+</div>
+
+On this page you can see all documents that are in your collection, you can also see their content and delete some parts of it. You can also add new files to your collection.
+
+Let's add Grampa Simpson to our collection by using the **Add file** button. And then let's see the content of the document by clicking on the **View file** button. You can aso edit the document, by clicking on the **Edit file** button. You can download the file here:
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target='_blank'
+        to='/grampa_simpson.pdf'
+        download
+        className="button button--primary button--lg"
+    >
+        Download Grampa Simpson file
+    </Link>
+</div>
+
+<Tabs>
+  <TabItem value="q1" label="Edit page" default>
+    <Image src='/img/newUI/simpsons/edit.png' alt='edit page'/>
+  </TabItem>
+
+  <TabItem value="q2" label="Add Grampa" default>
+    <Image src='/img/newUI/simpsons/edit-grampa.png' alt='add file'/>
+  </TabItem>
+
+  <TabItem value="q3" label="View document" default>
+    <Image src='/img/newUI/simpsons/edit-grampa-view-doc.png' alt='view page'/>
+    You can change from one mode to another ("viewing" to "editing") by clicking on the <i>Edit</i> button next to the "Go back to list" button.
+  </TabItem>
+
+  <TabItem value="q4" label="Edit document" default>
+    <Image src='/img/newUI/simpsons/edit-grampa-edit-doc.png' alt='who is the wife of homer'/>
+    You can change from one mode to another ("editing" to "viewing") by clicking on the <i>Edit</i> button next to the "Go back to list" button.
+  </TabItem>
+</Tabs>
+
+When you edit a document you can delete parts of it.
