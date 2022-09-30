@@ -45,12 +45,11 @@ serdi -i ntriples -o ntriples dump.nt > dump_clean.nt
 
 After uploading the dataset it needs to be indexed. This can be done with the following code snippets:
 
-
   ```bash
     curl -X POST \
-      'https://app.qanswer.ai/api/dataset/index?dataset=cocktails' \
+      'https://app.qanswer.ai/api/dataset/index' \
       -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi....' \
+      -H 'Content-Type: application/json' \
+      -d '{"dataset": "cocktails"}'
   ```
-
-
 The dataset is now ready to be queried!
