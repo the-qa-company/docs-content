@@ -11,11 +11,13 @@ import Link from '@docusaurus/Link';
 
 Each time you ask a question, the system tries to find answers to which it associates a confidence score. The different answers are ordered by confidence (from the higher score to the lower).
 
-By using the feedback functionality, i.e. by clicking on either the thumbs-up 👍, thumb-down 👎 or by selecting yourself the right answer, the system can learn better to answer your questions.
-
 ## Giving feedbacks
 
-When asking "Who is the wife of Homer Simpson?" the first time, the system will return these answers, by giving feedbacks you can then train your system. You can then see that the results changed.
+:::tip
+By using the feedback functionality, i.e. by clicking on either the thumbs-up&nbsp;👍, thumb-down&nbsp;👎 or by **selecting yourself** the right answer, the system can learn better to answer your questions.
+:::
+
+When asking "Who is the wife of Homer Simpson?" the first time, the system will return these answers, by giving feedbacks you can then train your system so it becomes more accurate. You can then see that the results changed.
 
 <Tabs>
   <TabItem value="q1" label="Giving feedbacks" default>
@@ -27,7 +29,23 @@ When asking "Who is the wife of Homer Simpson?" the first time, the system will 
   </TabItem>
 </Tabs>
 
+If the answer is wrong or incomplete but the right answer is in the same context, you can click on the selectionning tool (between the thumbs icons)
+
+<Tabs>
+  <TabItem value="q1" label="Select right answer" default>
+    <Image src='/img/newUI/simpsons/marge-hair-color-select.png' alt='what is the color hair of marge'/>
+  </TabItem>
+
+  <TabItem value="q3" label="Validate" default>
+    <Image src='/img/newUI/simpsons/marge-hair-color-validate-selection.png' alt='what is the color hair of marge'/>
+  </TabItem>
+</Tabs>
+
 The more you give feedbacks, the more your training set will grow and the more accurate your system will be.
+
+:::tip
+Give a negative feedback if the answer is **not correct** AND if the real answer is **not in the context**. Otherwise select the right answer using the tool between the thumbs icons.
+:::
 
 ## Training
 
@@ -43,7 +61,7 @@ This page allows you to see the feedbacks corresponding to your QA system. If yo
 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
     <Link
         target='_blank'
-        to='/questions_simpsons.jsonl'
+        to='/questions-simpsons.jsonl'
         download
         className="button button--primary button--lg"
     >

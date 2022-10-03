@@ -6,6 +6,8 @@ sidebar_label: Create a Playground
 
 import Image from '../../src/components/Image';
 import Link from '@docusaurus/Link';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 
 The goal of this tutorial is to construct your own digital twin!
@@ -31,11 +33,23 @@ Let's create an account to get started!
     </Link>
 </div>
 
-<Image src='/img/newUI/register.png' alt='Sign up'/>
+After your registered, you need to activate your account (check your email).
 
-As soon as your account is created, you will be redirected to the login page:
+Then you can login to the platform and create your first playground.
 
-<Image src='/img/newUI/login.png' alt='Login'/>
+<Tabs>
+  <TabItem value='1' label='Register' default>
+    <Image src='/img/newUI/register.png' alt='Sign up'/>
+  </TabItem>
+
+  <TabItem value='2' label='Activation' default>
+    <Image src='/img/newUI/activate-account.png' alt='Activate account'/>
+  </TabItem>
+
+  <TabItem value="3" label="Login">
+    <Image src='/img/newUI/login.png' alt='Login'/>
+  </TabItem>
+</Tabs>
 
 When you are logged in, you will enter in the <b>QA Systems</b> page:
 
