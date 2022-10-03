@@ -1,8 +1,10 @@
 ---
-id: termsOfUse
+id: terms-of-use
 title: Terms of Use
 sidebar_label: Terms of use
+sidebar_position: 7
 ---
+
 
 This web page represents our Terms of Use regarding our website, located at http://qanswer.eu, http://qanswer-frontend.univ-st-etienne.fr/, https://qanswer.univ-st-etienne.fr, and the tools we provide you (the "Website" or the "Service").
 It was last posted on 28 May 2019. The terms, "we" and "our" as used in this Agreement refer to QAnswer.

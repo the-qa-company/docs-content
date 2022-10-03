@@ -1,5 +1,5 @@
 ---
-id: api1
+id: api-references
 title: API Reference
 sidebar_position: 6
 ---
@@ -35,4 +35,4 @@ This must be specified in the authorization header to access the protected APIs.
  curl  http://qanswer-core1.univ-st-etienne.fr/api/feedback/upload -F json=@feed -H 'authorization: Bearer eyJhbGciOi...A'
 ```
 
-The APIs can be used under the following [Terms of Use](/docs/termsOfUse).
+The APIs can be used under the following [Terms of Use](terms-of-use).
