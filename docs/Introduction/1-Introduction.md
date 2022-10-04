@@ -1,8 +1,7 @@
 ---
-id: doc0
+id: introduction
 title: 'Welcome to QAnswer!'
-sidebar_label: Introduction
-sidebar_position: 1
+sidebar_label: Welcome to QAnswer!
 slug: /
 ---
 **A Platform to Access RDF Data and text documents via Natural Language**
