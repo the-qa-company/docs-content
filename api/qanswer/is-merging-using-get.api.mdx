@@ -1,0 +1,45 @@
+---
+id: is-merging-using-get
+title: "API to check if the store is in a merge state or not."
+description: "API to check if the store is in a merge state or not."
+sidebar_label: API to check if the store is in a merge state or not.
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["sparql-endpoint-controller"],"operationId":"isMergingUsingGET","parameters":[{"name":"dataset","in":"path","description":"dataset","required":true,"schema":{"type":"string"}},{"name":"user","in":"path","description":"user","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"object","properties":{"merging":{"type":"boolean"}},"title":"IsMergingResult"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"security":[{"JWT":[]}],"deprecated":false,"description":"API to check if the store is in a merge state or not.","method":"get","path":"/api/endpoint/{user}/{dataset}/is_merging","servers":[{"url":"//qanswer-core1.univ-st-etienne.fr"}],"securitySchemes":{"JWT":{"type":"apiKey","name":"Authorization","in":"header"}},"info":{"description":"APIs provided by QAnswer","version":"1.0","title":"QAnswer: Api Documentation","contact":{"name":"QAnswer","url":"www.the-qa-company.com","email":"info@qanswer.eu"}},"postman":{"name":"API to check if the store is in a merge state or not.","description":{"type":"text/plain"},"url":{"path":["api","endpoint",":user",":dataset","is_merging"],"host":["{{baseUrl}}"],"query":[],"variable":[{"disabled":false,"description":{"content":"(Required) dataset","type":"text/plain"},"type":"any","value":"","key":"dataset"},{"disabled":false,"description":{"content":"(Required) user","type":"text/plain"},"type":"any","value":"","key":"user"}]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "get api-method"
+info_path: api/qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## API to check if the store is in a merge state or not.
+
+
+
+API to check if the store is in a merge state or not.
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"dataset","in":"path","description":"dataset","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"user","in":"path","description":"user","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"merging"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"merging\": true\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthorized
+
+</div><div></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Forbidden
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem></ApiTabs></div>
+      

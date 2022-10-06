@@ -1,0 +1,45 @@
+---
+id: free-text-feedback-list-using-get
+title: "freeTextFeedbackList"
+description: "freeTextFeedbackList"
+sidebar_label: freeTextFeedbackList
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["free-text-feedback-controller"],"operationId":"freeTextFeedbackListUsingGET","parameters":[{"name":"indexId","in":"query","description":"indexId","required":true,"schema":{"type":"integer","format":"int64"}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"array","items":{"type":"object","properties":{"answerCorrect":{"type":"boolean"},"answerStart":{"type":"integer","format":"int32"},"answerText":{"type":"string"},"confidence":{"type":"number"},"context":{"type":"string"},"currentModelRight":{"type":"boolean"},"documentCorrect":{"type":"boolean"},"feedbackType":{"type":"string"},"id":{"type":"integer","format":"int32"},"indexId":{"type":"integer","format":"int32"},"question":{"type":"string"},"username":{"type":"string"}},"title":"FeedbackGetModel"}}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"security":[{"JWT":[]}],"deprecated":false,"description":"freeTextFeedbackList","method":"get","path":"/api/freeText/feedback/list","servers":[{"url":"//qanswer-core1.univ-st-etienne.fr"}],"securitySchemes":{"JWT":{"type":"apiKey","name":"Authorization","in":"header"}},"info":{"description":"APIs provided by QAnswer","version":"1.0","title":"QAnswer: Api Documentation","contact":{"name":"QAnswer","url":"www.the-qa-company.com","email":"info@qanswer.eu"}},"postman":{"name":"freeTextFeedbackList","description":{"type":"text/plain"},"url":{"path":["api","freeText","feedback","list"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) indexId","type":"text/plain"},"key":"indexId","value":""}],"variable":[]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "get api-method"
+info_path: api/qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## freeTextFeedbackList
+
+
+
+freeTextFeedbackList
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"indexId","in":"query","description":"indexId","required":true,"schema":{"type":"integer","format":"int64"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong><span style={{"opacity":"0.6"}}> array</span></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"answerCorrect"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"answerStart"} required={false} schemaDescription={undefined} schemaName={"int32"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"answerText"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"confidence"} required={false} schemaDescription={undefined} schemaName={"number"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"context"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"currentModelRight"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"documentCorrect"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"feedbackType"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"id"} required={false} schemaDescription={undefined} schemaName={"int32"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"indexId"} required={false} schemaDescription={undefined} schemaName={"int32"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"question"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"username"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  {\n    \"answerCorrect\": true,\n    \"answerStart\": 0,\n    \"answerText\": \"string\",\n    \"confidence\": 0,\n    \"context\": \"string\",\n    \"currentModelRight\": true,\n    \"documentCorrect\": true,\n    \"feedbackType\": \"string\",\n    \"id\": 0,\n    \"indexId\": 0,\n    \"question\": \"string\",\n    \"username\": \"string\"\n  }\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthorized
+
+</div><div></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Forbidden
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem></ApiTabs></div>
+      

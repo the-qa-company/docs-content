@@ -1,0 +1,45 @@
+---
+id: get-logo-using-get-1
+title: "Retrives the logo of a specific dataset"
+description: "Retrives the logo of a specific dataset"
+sidebar_label: Retrives the logo of a specific dataset
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["dataset-controller-kg"],"operationId":"getLogoUsingGET_1","parameters":[{"name":"dataset","in":"query","description":"dataset","required":true,"schema":{"type":"string"}},{"name":"user","in":"query","description":"user","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"image/png":{"schema":{"type":"string","format":"byte"}}}},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"security":[{"JWT":[]}],"deprecated":false,"description":"Retrives the logo of a specific dataset","method":"get","path":"/api/dataset/logo","servers":[{"url":"//qanswer-core1.univ-st-etienne.fr"}],"securitySchemes":{"JWT":{"type":"apiKey","name":"Authorization","in":"header"}},"info":{"description":"APIs provided by QAnswer","version":"1.0","title":"QAnswer: Api Documentation","contact":{"name":"QAnswer","url":"www.the-qa-company.com","email":"info@qanswer.eu"}},"postman":{"name":"Retrives the logo of a specific dataset","description":{"type":"text/plain"},"url":{"path":["api","dataset","logo"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) dataset","type":"text/plain"},"key":"dataset","value":""},{"disabled":false,"description":{"content":"(Required) user","type":"text/plain"},"key":"user","value":""}],"variable":[]},"header":[{"key":"Accept","value":"image/png"}],"method":"GET","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "get api-method"
+info_path: api/qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Retrives the logo of a specific dataset
+
+
+
+Retrives the logo of a specific dataset
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"dataset","in":"query","description":"dataset","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"user","in":"query","description":"user","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"image/png"} value={"image/png"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><strong>string</strong><span style={{"opacity":"0.6"}}> byte</span></div></li></ul></details></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthorized
+
+</div><div></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Forbidden
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem></ApiTabs></div>
+      

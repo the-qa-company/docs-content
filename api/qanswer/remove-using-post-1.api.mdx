@@ -1,0 +1,49 @@
+---
+id: remove-using-post-1
+title: "To remove a specific dataset"
+description: "To remove a specific dataset"
+sidebar_label: To remove a specific dataset
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["dataset-controller-kg"],"operationId":"removeUsingPOST_1","parameters":[{"name":"dataset","in":"query","description":"dataset","required":true,"schema":{"type":"string"}}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string"},"success":{"type":"boolean"}},"title":"ApiResponse"}}}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"security":[{"JWT":[]}],"deprecated":false,"description":"To remove a specific dataset","method":"post","path":"/api/dataset/remove","servers":[{"url":"//qanswer-core1.univ-st-etienne.fr"}],"securitySchemes":{"JWT":{"type":"apiKey","name":"Authorization","in":"header"}},"info":{"description":"APIs provided by QAnswer","version":"1.0","title":"QAnswer: Api Documentation","contact":{"name":"QAnswer","url":"www.the-qa-company.com","email":"info@qanswer.eu"}},"postman":{"name":"To remove a specific dataset","description":{"type":"text/plain"},"url":{"path":["api","dataset","remove"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) dataset","type":"text/plain"},"key":"dataset","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"POST","auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "post api-method"
+info_path: api/qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## To remove a specific dataset
+
+
+
+To remove a specific dataset
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"dataset","in":"query","description":"dataset","required":true,"schema":{"type":"string"}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"success"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"string\",\n  \"success\": true\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"201"} value={"201"}><div>
+
+Created
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthorized
+
+</div><div></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Forbidden
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem></ApiTabs></div>
+      

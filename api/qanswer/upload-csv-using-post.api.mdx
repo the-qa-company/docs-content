@@ -1,0 +1,49 @@
+---
+id: upload-csv-using-post
+title: "Loads a CSV and creates out of it a knowledge graph"
+description: "Loads a CSV and creates out of it a knowledge graph"
+sidebar_label: Loads a CSV and creates out of it a knowledge graph
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["csv-loader-controller"],"operationId":"uploadCsvUsingPOST","parameters":[{"name":"columnLabel","in":"query","description":"columnLabel","required":false,"schema":{"type":"string"}},{"name":"dataset","in":"query","description":"dataset","required":true,"schema":{"type":"string"}},{"name":"datatypes","in":"query","description":"datatypes","required":false,"schema":{"type":"string"}},{"name":"headerSynonym","in":"query","description":"headerSynonym","required":false,"schema":{"type":"string"}},{"name":"languages","in":"query","description":"languages","required":false,"explode":true,"schema":{"type":"array","items":{"type":"string"},"default":"en,de,it,fr"}},{"name":"separator","in":"query","description":"separator","required":false,"schema":{"type":"string","default":","}},{"name":"splitColumns","in":"query","description":"splitColumns","required":false,"explode":true,"schema":{"type":"array","items":{"type":"string"}}},{"name":"splitSeparator","in":"query","description":"splitSeparator","required":false,"schema":{"type":"string","default":","}}],"requestBody":{"$ref":"#/components/requestBodies/uploadUsingPOST"},"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string"},"success":{"type":"boolean"}},"title":"ApiResponse"}}}},"201":{"description":"Created"},"401":{"description":"Unauthorized"},"403":{"description":"Forbidden"},"404":{"description":"Not Found"}},"security":[{"JWT":[]}],"deprecated":false,"description":"Loads a CSV and creates out of it a knowledge graph","method":"post","path":"/api/loader/csv","servers":[{"url":"//qanswer-core1.univ-st-etienne.fr"}],"securitySchemes":{"JWT":{"type":"apiKey","name":"Authorization","in":"header"}},"info":{"description":"APIs provided by QAnswer","version":"1.0","title":"QAnswer: Api Documentation","contact":{"name":"QAnswer","url":"www.the-qa-company.com","email":"info@qanswer.eu"}},"postman":{"name":"Loads a CSV and creates out of it a knowledge graph","description":{"type":"text/plain"},"url":{"path":["api","loader","csv"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"columnLabel","type":"text/plain"},"key":"columnLabel","value":""},{"disabled":false,"description":{"content":"(Required) dataset","type":"text/plain"},"key":"dataset","value":""},{"disabled":false,"description":{"content":"datatypes","type":"text/plain"},"key":"datatypes","value":""},{"disabled":false,"description":{"content":"headerSynonym","type":"text/plain"},"key":"headerSynonym","value":""},{"disabled":false,"description":{"content":"languages","type":"text/plain"},"key":"languages","value":""},{"disabled":false,"description":{"content":"separator","type":"text/plain"},"key":"separator","value":""},{"disabled":false,"description":{"content":"splitColumns","type":"text/plain"},"key":"splitColumns","value":""},{"disabled":false,"description":{"content":"splitSeparator","type":"text/plain"},"key":"splitSeparator","value":""}],"variable":[]},"header":[{"key":"Content-Type","value":"multipart/form-data"},{"key":"Accept","value":"application/json"}],"method":"POST","body":{"mode":"formdata","formdata":[]},"auth":{"type":"apikey","apikey":[{"type":"any","value":"Authorization","key":"key"},{"type":"any","value":"<API Key>","key":"value"},{"type":"any","value":"header","key":"in"}]}}}
+sidebar_class_name: "post api-method"
+info_path: api/qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Loads a CSV and creates out of it a knowledge graph
+
+
+
+Loads a CSV and creates out of it a knowledge graph
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"columnLabel","in":"query","description":"columnLabel","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"dataset","in":"query","description":"dataset","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"datatypes","in":"query","description":"datatypes","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"headerSynonym","in":"query","description":"headerSynonym","required":false,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"languages","in":"query","description":"languages","required":false,"explode":true,"schema":{"type":"array","items":{"type":"string"},"default":"en,de,it,fr"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"separator","in":"query","description":"separator","required":false,"schema":{"type":"string","default":","}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"splitColumns","in":"query","description":"splitColumns","required":false,"explode":true,"schema":{"type":"array","items":{"type":"string"}}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"splitSeparator","in":"query","description":"splitSeparator","required":false,"schema":{"type":"string","default":","}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs groupId={"mime-type"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"message"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"success"} required={false} schemaDescription={undefined} schemaName={"boolean"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"message\": \"string\",\n  \"success\": true\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"201"} value={"201"}><div>
+
+Created
+
+</div><div></div></TabItem><TabItem label={"401"} value={"401"}><div>
+
+Unauthorized
+
+</div><div></div></TabItem><TabItem label={"403"} value={"403"}><div>
+
+Forbidden
+
+</div><div></div></TabItem><TabItem label={"404"} value={"404"}><div>
+
+Not Found
+
+</div><div></div></TabItem></ApiTabs></div>
+      
