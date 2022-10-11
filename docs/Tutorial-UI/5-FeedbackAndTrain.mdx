@@ -9,6 +9,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 
+## Feedback
 
 Each time you ask a question the system generate interpretations and computes a confidence score. A list of different interpretations can be shown by clicking on the button at the left of the current interpretation.
 :::note
@@ -47,6 +48,8 @@ After asking a set of questions, and by giving feedback you will have created a 
     </Link>
 </div>
 
+## Training
+
 First you need to access the **Training** page.
 
 You can access it page using the button in the status bar (on top of you screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Training* button.
@@ -68,7 +71,7 @@ It can be uploaded from the [training page](https://app.qanswer.ai/qa-systems/tr
   </TabItem>
 </Tabs>
 
-On this page you have an overview of how the system performs on the questions you gave feedbacks and some statistics.
+On this page you have an overview of how the system performs on the questions you gave feedbacks and some statistics. You can also see a tab name [Logs](#logs) which will show you the history of questions asked.
 
 <Image src='/img/newUI/cocktails/training-upload-done.png' alt='before training'/>
 
@@ -81,3 +84,9 @@ The model will generalize also over questions you didn't ask.
 :::
 
 Now you learned how to give feedbacks to the system and how these feedbacks can be used to adapt QAnswer to your QA Systems.
+
+## Logs
+
+This tab is used to see a list of all questions that have been asked to this QA System.
+
+<Image src='/img/newUI/cocktails/logs.png' alt='after training' />
