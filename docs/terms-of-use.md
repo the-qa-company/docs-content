@@ -2,7 +2,7 @@
 id: terms-of-use
 title: Terms of Use
 sidebar_label: Terms of use
-sidebar_position: 7
+sidebar_position: 10
 ---
 
 
