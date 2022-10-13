@@ -16,25 +16,6 @@ const config = {
     organizationName: 'The QA Company',
     projectName: 'QAnswer',
 
-    plugins: [
-        [
-          "docusaurus-plugin-openapi-docs",
-          {
-            id: "openapi",
-            docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
-            config: {
-              petstore: { // "petstore" is considered the <id> that you will reference in the CLI
-                specPath: "https://qanswer-core1.univ-st-etienne.fr/v2/api-docs", // path or URL to the OpenAPI spec
-                outputDir: "api/qanswer", // output directory for generated *.mdx and sidebar.js files
-                sidebarOptions: {
-                  groupPathsBy: "tag", // generate a sidebar.js slice that groups operations by tag
-                },
-              }
-            }
-          },
-        ]
-      ],
-    themes: ["docusaurus-theme-openapi-docs"],
     presets: [
         [
             '@docusaurus/preset-classic',
@@ -43,7 +24,6 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
-                    docItemComponent: "@theme/ApiItem"
                 },
                 blog: false,
                 pages: false,
