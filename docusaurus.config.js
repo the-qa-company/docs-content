@@ -61,7 +61,10 @@ const config = {
                     items: [{
                         label: 'Twitter',
                         href: 'https://twitter.com/TheQACompany',
-                    }, ],
+                    }, {
+                        label: 'LinkedIn',
+                        href: 'https://www.linkedin.com/company/qanswer/',
+                    }],
                 },
                 {
                     title: 'More',
