@@ -23,13 +23,13 @@ const config = {
             id: "openapi",
             docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
             config: {
-              petstore: { // "petstore" is considered the <id> that you will reference in the CLI
-                specPath: "https://qanswer-core1.univ-st-etienne.fr/v2/api-docs", // path or URL to the OpenAPI spec
-                outputDir: "api/qanswer", // output directory for generated *.mdx and sidebar.js files
-                sidebarOptions: {
-                  groupPathsBy: "tag", // generate a sidebar.js slice that groups operations by tag
-                },
-              }
+                cos: {
+                    specPath: "qanswer.json",
+                    outputDir: "docs/qanswer",
+                    sidebarOptions: {
+                      groupPathsBy: "tag",
+                    },
+                  },
             }
           },
         ]
@@ -43,6 +43,7 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
+                    docLayoutComponent: "@theme/DocPage",
                     docItemComponent: "@theme/ApiItem"
                 },
                 blog: false,
@@ -97,6 +98,43 @@ const config = {
             darkTheme: darkCodeTheme,
             additionalLanguages: ['java'],
         },
+        languageTabs: [
+            {
+              highlight: "bash",
+              language: "curl",
+              logoClass: "bash",
+            },
+            {
+              highlight: "python",
+              language: "python",
+              logoClass: "python",
+            },
+            {
+              highlight: "go",
+              language: "go",
+              logoClass: "go",
+            },
+            {
+              highlight: "javascript",
+              language: "nodejs",
+              logoClass: "nodejs",
+            },
+            {
+              highlight: "ruby",
+              language: "ruby",
+              logoClass: "ruby",
+            },
+            {
+              highlight: "csharp",
+              language: "csharp",
+              logoClass: "csharp",
+            },
+            {
+              highlight: "php",
+              language: "php",
+              logoClass: "php",
+            },
+          ],
     }),
 };
 
