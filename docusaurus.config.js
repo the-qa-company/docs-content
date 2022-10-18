@@ -15,25 +15,24 @@ const config = {
     favicon: 'img/favicon.png',
     organizationName: 'The QA Company',
     projectName: 'QAnswer',
-
-    plugins: [
-        [
-          "docusaurus-plugin-openapi-docs",
-          {
-            id: "openapi",
-            docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
-            config: {
-                cos: {
-                    specPath: "qanswer.json",
-                    outputDir: "docs/qanswer",
-                    sidebarOptions: {
-                      groupPathsBy: "tag",
-                    },
-                  },
-            }
-          },
-        ]
-      ],
+    // plugins: [
+    //     [
+    //       "docusaurus-plugin-openapi-docs",
+    //       {
+    //         id: "openapi",
+    //         docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
+    //         config: {
+    //             cos: {
+    //                 specPath: "qanswer.json",
+    //                 outputDir: "docs/qanswer",
+    //                 sidebarOptions: {
+    //                   groupPathsBy: "tag",
+    //                 },
+    //               },
+    //         }
+    //       },
+    //     ]
+    //   ],
     themes: ["docusaurus-theme-openapi-docs"],
     presets: [
         [
@@ -82,7 +81,10 @@ const config = {
                     items: [{
                         label: 'Twitter',
                         href: 'https://twitter.com/TheQACompany',
-                    }, ],
+                    }, {
+                        label: 'LinkedIn',
+                        href: 'https://www.linkedin.com/company/qanswer/',
+                    }],
                 },
                 {
                     title: 'More',
