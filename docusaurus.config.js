@@ -15,7 +15,25 @@ const config = {
     favicon: 'img/favicon.png',
     organizationName: 'The QA Company',
     projectName: 'QAnswer',
-
+    // plugins: [
+    //     [
+    //       "docusaurus-plugin-openapi-docs",
+    //       {
+    //         id: "openapi",
+    //         docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
+    //         config: {
+    //             cos: {
+    //                 specPath: "qanswer.json",
+    //                 outputDir: "docs/qanswer",
+    //                 sidebarOptions: {
+    //                   groupPathsBy: "tag",
+    //                 },
+    //               },
+    //         }
+    //       },
+    //     ]
+    //   ],
+    themes: ["docusaurus-theme-openapi-docs"],
     presets: [
         [
             '@docusaurus/preset-classic',
@@ -24,6 +42,8 @@ const config = {
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
+                    docLayoutComponent: "@theme/DocPage",
+                    docItemComponent: "@theme/ApiItem"
                 },
                 blog: false,
                 pages: false,
@@ -61,7 +81,10 @@ const config = {
                     items: [{
                         label: 'Twitter',
                         href: 'https://twitter.com/TheQACompany',
-                    }, ],
+                    }, {
+                        label: 'LinkedIn',
+                        href: 'https://www.linkedin.com/company/qanswer/',
+                    }],
                 },
                 {
                     title: 'More',
@@ -77,6 +100,43 @@ const config = {
             darkTheme: darkCodeTheme,
             additionalLanguages: ['java'],
         },
+        languageTabs: [
+            {
+              highlight: "bash",
+              language: "curl",
+              logoClass: "bash",
+            },
+            {
+              highlight: "python",
+              language: "python",
+              logoClass: "python",
+            },
+            {
+              highlight: "go",
+              language: "go",
+              logoClass: "go",
+            },
+            {
+              highlight: "javascript",
+              language: "nodejs",
+              logoClass: "nodejs",
+            },
+            {
+              highlight: "ruby",
+              language: "ruby",
+              logoClass: "ruby",
+            },
+            {
+              highlight: "csharp",
+              language: "csharp",
+              logoClass: "csharp",
+            },
+            {
+              highlight: "php",
+              language: "php",
+              logoClass: "php",
+            },
+          ],
     }),
 };
 

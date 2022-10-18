@@ -1,5 +1,5 @@
 ---
-id: doc2.3
+id: upload-index
 title: 'Upload and index'
 sidebar_label: Upload and index
 ---
@@ -22,7 +22,7 @@ The cocktail dataset can be downloaded here:
 </div>
 :::
 
-To upload a new dataset you can use one of the following code snippets (remember to use the Bearer Token that you get at Signin [Signup and login](/docs/doc2.2)):
+To upload a new dataset you can use one of the following code snippets (remember to use the Bearer Token that you get at Signin [Signup and login](register-login)):
 
 
   ```bash
@@ -45,12 +45,11 @@ serdi -i ntriples -o ntriples dump.nt > dump_clean.nt
 
 After uploading the dataset it needs to be indexed. This can be done with the following code snippets:
 
-
   ```bash
     curl -X POST \
-      'https://app.qanswer.ai/api/dataset/index?dataset=cocktails' \
+      'https://app.qanswer.ai/api/dataset/index' \
       -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi....' \
+      -H 'Content-Type: application/json' \
+      -d '{"dataset": "cocktails"}'
   ```
-
-
 The dataset is now ready to be queried!
