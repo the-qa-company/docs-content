@@ -1,0 +1,37 @@
+---
+id: table-context
+title: "tableContext"
+description: "tableContext"
+sidebar_label: tableContext
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["answer-controller"],"operationId":"tableContext","parameters":[{"name":"lang","in":"query","required":false,"schema":{"type":"string","default":"en"}},{"name":"kb","in":"query","required":false,"schema":{"type":"string","default":"wikidata"}},{"name":"sparqlQuery","in":"query","required":true,"schema":{"type":"string"}},{"name":"limit","in":"query","required":false,"schema":{"type":"integer","format":"int32","default":25}},{"name":"offset","in":"query","required":false,"schema":{"type":"integer","format":"int32","default":0}},{"name":"user","in":"query","required":false,"schema":{"type":"string","default":""}},{"name":"timeout","in":"query","required":false,"schema":{"type":"integer","format":"int32","default":5}}],"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"table":{"type":"array","items":{"type":"array","items":{"type":"array","items":{"type":"object","properties":{"content":{"type":"string"},"link":{"type":"string"}}}}}},"numberRows":{"type":"integer","format":"int32"}}}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{"type":"object","additionalProperties":{"type":"string"}}}}}},"description":"tableContext","method":"get","path":"/api/answer/table","servers":[{"url":"http://localhost:4567"}],"security":[{"Authorization":[]}],"securitySchemes":{"Authorization":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"info":{"title":"QAnswer API Documentation","description":"APIs provided by QAnswer","contact":{"name":"QAnswer","url":"https://qanswer.ai","email":"info@qanswer.ai"},"version":"1.0"},"postman":{"name":"table Context","description":{"type":"text/plain"},"url":{"path":["api","answer","table"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"key":"lang","value":""},{"disabled":false,"key":"kb","value":""},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"sparqlQuery","value":""},{"disabled":false,"key":"limit","value":""},{"disabled":false,"key":"offset","value":""},{"disabled":false,"key":"user","value":""},{"disabled":false,"key":"timeout","value":""}],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## tableContext
+
+
+
+tableContext
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"lang","in":"query","required":false,"schema":{"type":"string","default":"en"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"kb","in":"query","required":false,"schema":{"type":"string","default":"wikidata"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"sparqlQuery","in":"query","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"limit","in":"query","required":false,"schema":{"type":"integer","format":"int32","default":25}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"offset","in":"query","required":false,"schema":{"type":"integer","format":"int32","default":0}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"user","in":"query","required":false,"schema":{"type":"string","default":""}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"timeout","in":"query","required":false,"schema":{"type":"integer","format":"int32","default":5}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"table"} required={false} schemaDescription={undefined} schemaName={"array[]"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"numberRows"} required={false} schemaDescription={undefined} schemaName={"int32"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"table\": [\n    [\n      [\n        {\n          \"content\": \"string\",\n          \"link\": \"string\"\n        }\n      ]\n    ]\n  ],\n  \"numberRows\": 0\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Bad Request
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><code>property name*</code><span style={{"opacity":"0.6"}}> string</span></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      

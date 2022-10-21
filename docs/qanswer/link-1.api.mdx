@@ -1,0 +1,37 @@
+---
+id: link-1
+title: "link_1"
+description: "link_1"
+sidebar_label: link_1
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["link-controller"],"operationId":"link_1","parameters":[{"name":"text","in":"query","required":true,"schema":{"type":"string"}},{"name":"language","in":"query","required":true,"schema":{"type":"string"}},{"name":"user","in":"query","required":true,"schema":{"type":"string"}},{"name":"knowledgebase","in":"query","required":true,"schema":{"type":"string"}},{"name":"query","in":"query","required":false,"schema":{"type":"string","default":""}},{"name":"conceptMust","in":"query","required":false,"schema":{"type":"array","items":{"type":"string"},"default":[]}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{"type":"object","additionalProperties":{"type":"string"}}}}}},"description":"link_1","method":"get","path":"/api/linkDev/link","servers":[{"url":"http://localhost:4567"}],"security":[{"Authorization":[]}],"securitySchemes":{"Authorization":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"info":{"title":"QAnswer API Documentation","description":"APIs provided by QAnswer","contact":{"name":"QAnswer","url":"https://qanswer.ai","email":"info@qanswer.ai"},"version":"1.0"},"postman":{"name":"link 1","description":{"type":"text/plain"},"url":{"path":["api","linkDev","link"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"text","value":""},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"language","value":""},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"user","value":""},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"knowledgebase","value":""},{"disabled":false,"key":"query","value":""},{"disabled":false,"key":"conceptMust","value":""}],"variable":[]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## link_1
+
+
+
+link_1
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"text","in":"query","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"language","in":"query","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"user","in":"query","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"knowledgebase","in":"query","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"query","in":"query","required":false,"schema":{"type":"string","default":""}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"conceptMust","in":"query","required":false,"schema":{"type":"array","items":{"type":"string"},"default":[]}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><strong>object</strong></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Bad Request
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><code>property name*</code><span style={{"opacity":"0.6"}}> string</span></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      

@@ -1,0 +1,37 @@
+---
+id: rdf
+title: "rdf"
+description: "rdf"
+sidebar_label: rdf
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["rdf-facet-browser-controller"],"operationId":"rdf","parameters":[{"name":"dataset","in":"path","required":true,"schema":{"type":"string"}},{"name":"user","in":"path","required":true,"schema":{"type":"array","items":{"type":"string"}}},{"name":"url","in":"query","required":true,"schema":{"type":"string"}},{"name":"language","in":"query","required":false,"schema":{"type":"string","default":"en"}},{"name":"accept","in":"header","required":false,"schema":{"type":"array","items":{"type":"string"},"default":["application/rdf+json"]}}],"responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"object"}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{"type":"object","additionalProperties":{"type":"string"}}}}}},"description":"rdf","method":"get","path":"/api/browser/{user}/{dataset}/facet","servers":[{"url":"http://localhost:4567"}],"security":[{"Authorization":[]}],"securitySchemes":{"Authorization":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"info":{"title":"QAnswer API Documentation","description":"APIs provided by QAnswer","contact":{"name":"QAnswer","url":"https://qanswer.ai","email":"info@qanswer.ai"},"version":"1.0"},"postman":{"name":"rdf","description":{"type":"text/plain"},"url":{"path":["api","browser",":user",":dataset","facet"],"host":["{{baseUrl}}"],"query":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"key":"url","value":""},{"disabled":false,"key":"language","value":""}],"variable":[{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"dataset"},{"disabled":false,"description":{"content":"(Required) ","type":"text/plain"},"type":"any","value":"","key":"user"}]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## rdf
+
+
+
+rdf
+
+<details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Path Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"dataset","in":"path","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"user","in":"path","required":true,"schema":{"type":"array","items":{"type":"string"}}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Query Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"url","in":"query","required":true,"schema":{"type":"string"}}}></ParamsItem><ParamsItem className={"paramsItem"} param={{"name":"language","in":"query","required":false,"schema":{"type":"string","default":"en"}}}></ParamsItem></ul></div></details><details style={{"marginBottom":"1rem"}} data-collapsed={false} open={true}><summary style={{}}><strong>Header Parameters</strong></summary><div><ul><ParamsItem className={"paramsItem"} param={{"name":"accept","in":"header","required":false,"schema":{"type":"array","items":{"type":"string"},"default":["application/rdf+json"]}}}></ParamsItem></ul></div></details><div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><strong>object</strong></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Bad Request
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><code>property name*</code><span style={{"opacity":"0.6"}}> string</span></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      

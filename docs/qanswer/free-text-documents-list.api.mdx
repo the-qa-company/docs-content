@@ -1,0 +1,37 @@
+---
+id: free-text-documents-list
+title: "freeTextDocumentsList"
+description: "freeTextDocumentsList"
+sidebar_label: freeTextDocumentsList
+hide_title: true
+hide_table_of_contents: true
+api: {"tags":["dataset-controller-free-text"],"operationId":"freeTextDocumentsList","responses":{"200":{"description":"OK","content":{"*/*":{"schema":{"type":"object","properties":{"elasticsearch":{"type":"array","items":{"type":"object","properties":{"documents":{"type":"array","items":{"type":"object","properties":{"content":{"type":"string"},"id":{"type":"string"},"meta":{"type":"object","properties":{"_split_id":{"type":"integer","format":"int32"},"name":{"type":"string"},"session_id":{"type":"string"},"title":{"type":"string"}}},"score":{"type":"number"}}}},"indexName":{"type":"string"}}}}}}}}},"400":{"description":"Bad Request","content":{"*/*":{"schema":{"type":"object","additionalProperties":{"type":"string"}}}}}},"description":"freeTextDocumentsList","method":"get","path":"/api/freeText/collection/documents","servers":[{"url":"http://localhost:4567"}],"security":[{"Authorization":[]}],"securitySchemes":{"Authorization":{"type":"http","scheme":"bearer","bearerFormat":"JWT"}},"info":{"title":"QAnswer API Documentation","description":"APIs provided by QAnswer","contact":{"name":"QAnswer","url":"https://qanswer.ai","email":"info@qanswer.ai"},"version":"1.0"},"postman":{"name":"free Text Documents List","description":{"type":"text/plain"},"url":{"path":["api","freeText","collection","documents"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"*/*"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: qanswer/q-answer-api-documentation
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem"
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## freeTextDocumentsList
+
+
+
+freeTextDocumentsList
+
+<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+OK
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>elasticsearch</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>documents</strong><span style={{"opacity":"0.6"}}> object[]</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"content"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"id"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={true} className={"schemaItem"}><details style={{}}><summary style={{}}><strong>meta</strong><span style={{"opacity":"0.6"}}> object</span></summary><div style={{"marginLeft":"1rem"}}><SchemaItem collapsible={false} name={"_split_id"} required={false} schemaDescription={undefined} schemaName={"int32"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"session_id"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem><SchemaItem collapsible={false} name={"title"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem><SchemaItem collapsible={false} name={"score"} required={false} schemaDescription={undefined} schemaName={"number"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem><SchemaItem collapsible={false} name={"indexName"} required={false} schemaDescription={undefined} schemaName={"string"} qualifierMessage={undefined} defaultValue={undefined}></SchemaItem></div></details></SchemaItem></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{\n  \"elasticsearch\": [\n    {\n      \"documents\": [\n        {\n          \"content\": \"string\",\n          \"id\": \"string\",\n          \"meta\": {\n            \"_split_id\": 0,\n            \"name\": \"string\",\n            \"session_id\": \"string\",\n            \"title\": \"string\"\n          },\n          \"score\": 0\n        }\n      ],\n      \"indexName\": \"string\"\n    }\n  ]\n}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem><TabItem label={"400"} value={"400"}><div>
+
+Bad Request
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"*/*"} value={"*/*"}><SchemaTabs groupId={"schema-tabs"}><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div><code>property name*</code><span style={{"opacity":"0.6"}}> string</span></div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"{}"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      
