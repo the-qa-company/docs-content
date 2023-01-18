@@ -1,9 +1,10 @@
 ---
 id: playground
-title: Access Playground
-sidebar_label: Access Playground
+title: Access playground
+sidebar_label: Access playground
 ---
-
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 import Image from '../../src/components/Image';
 
 The goal of this tutorial is to have fun using question answering over text! Let's construct your own digital twin!
@@ -37,13 +38,18 @@ When you are logged in, you will enter in the <b>QA Systems</b> page:
 
 <Image src='/img/newUI/qa-systems-empty.png' alt='QA Systems'/>
 
-Click <i>New Playground</i> and then choose the **Free Text** option.
+Click <i>New Playground</i> and then choose the **Text** option.
 
-<Image src='/img/newUI/choose-playground-type.png' alt='QA Systems'/>
+<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', justifyContent: 'center' }}>
+    <img src='/img/newUI/navbar-open-playground-text.png' alt='nav bar' style={{ height: '300px' }}/>
+    <img src='/img/newUI/navbar-closed-playground.png' alt='nav bar closed' style={{ height: '300px' }}/>
+</div>
 
 You will get here:
 
-<Image src='/img/newUI/playground-text-empty.png' alt='QA Systems'/>
+<Image src='/img/newUI/playground-text/playground-text.png' alt='playground'/>
+
+You can remove the text example by clicking on <i>Clear</i>. You can bring the example back by clicking on <i>Example</i>.
 
 :::caution warning
 What you write here won't be saved.
