@@ -30,41 +30,35 @@ Let's do it:
 </TabItem>
 <TabItem value='ui' label='UI'>
 
-  <Image src='/img/newUI/turtle/first-node.png' alt='First node'/>
+  <Image src='/img/newUI/playground-graph/first-node.png' alt='First node'/>
 
 </TabItem>
 </Tabs>
 
-If you click on the magnifying glass icon (in the status bar) we can already ask "QAnswer?" or "What is QAnswer?" and get:
+The playground is separated in two parts:
+- **Left** is your *Context*: the turtle code you want to ask questions on
+- **Right** is where you ask your questions: ask your question, the answers will appear below with the display types available
 
-<Image src='/img/newUI/question-0.png' alt='QAnswer?'/>
+
+We can already ask "QAnswer?" or "What is QAnswer?" and get:
+
+<Image src='/img/newUI/playground-graph/what-is-qanswer.png' alt='QAnswer?'/>
 
 ## Using skos:altLabel
 
 You may be called also differently. So let's add this too:
 
-<Tabs>
-<TabItem value='turtle' label='Turtle' default>
+```turtle
+  @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-  ```turtle
-    @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-
-    qa:node1 rdfs:label "QAnswer" .
-    qa:node1 skos:altLabel "QAnswer KG" .
-    qa:node1 skos:altLabel "QA" .
-  ```
-
-</TabItem>
-
-<TabItem value='ui' label='UI'>
-
-  <Image src='/img/newUI/turtle/add-skos.png' alt='skos:altLabel'/>
-
-</TabItem>
-</Tabs>
+  qa:node1 skos:altLabel "QAnswer KG" .
+  qa:node1 skos:altLabel "QA" .
+```
 
 We used another standard property which is `skos:altLabel`. And yes, people also call me "QAnswer KG" or "QA" in short.
 Now you can also ask "QAnswer KG?" or "What is QA?".
+
+<Image src='/img/newUI/playground-graph/what-is-qa.png' alt='QA?'/>
 
 Finally lets add a little hack 🤖. We want to ask also thinks like "Who are you?", "What do you like?" ... so let add to the 
 node also the name "you" 😉
@@ -97,7 +91,7 @@ All together this looks as follows:
 
 <TabItem value='ui' label='UI'>
 
-  <Image src='/img/newUI/turtle/add-you-label.png' alt='skos:altLabel "you"'/>
+  <Image src='/img/newUI/playground-graph/who-are-you.png' alt='skos:altLabel "you"'/>
 
 </TabItem>
 </Tabs>
