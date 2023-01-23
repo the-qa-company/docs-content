@@ -1,7 +1,7 @@
 ---
 id: api-references
 title: API Reference
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 The documentation of all APIs is available via Swagger at the following address:
