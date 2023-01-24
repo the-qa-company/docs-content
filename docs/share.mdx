@@ -1,6 +1,115 @@
 ---
 id: share
-title: 'Shared QA Systems'
-sidebar_label: Shared QA Systems
+title: 'Share your QA System'
+sidebar_label: Share your QA System
 sidebar_position: 5
 ---
+
+import Image from '../src/components/Image';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
+
+
+You can now share your QA systems with other users in your organization. This is a great way to collaborate with your team and share your knowledge.
+
+:::info
+You can share both type of QA systems: based on **Graph** or **Text**.
+:::
+
+You can access it using the button in the status bar (on top of you screen) or in the QA Systems page by clicking on the QA system you are interested in and then the Share button.
+
+<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+    <img src='/img/newUI/share/status-bar-share-btn.png' alt='Share button' width= '60%'/>
+    <img src='/img/newUI/share/qa-system-share-btn.png' alt='Share button' width= '60%'/>
+</div>
+
+You will get here:
+
+<Image src='/img/newUI/share/share-empty.png' alt='share page'/>
+
+## Shared users
+:::info
+In the *Share with* section, you can specify the usernames of the users you want to share your QA system with.
+:::
+
+You can also specify the permissions for each user. The permissions are:
+1. **Read only** - the user can only ask questions and give feedbacks to your QA system.
+2. **Read and write** - the user can ask questions, give feedbacks, and edit your QA system (access the training page, configs etc. like you do).
+
+These specified users will be able to see and access your dataset from their *QA Systems* page.
+
+Let's give access to **UserB** with read only permissions and **UserC** with read and write permissions.
+
+<Image src='/img/newUI/share/share-users.png' alt='share to userA'/>
+
+<Tabs>
+    <TabItem value="read" label="Read only">
+        As you can see, <b>UserB</b> can now see the QA system in his <i>QA Systems</i> page in the <i>Shared with me</i> section but he doesn't have access to the other pages (Training, Configs etc.).
+        <Image src='/img/newUI/share/qa-systems-shared.png' alt='share page'/>
+        This is the page he will see when he clicks on the magnifying glass icon. He can ask questions normally and give feedbacks to the QA system.
+        <Image src='/img/newUI/share/shared-read-ask-page.png' alt='share page'/>
+    </TabItem>
+    <TabItem value="read write" label="Read and write">
+        A <b>userC</b> having read and write permissions can access the other pages of the QA system (Training, Configs etc.) so they will be accessible in the QA Systems page and the status bar.
+        <Image src='/img/newUI/share/qa-systems-shared-write.png' alt='share page'/>
+        This is the page he will see when he clicks on the magnifying glass icon. He can ask questions normally and give feedbacks to the QA system.
+        <Image src='/img/newUI/share/shared-write-ask-page.png' alt='share page'/>
+    </TabItem>
+</Tabs>
+
+
+## Public access
+You can also open your QA System to the public by sharing a link. This means that anyone having access to the link can ask questions and give feedbacks to your QA system.
+
+:::info
+You don't need to have a QAnswer account to access an open QA System.
+:::
+
+You can enable the share option by clicking on the checkbox *Accessible to everyone*. A link will be generated and you can copy it by clicking on the copy icon.
+<Image src='/img/newUI/share/share-public.png' alt='public link'/>
+
+:::tip
+Share your link to others so they can ask questions to your QA System and give feedbacks!
+[Here is how it looks for the public users](#public-mode).
+:::
+
+<Admonition type="note">
+    <p>The feedbacks given by public users are considered <i>not trusted</i>, you can visualize them in the <i>Training page</i> in a separated tab so you can check them easily.</p>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <img src='/img/newUI/share/trusted-not-trusted.png' alt='trusted or not trusted feedbacks' width='270px'/>
+    </div>
+</Admonition>
+
+
+
+## Description
+
+People using your shared link may not know what your QA system is about. So you can add a description to guide them.
+:::info
+Add a description to your QA system so people can understand what it is about.
+:::
+
+<Image src='/img/newUI/share/share-edit-description.png' alt='Edit description'/>
+
+So when they access your QA system, they will see the description you added. See the next section for more details.
+
+## Public mode
+
+This is the view that others will see when they open your shared link. The first thing they will see is the description you added, if there is one.
+
+<Image src='/img/newUI/share/see-description.png' alt='Edit description'/>
+
+You can open the description again by clicking on the *Show description* button on the top right corner.
+
+They can then ask questions and give feedbacks to your QA system.
+
+<Tabs>
+    <TabItem value='s1' label='Ask page' default>
+        <Image src='/img/newUI/share/public-share-ask.png' alt='Ask page'/>
+    </TabItem>
+    <TabItem value='s2' label='Answer page'>
+        <Image src='/img/newUI/share/public-share-answer-page.png' alt='Ask page'/>
+    </TabItem>
+</Tabs>
+
