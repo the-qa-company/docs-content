@@ -20,7 +20,7 @@ and correctly compute the confidence.
 
 When asking "What is a cocktail" as a response a list of all cocktails is given, i.e. the system understood that we search for anything of type cocktail which would correspond to "Give me all cocktails".
 
-<Image src='/img/newUI/cocktails/what-is-a-cocktail.png' alt='wrong answer'/>
+<Image src='/img/newUI/tuto-ui-graph/what-is-a-cocktail.png' alt='wrong answer'/>
 
 <p>
   You can click on the "SPARQL interpretation" icon:
@@ -28,11 +28,11 @@ When asking "What is a cocktail" as a response a list of all cocktails is given,
   (at the left of the current interpretation) all generated interpretations will be shown:
 </p>
 
-<Image src='/img/newUI/cocktails/what-is-a-cocktail-sparqllist.png' alt='SPARQL list'/>
+<Image src='/img/newUI/tuto-ui-graph/what-is-a-cocktail-sparqllist.png' alt='SPARQL list'/>
 
 In particular the second returns general information about "Cocktail". This is the interpretation we are searching for. By clicking on this interpretation we get:
 
-<Image src='/img/newUI/cocktails/cocktail.png' alt='SPARQL list'/>
+<Image src='/img/newUI/tuto-ui-graph/cocktail.png' alt='right answer'/>
 
 Which gives general information about "Cocktail". By using the feedback functionality (i.e. 👍 or 👎), the system will save the given example.
 
@@ -56,29 +56,29 @@ First you need to access the **Training** page.
 You can access it using the button in the status bar (on top of you screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Training* button.
 
 <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/newUI/cocktails/status-bar.png' alt='training button' width= '60%'/>
-    <img src='/img/newUI/cocktails/qa-system-training-btn.png' alt='training button' width= '60%'/>
+    <img src='/img/newUI/tuto-ui-graph/status-bar.png' alt='training button' width= '60%'/>
+    <img src='/img/newUI/tuto-ui-graph/qa-system-training-btn.png' alt='training button' width= '60%'/>
 </div>
 
 It can be uploaded from the [training page](https://app.qanswer.ai/qa-systems/training) using the "Upload Train" button (available either if you already have feedbacks or not).
 
 <Tabs>
   <TabItem value="q2" label="No feedbacks yet">
-    <Image src='/img/newUI/cocktails/training-upload.png' alt='new feedbacks'/>
+    <Image src='/img/newUI/tuto-ui-graph/training-empty.png' alt='new feedbacks'/>
   </TabItem>
 
   <TabItem value='q1' label='You already have some feedbacks' default>
-    <Image src='/img/newUI/cocktails/training-add-to-existing.png' alt='existing feedbacks'/>
+    <Image src='/img/newUI/tuto-ui-graph/training-existing.png' alt='existing feedbacks'/>
   </TabItem>
 </Tabs>
 
 On this page you have an overview of how the system performs on the questions you gave feedbacks and some statistics. You can also see a tab name [Logs](#logs) which will show you the history of questions asked.
 
-<Image src='/img/newUI/cocktails/training-upload-done.png' alt='before training'/>
+<Image src='/img/newUI/tuto-ui-graph/training-upload-done.png' alt='before training'/>
 
 After clicking on *Train* the system will create a model that adapts to your dataset:
 
-<Image src='/img/newUI/cocktails/after-training.png' alt='after training' />
+<Image src='/img/newUI/tuto-ui-graph/trained.png' alt='after training' />
 
 :::note
 The model will generalize also over questions you didn't ask.
@@ -90,4 +90,47 @@ Now you learned how to give feedbacks to the system and how these feedbacks can 
 
 This tab is used to see a list of all questions that have been asked to this QA System.
 
-<Image src='/img/newUI/cocktails/logs.png' alt='after training' />
+<Image src='/img/newUI/tuto-ui-graph/logs.png' alt='logs' />
+
+
+## Sharing
+
+Let's share the QA System with other users, here **userB** with read rights and **userC** with write rights.
+More information about sharing can be found [here](/share).
+
+<Image src='/img/newUI/tuto-ui-graph/share.png' alt='share' />
+
+These users can now access the QA System and give feedbacks to the system. As you can notice on the *Training page*.
+
+<Image src='/img/newUI/tuto-ui-graph/share.png' alt='share' />
+
+:::note
+You can see who gave the feedbacks in the *Feedbacks* tab. And also see the history of questions asked in the *Logs* tab to know who asked what.
+:::
+
+<Tabs>
+  <TabItem value='f' label='Feedbacks'>
+    <Image src='/img/newUI/tuto-ui-graph/feedbacks-shared.png' alt='feedbacks'/>
+  </TabItem>
+
+  <TabItem value='l' label='Logs' default>
+    <Image src='/img/newUI/tuto-ui-graph/logs-shared.png' alt='logs'/>
+  </TabItem>
+</Tabs>
+
+:::tip
+You can filter your feedbacks and log depending on a column value. 
+:::
+
+Let's add a filter related to users, click on the three-dot icon to open the menu:
+<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', justifyContent: 'center' }}>
+    <img src='/img/newUI/tuto-ui-graph/filter-menu.png' alt='nav bar' style={{ height: '300px' }}/>
+</div>
+
+Let's use the *Filter* option to filter the feedbacks by user.
+
+<Image src='/img/newUI/tuto-ui-graph/filtered-user.png' alt='filter by username'/>
+
+You can filter in various ways and adapt the filters to your needs.
+
+<Image src='/img/newUI/tuto-ui-graph/filter-option.png' alt='filter by username'/>
