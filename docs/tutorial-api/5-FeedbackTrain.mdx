@@ -1,0 +1,260 @@
+---
+id: feedback-train
+title: 'Feedback and Train'
+sidebar_label: Feedback and train
+---
+import Link from '@docusaurus/Link';
+
+
+Each time you ask a question the system generate interpretations and computes a confidence. We have seen the list of different interpretations in the answer object in the
+previews call. 
+
+:::note
+The system believes the answer is correct if the confidence is bigger than 50% and wrong if it is lower than 50%.
+:::
+
+By using the feedback functionality the system can learn to choose the right interpretation
+and correctly compute the confidence.
+
+When asking "Give me all cocktails?" we get the following response:
+
+```json
+{
+    "question": "give me all cocktails",
+    "queries": [
+        {
+            "query": "SELECT DISTINCT ?s0 where { VALUES ?s0 { <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> }  } LIMIT 1000",
+            "confidence": 0.9999999999999916,
+            "kb": "cocktails"
+        },
+        {
+            "query": "SELECT DISTINCT ?s1 where { ?s1  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> . } limit 1000",
+            "confidence": 3.1629109018663826e-11,
+            "kb": "cocktails"
+        },
+        {
+            "query": "SELECT DISTINCT ?o1 where { <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail>  ?p1  ?o1 . } limit 1000",
+            "confidence": 0.07094440771550606,
+            "kb": "cocktails"
+        },
+        {
+            "query": "SELECT DISTINCT ?s1 where { ?s1  ?p1  <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> . } limit 1000",
+            "confidence": 0.18335346032869446,
+            "kb": "cocktails"
+        },
+        {
+            "query": "SELECT DISTINCT ?o1 where { <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail>  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  ?o1 . } limit 1000",
+            "confidence": 1.0757427783726548e-11,
+            "kb": "cocktails"
+        }
+    ],
+    "qaContexts": [
+        {
+            "kb": "cocktails",
+            "literal": null,
+            "uri": "http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail",
+            "description": null,
+            "links": {
+                "cocktails": "http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail"
+            },
+            "label": "Cocktail",
+            "time": null,
+            "images": [],
+            "audio": [],
+            "geo": [],
+            "video": [],
+            "geoJson": null,
+            "pageRank": 2.1089668
+        }
+    ]
+}
+```
+
+
+the answer is "Cocktail", which would correspond to the question "What is a cocktail?". The right answer is given by the second ranked query which gives back things
+of type cocktail. We can tell the system that this is the right query by the following request:
+
+
+```bash
+curl -X POST \
+  https://app.qanswer.ai/api/feedback/create \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ.................' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "user: YourUsername .....................",
+  "correct": true,
+  "knowledgebase": ["cocktails"],
+  "language": ["en"],
+  "question": "Give me all cocktails.",
+  "questionId": -1,
+  "sparql": "SELECT DISTINCT ?s1 where { ?s1  <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>  <http://vocabulary.semantic-web.at/cocktail-ontology/Cocktail> . } limit 1000",
+  "sparqlKB": "cocktails",
+  "validated": true
+}'
+```
+
+Note that the body contains a JSON object that specifies the knowledgebase, the language, the question and the correct query. The questionId is "-1" if the question is not in the training dataset yet. To overwrite a previews feedback you can specify the questionId.
+
+After asking a set of questions, and by giving feedback you will have created a training set. A training set for the cocktail dataset can be downloaded here:
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target='_blank'
+        to='pathname:///questions_cocktail.json'
+        className="button button--primary button--lg"
+    >
+        Download training set 🍸
+    </Link>
+</div>
+
+It can be uploaded as follows:
+
+
+```bash
+curl -X POST \
+  https://app.qanswer.ai/api/feedback/upload \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDUiLCJ.......' \
+  -F json=@/path/to/file/questions_cocktail.json
+```
+
+By calling the following API you have an overview of how the system performs on the questions you gave feedback:
+
+
+```bash
+curl -X GET \
+  https://app.qanswer.ai/api/feedback/evaluate \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi.....................' \
+```
+
+The response looks as follows:
+
+```json
+{
+    "confidence": {
+        "confusionMatrix": {
+            "TT": 24,
+            "FF": 36,
+            "TF": 57,
+            "FT": 7
+        }
+    },
+    "questions": [
+        {
+            "allAnswer": [
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -4.09135627746582
+                },
+                {
+                    "rank": "1162293",
+                    "label": 1,
+                    "value": -5.338467121124268
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -6.426987171173096
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -6.502406120300293
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -6.691828727722168
+                }
+            ],
+            "question": "Give me all cocktails.",
+            "knowledgebase": "cocktails",
+            "validated": true,
+            "confidence": 0.9999999999999916,
+            "language": "en",
+            "id": 1162293
+        },
+        .
+        .
+        .
+
+
+    ],
+    "ranking": {
+        "pa1": 0
+    },
+    "numOfQuestions": 28
+}
+```
+
+After calling the train API:
+
+```bash
+curl -X GET \
+  https://app.qanswer.ai/api/feedback/train \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzUxMi.....' \
+```
+
+the system will create a model that adapts to your dataset:
+
+```json
+{
+    "confidence": {
+        "confusionMatrix": {
+            "TT": 81,
+            "FF": 43,
+            "TF": 0,
+            "FT": 0
+        }
+    },
+    "questions": [
+        {
+            "allAnswer": [
+                {
+                    "rank": "1162293",
+                    "label": 1,
+                    "value": 14.571797370910645
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -10.909229278564453
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -12.239108085632324
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -12.54185962677002
+                },
+                {
+                    "rank": "1162293",
+                    "label": 0,
+                    "value": -18.441089630126953
+                }
+            ],
+            "question": "Give me all cocktails.",
+            "knowledgebase": "cocktails",
+            "validated": true,
+            "confidence": 0.999998823957124,
+            "language": "en",
+            "id": 1162293
+        },
+        .
+        .
+        .
+
+
+    ],
+    "ranking": {
+        "pa1": 0
+    },
+    "numOfQuestions": 28
+}
+```
+
+Note that the model will generalize also over questions you didn't ask.
+
+Now you learned how to give feedback to the system and how this feedback can be used to adapt QAnswer to your dataset.

@@ -1,0 +1,52 @@
+---
+id: upload-index
+title: 'Upload and index'
+sidebar_label: Upload and index
+---
+
+import Image from '../../src/components/Image';
+import Link from '@docusaurus/Link';
+
+:::info
+The cocktail dataset can be downloaded here:
+<div style={{ display: 'flex', justifyContent: 'center' }}>
+    <Link
+        target="_blank"
+        to='/cocktails.nt'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download cocktail dataset 🍸
+    </Link>
+</div>
+:::
+
+Now you are ready to upload your first graph dataset. On your [QA Systems page](https://app.qanswer.ai/qa-systems) click on *Add dataset*.
+
+
+<Image src='/img/screenshots/tuto-ui-text/qa-systems-simpsons.png' alt='home page'/>
+
+:::note
+We see both types of QA Systems in the same list. So here we can see the QA System we created in the previous section.
+:::
+
+This time, choose *Graph* as the type of dataset.
+
+<Image src='/img/screenshots/wizard.png' alt='Wizard'/>
+
+You will be redirected to the dataset creation page, where you have to specify the name of the dataset, the dataset itself and optionnaly a logo.
+
+<Image src='/img/screenshots/tuto-ui-graph/creation-cocktails.png' alt='home page'/>
+
+:::caution
+The dataset can be in one of the common RDF serializations and must be syntactically correct. You can both check and clean a file using [serdi](https://drobilla.net/software/serd)
+
+```
+serdi -i ntriples -o ntriples dump.nt > dump_clean.nt
+```
+:::
+
+
+After uploading the dataset, your QA system will appear in your home page.
+
+It is now ready to be [queried!](query)
