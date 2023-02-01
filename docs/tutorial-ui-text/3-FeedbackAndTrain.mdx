@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
 import Admonition from '@theme/Admonition';
 
-Each time you ask a question, the system tries to find answers to which it associates a confidence score. The different answers are ordered by confidence (from the higher score to the lower).
+Each time you ask a question, the system tries to find best answers together with its confidence scores. The answers presented are ordered descendingly by confidence scores.
 
 ## Giving feedbacks
 
@@ -18,7 +18,10 @@ Each time you ask a question, the system tries to find answers to which it assoc
 By using the feedback functionality, i.e. by clicking on either the thumbs-up&nbsp;👍, thumb-down&nbsp;👎 or by **selecting yourself** the right answer, the system can learn better to answer your questions.
 :::
 
-When asking "Where does Homer work?" the first time, the system will return these answers, by giving feedbacks you can then train your system so it becomes more accurate. You can then see that the results changed.
+When asking "Where does Homer work?" after creation of the QA system, the system is not able to find the correct answers for you. <br/>
+By giving feedbacks you can then train your system so it becomes more accurate. So we will have to collect some feedbacks to teach the AI what's the better answer for this question.
+
+You can then see that the results changed.
 
 <Tabs>
   <TabItem value="q1" label="Giving feedbacks" default>
@@ -51,7 +54,7 @@ When asking "Where does Homer work?" the first time, the system will return thes
   </TabItem>
 </Tabs>
 
-The more you give feedbacks, the more your training set will grow and the more accurate your system will be.
+By collecting feedbacks, you are improving the AI models behind your QA systems. Theoritically, the more feedbacks you give, the smarter your QA system will be.
 
 :::tip
 Give a negative feedback if the answer is **not correct** AND if the real answer is **not in the context**. Otherwise select the right answer using the tool between the thumbs icons.
@@ -59,7 +62,12 @@ Give a negative feedback if the answer is **not correct** AND if the real answer
 
 ## Training
 
-You can access the **Training** page using the button in the status bar (on top of your screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Training* button.
+<p>
+  You can access the <b>Training</b> page using the button in the status bar (on top of your screen) or in the <b>QA Systems</b> page by clicking on the QA system you are interested in and then the
+  <img src='/img/icons/school.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+  <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Training</b>
+  button.
+</p>
 
 <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
     <img src='/img/screenshots/tuto-ui-text/status-bar-train.png' alt='training button' width= '60%'/>
@@ -137,7 +145,7 @@ The annotation mode allows you to give feedbacks on the system's answers, but al
 The feedbacks you give by selecting the answer inside the document collection will have as type "Annotated by user" so you can find them easily in the **Training Page**.
 
 ## Suggestions
-When you are in the **Ask page**, you can see the suggestions of the system. These suggestions are based on the questions you asked and the feedbacks you gave.
+When you enter one QA system, you can see the suggestions of the system. These suggestions are based on the questions you asked and the feedbacks you gave.
 
 <Image src='/img/screenshots/tuto-ui-text/ask-suggestions.png' alt='suggestions'/>
 
