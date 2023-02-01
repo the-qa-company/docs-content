@@ -8,6 +8,7 @@ import Image from '../../src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Link from '@docusaurus/Link';
+import Admonition from '@theme/Admonition';
 
 Each time you ask a question, the system tries to find answers to which it associates a confidence score. The different answers are ordered by confidence (from the higher score to the lower).
 
@@ -29,7 +30,16 @@ When asking "Where does Homer work?" the first time, the system will return thes
   </TabItem>
 </Tabs>
 
-If the answer is wrong or incomplete but the right answer is in the same context, you can click on the selectionning tool (between the thumbs icons)
+<div>
+    <Admonition type="info">
+    If the answer is wrong or incomplete but the right answer is in the same context, you can select it using the selectionning tool:
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <img src='/img/screenshots/tuto-ui-text/select-tool.png' alt='download' width='200px'/>
+    </div>
+    By default this tool is enabled so you just have to select the right answer.
+    </Admonition>
+</div>
+
 
 <Tabs>
   <TabItem value="q1" label="Select right answer" default>
@@ -49,10 +59,10 @@ Give a negative feedback if the answer is **not correct** AND if the real answer
 
 ## Training
 
-You can access the **Training** page using the button in the status bar (on top of you screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Training* button.
+You can access the **Training** page using the button in the status bar (on top of your screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Training* button.
 
 <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-text/status-bar.png' alt='training button' width= '60%'/>
+    <img src='/img/screenshots/tuto-ui-text/status-bar-train.png' alt='training button' width= '60%'/>
     <img src='/img/screenshots/tuto-ui-text/qa-system-training-btn.png' alt='training button' width= '60%'/>
 </div>
 
@@ -85,6 +95,20 @@ Your feedbacks are displayed using a color code:
 - Red: you gave 👍 but the system was incorrect
 - Grey: you gave 👎
 :::
+
+<div>
+    <Admonition type="tip">
+    <p>To start training your system, you can click on the <i>Train</i> button.</p>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+      <img src='/img/screenshots/tuto-ui-text/train-btn.png' alt='training button' width= '300px'/>
+    </div>
+    The training process can take a few seconds depending on the size of your training set.
+    </Admonition>
+</div>
+
+When your system is training, your page will look like this:
+
+<Image src='/img/screenshots/tuto-ui-text/training-animation.png' alt='Training animation' style={{ marginBottom: '20px'}} />
 
 ## Annotation
 
