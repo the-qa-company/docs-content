@@ -1,0 +1,79 @@
+---
+id: display-types
+title: 'Display types'
+sidebar_label: Display types
+---
+
+import Image from '../../src/components/Image';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Admonition from '@theme/Admonition';
+
+
+Depending on the answer we get, we can display it in different ways. The types available are listed below the confidence bar on the answer page, for example:
+
+<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+    <img src='/img/screenshots/tuto-ui-graph/display-types.png' alt='display types' width='40%'/>
+</div>
+
+You can personnalize the visualization order in the *Configuration page*. You can access it using the button in the status bar (on top of your screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Config* button.
+
+<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
+    <img src='/img/screenshots/tuto-ui-graph/config-statusbar.png' alt='config button' width= '60%'/>
+    <img src='/img/screenshots/tuto-ui-graph/config-qasystems.png' alt='config button' width= '60%'/>
+</div>
+
+You can order the display types depending on what you want. You can drag and drop the items of the list to order them differently and also hide some display types using the eye icon.
+
+<Image src='/img/screenshots/tuto-ui-graph/config-displays.png' alt='config displays' />
+
+
+## Facet
+*Facet* is the default display type. It allows you to see all the properties of an element.<br/>
+When the answer is a single element, it is expanded by default.<br/>
+When the answer is composed of several elements, these elements are listed and you can click on them to expand them and see more detail.
+
+<Tabs>
+  <TabItem value="f1" label="One element" default>
+    <Image src='/img/screenshots/tuto-ui-graph/margarita-facet.png' alt='margarita'/>
+  </TabItem>
+
+  <TabItem value='f2' label='List of elements'>
+    <Image src='/img/screenshots/tuto-ui-graph/margarita-ingredients-facet.png' alt='margarita ingredients'/>
+  </TabItem>
+
+  <TabItem value='f3' label='List of elements > expand element'>
+    <Image src='/img/screenshots/tuto-ui-graph/margarita-ingredients-expanded.png' alt='margarita ingredients > lime'/>
+  </TabItem>
+</Tabs>
+
+## List
+*List* is similar to *Facet*, the difference is that not all properties of an element are displayed, only some information that is judged important, like the description or the image.
+
+<Image src='/img/screenshots/tuto-ui-graph/margarita-after-mappings.png' alt='margarita'/>
+
+
+## Images
+*Images* allows you to visualize your answer as a grid of images. If you want more information on an element you can click on it and it will redirect you to this element (using *Facet* display to see all information available).
+<Image src='/img/screenshots/tuto-ui-graph/image-cocktails.png' alt='cocktails'/>
+
+## Table
+*Table* allows you to visualize your answer as a table.
+<Image src='/img/screenshots/tuto-ui-graph/table-display.png' alt='table'/>
+To have a better view you can display the table in fullscreen mode.
+<Image src='/img/screenshots/tuto-ui-graph/table-fullscreen.png' alt='table'/>
+
+You can hide/show columns, pin them to the left or right of your screen.
+
+<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
+    <img src='/img/screenshots/tuto-ui-graph/menu-column.png' alt='display types' width='40%'/>
+    <img src='/img/screenshots/tuto-ui-graph/manage-columns.png' alt='display types' width='40%'/>
+</div>
+
+You also drag and drop columns to reorder them.
+<Image src='/img/screenshots/tuto-ui-graph/table-reorder-columns.png' alt='table'/>
+
+
+## Simple
+*Simple* is like is name says, a simple way to display information. It is a table constitued of 2 columns. In the example below, we asked for "all cocktails ingredients" so on the first column we see cocktails name, and on the other columns, ingredients that constitute these cocktails.
+<Image src='/img/screenshots/tuto-ui-graph/simple-display.png' alt='all cocktails ingredients'/>
