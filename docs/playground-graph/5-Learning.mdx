@@ -1,0 +1,91 @@
+---
+id: learning
+title: Learning a bit ....
+sidebar_label: Learning a bit ....
+---
+
+import Admonition from '@theme/Admonition';
+import Image from '../../src/components/Image';
+import InfoSvgIcon from '../../src/components/InfoSvgIcon';
+
+While writing down the Knwoledge Graph about myself, and asking questions, I noted that there were some problems. 
+Maybe the same happend to you! 
+
+Mainly two things happened ...
+
+## 1. The Knowledge is not encoded correctly
+
+At some point for example I wrote:
+
+```
+qa:birthPlace rdfs:label "born" .
+qa:birthPlace skos:altLabel "birth place" .
+
+#create node Saint-Etienne
+qa:saintEtienne rdfs:label "Saint-Etienne" .
+
+#born in Saint-Etienne
+qa:node2 qa:birthPlace qa:saintEtienne . 
+```
+
+
+Do you see the error? The problem is the last triple, instead of writing
+```
+#born in Saint-Etienne
+qa:node1 qa:birthPlace qa:saintEtienne . 
+```
+
+
+i.e. that QAnswer was born in Saint-Etienne, I wrote
+```
+#born in Saint-Etienne
+qa:node2 qa:birthPlace qa:saintEtienne . 
+```
+
+
+i.e. that English was born in Saint-Etienne. So clearly we will not get a meaningful answer if
+the knowledge is not encoded correctly. So one important thing is: "Check that your knowledge is encoded correctly!"
+
+
+## 2. The interpretation is wrong
+The second thing that happened was that some questions where interpreted wrongly even if the knowledge was encoded
+correctly. When I asked "Where are you born?"
+I got:
+
+<Image src='/img/screenshots/playground-graph/where-born-wrong-interpretation.png' alt='where are you born' />
+
+But I asked "where", not "when"! and the information in the Knowledge Graph was correct!
+In this case when I clicked on <i>show other SPARQL interpretations</i> (on the left of the current interpretation).
+<div style={{ display: 'flex', alignItems: 'center', gap: '30px', marginBottom: '20px', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <img src='/img/screenshots/playground-graph/born-at-interpretations-btn.png' alt='show more interpretations' width='200px'/>
+        Click to show more interpretations
+    </div>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <img src='/img/screenshots/playground-graph/born-at-interpretations-open.png' alt='hide interpretations' width='200px'/>
+        Click to hide interpretations
+    </div>
+</div>
+I found the right interpretation:
+
+<Image src='/img/screenshots/playground-graph/where-born-sparql-interpretations.png' alt='interpretations' />
+
+You see it, it is the 2nd one! When I clicked on it I got the right answer:
+
+<Image src='/img/screenshots/playground-graph/where-born.png' alt='where are you born' />
+
+:::caution
+This is a playground so **it will not be saved**.
+:::
+
+<div>
+    <Admonition type="tip">
+    <p>If you want to save it anyway you can <b>download your file</b> by clicking on the <i>download</i> icon of the editor.</p>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <img src='/img/screenshots/playground-graph/download-playground.png' alt='download' width='200px'/>
+    </div>
+    <p>Then you can use this file to <b>create a QA system</b>.</p>
+    </Admonition>
+</div>
+
+Let's see now how to construct a full [QA System over an RDF Graph!](/tutorial-ui-graph/rdf-to-qa)

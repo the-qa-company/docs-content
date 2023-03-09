@@ -1,0 +1,91 @@
+---
+id: playground
+title: Playground graph
+sidebar_label: Access playground
+---
+
+import Image from '../../src/components/Image';
+import Link from '@docusaurus/Link';
+import Admonition from '@theme/Admonition';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+The goal of this tutorial is to construct your own digital twin!
+
+It should be able to reply to questions about yourself like: 
+* "Where were you born?"
+* "What do you like to eat?"
+* "Who is your best friend?"
+* "What languages do you speak?"
+
+and other things you would like him to know or not 😉
+
+While you will create your digital twin, I will create mine 😀 so we are also going to know each other better ....
+
+## Open Access
+Even if you don't have an account, you can access the playground and create your digital twin!
+
+:::tip
+You can access the playground without creating an account.
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/playground/kg'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: '#fff9', color: '#000', border: 'none' }}
+    >
+        Open Playground!
+    </Link>
+</div>
+:::
+
+<Image src='/img/screenshots/playground-graph/open-playground.png' alt='Open playground'/>
+
+## Access from your account
+
+:::info
+If you don't have an account yet, you can [see the tutorial here](/introduction/register-login)
+:::
+
+Once your account is created, you can login and start discovering the platform!
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai'
+        className="button button--primary button--lg"
+    >
+        Open QAnswer!
+    </Link>
+</div>
+
+When you are logged in, you will enter in the <b>QA Systems</b> page:
+
+<Image src='/img/screenshots/qa-systems-empty.png' alt='QA Systems'/>
+
+Click <i>Instant Playgrounds</i> and then choose the **Knowledge Graph** option.
+
+<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', justifyContent: 'center' }}>
+    <img src='/img/screenshots/navbar-open-playground-graph.png' alt='nav bar' style={{ height: '300px' }}/>
+    <img src='/img/screenshots/navbar-closed-playground.png' alt='nav bar closed' style={{ height: '300px' }}/>
+</div>
+
+You will get here:
+
+<Image src='/img/screenshots/playground-graph/playground-graph.png' alt='playground'/>
+
+You can remove the text example by clicking on <i>Clear</i>. You can bring the example back by clicking on <i>Example</i>.
+
+
+:::caution
+This is a playground so **it will not be saved**.
+:::
+
+<div>
+    <Admonition type="tip">
+    <p>If you want to save it anyway you can <b>download your file</b> by clicking on the <i>download</i> icon of the editor.</p>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <img src='/img/screenshots/playground-graph/download-playground.png' alt='download' width='200px'/>
+    </div>
+    <p>Then you can use this file to <b>create a QA system</b> (do to that you need to be logged in).</p>
+    </Admonition>
+</div>

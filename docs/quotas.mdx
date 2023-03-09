@@ -8,21 +8,21 @@ import Image from '../src/components/Image';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-As you can see on your home page (next to *My QA Systems* title), there are quotas for the number of QA Systems based on graph and text. 
+As you can see on your home page (on top of *My QA Systems* title), there are quotas for the number of QA Systems based on graph and text. 
 Both of these quotas' **default value is 5**. It can be changed by an administrator.
 
 
-<Image src='/img/newUI/qasystems-quotas.png' alt='home page'/>
+<Image src='/img/screenshots/qasystems-quotas.png' alt='home page'/>
 
-:::note
-Graph-based playgrounds are counted as QA Systems.
+:::info
+Shared QA Systems are not counted in the quotas.
 :::
 
 If you have reached your quota, you will not be able to create new QA Systems. You can delete existing QA Systems (of the corresponding type: graph/text) to create new ones.
 
 You can also see these quotas on your profile page.
 
-<Image src='/img/newUI/profile-quotas.png' alt='profile page'/>
+<Image src='/img/screenshots/profile-page.png' alt='profile page'/>
 
 There are other quotas for the size of the files you import. The **default value is 5MB**. It can also be changed by an administrator.
 
@@ -33,10 +33,10 @@ When you create your QA System, you can see the size of each files and chose acc
 
 <Tabs>
   <TabItem value='b1' label='Add files'>
-    <Image src='/img/newUI/upload-files-quota-size.png' alt='create a text QA System: upload page'/>
+    <Image src='/img/screenshots/tuto-ui-text/add-dataset-upload.png' alt='create a text QA System: upload page'/>
   </TabItem>
   
   <TabItem value='b2' label='Exceeded quota'>
-    <Image src='/img/newUI/upload-files-quota-size-exceeded.png' alt='collection too big'/>
+    <Image src='/img/screenshots/quotas-exceeded.png' alt='collection too big'/>
   </TabItem>
 </Tabs>

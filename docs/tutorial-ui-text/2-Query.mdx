@@ -1,0 +1,56 @@
+---
+id: query
+title: 'Query'
+sidebar_label: Query
+---
+
+import Image from '../../src/components/Image';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<p>
+  Now, you can start asking your first question to the QA system you just built! By clicking on the
+  <img src='/img/icons/search.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+  icon, you will enter the QA system built on top of the documents you uploaded.
+</p>
+
+<Image src='/img/screenshots/tuto-ui-text/qa-systems-simpsons.png' alt='home page'/>
+
+You can also switch to another QA system using the selector located at the top right corner.
+
+<Image src='/img/screenshots/tuto-ui-text/qa-system-selector.png' alt='ask page'/>
+
+For "The Simpsons" QA system, you can ask questions like:
+- "who are the children of the simpsons"
+- "what is the name of the dog of the simpsons"
+
+<Tabs>
+  <TabItem value='q1' label='Question 1' default>
+    <Image src='/img/screenshots/tuto-ui-text/who-are-the-children.png' alt='who are the children of the simpsons'/>
+  </TabItem>
+
+  <TabItem value="q2" label="Question 2">
+    <Image src='/img/screenshots/tuto-ui-text/what-is-name-of-dog.png' alt='what is the name of the dog of the simpsons'/>
+  </TabItem>
+</Tabs>
+
+When the system gives you an answer it is highlighted inside its context. You can also see in which document it was found (at the beginning of the box).
+
+<p>
+  You can click on the
+  <span style={{ whiteSpace: 'nowrap' }}>
+    <b style={{ verticalAlign: 'middle', color: '#666666', marginLeft: '10px' }}>Open PDF</b>
+    <img src='/img/icons/open_in_new.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+  </span>
+  button (at the bottom right), it will show you the answer highlighted in the PDF document.
+</p>
+
+<Image src='/img/screenshots/tuto-ui-text/open-pdf-children.png' alt='open pdf'/>
+
+Sometimes the AI model we put by default may not fit in your situation and as a result
+you see bad answers presented by the system.
+To solve this problem, check the [train](feedback-train) section to adapt the model for your specific
+use!
+
+<!-- The results that you achieve may not be satisfying. To train the machine learning model to fit your needs, you can check the next section. -->
+

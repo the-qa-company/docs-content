@@ -1,0 +1,75 @@
+---
+id: upload-index
+title: 'Upload and index'
+sidebar_label: Upload and index
+---
+
+import Image from '../../src/components/Image';
+import Link from '@docusaurus/Link';
+import Tabs from '@theme/Tabs';
+
+:::info
+In this tutorial we are going to make a Question Answering (QA) system on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target="_blank"
+        to='/Simpson_Family.zip'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download Simpson dataset 🍩
+    </Link>
+</div>
+These documents are coming from <a href='https://simpsons.fandom.com/wiki/Category:Simpson_family'>the Simpsons wiki</a>
+:::
+
+
+:::tip
+Here you can access a demo based on this tutorial and try it yourself!
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/public-share?kb=The%20Simpson%20Family&type=text&user=demo&lang=en'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: '#fff9', color: '#000', border: 'none' }}
+    >
+        Open demo 🍩
+    </Link>
+</div>
+:::
+
+<p>
+    It's time to build your first QA system over textual documents! In the panel <a href='https://app.qanswer.ai/qa-systems'>QA Systems</a>, click on
+    <span style={{ whiteSpace: 'nowrap' }}>
+        <img src='/img/icons/add_circle.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        <b style={{ verticalAlign: 'middle', color: '#666666', marginRight: '10px' }}>Add</b>
+    </span>
+    button.
+</p>
+
+<Image src='/img/screenshots/tuto-ui-text/qa-systems-empty.png' alt='Home'/>
+
+Here we are adding a free text dataset!
+
+<Image src='/img/screenshots/wizard.png' alt='Wizard'/>
+
+Pick the name of the QA system, customize its parameters if needed (default
+parameters are good for general use), and then upload your documents to finish the
+creation of your QA system.
+
+<Tabs>
+  <TabItem value='q1' label='Creation' default>
+      <Image src='/img/screenshots/tuto-ui-text/add-dataset-creation.png' alt='Default viwe'/>
+  </TabItem>
+
+  <TabItem value="q2" label="Customize">
+      <Image src='/img/screenshots/tuto-ui-text/add-dataset-creation-details.png' alt='Show configs'/>
+  </TabItem>
+
+  <TabItem value='q3' label='Upload'>
+      <Image src='/img/screenshots/tuto-ui-text/add-dataset-upload.png' alt='Upload files'/>
+  </TabItem>
+</Tabs>
+
+
+After clicking on the <kbd>Finish</kbd> button, you will be redirected to the home page and you
+will have your newly built QA system appearing in the list.
