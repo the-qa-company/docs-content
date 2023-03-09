@@ -67,6 +67,11 @@ const config = {
             },
             items: [],
         },
+        docs: {
+            sidebar: {
+              hideable: true,
+            },
+          },
         footer: {
             style: 'dark',
             links: [{
@@ -95,6 +100,11 @@ const config = {
             ],
             copyright: `Copyright © ${new Date().getFullYear()} The QA Company.`,
         },
+        // docs: {
+        //     sidebar:{
+        //         hidable: true
+        //     }
+        // },
         prism: {
             theme: lightCodeTheme,
             darkTheme: darkCodeTheme,
