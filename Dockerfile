@@ -5,6 +5,7 @@ FROM node:16 as qanswer-doc-build
 WORKDIR /app
 
 COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
 # Prepare the container for building React
 RUN npm install
 #RUN yarn global add serve
