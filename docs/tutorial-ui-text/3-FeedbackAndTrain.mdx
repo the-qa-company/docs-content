@@ -20,22 +20,38 @@ If you have questions you can [contact us](mailto:info@the-qa-company.com).
 
 ## Giving feedbacks
 
-:::tip
-By using the feedback functionality, i.e. by clicking on either the thumbs-up&nbsp;👍, thumb-down&nbsp;👎 or by **selecting yourself** the right answer, the system can learn better to answer your questions.
-:::
+<div>
+    <Admonition type="tip">
+      <p>
+        By using the feedback functionality, i.e. by clicking on either
+        <img src='/img/icons/thumb_up.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        or
+        <img src='/img/icons/thumb_down.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        or by <b>selecting yourself</b> the right answer, the system can learn better to answer your questions.
+      </p>
+    </Admonition>
+</div>
 
-When asking "Where does Homer work?" after creation of the QA system, the system is not able to find the correct answers for you. <br/>
+When asking "Who are the parents of Homer Simpson?" after creation of the QA system, the system is not able to find the correct answers for you. <br/>
 So we will have to collect some feedbacks to teach the AI what's the better answer for this question.
 
 You can then see that the results changed.
 
 <Tabs>
   <TabItem value="q1" label="Giving feedbacks" default>
-    <Image src='/img/screenshots/tuto-ui-text/where-homer-works.png' alt='Where does Homer work?'/>
+    <p>
+      The first extractive answer (we do not consider the Summarized Answer here) is wrong but the second one is correct. So we give a 
+      <img src='/img/icons/thumb_up.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+      to the second answer and a 
+      <img src='/img/icons/thumb_down.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+      to the first one.
+    </p>
+    <Image src='/img/screenshots/tuto-ui-text/who-are-parents-of-homer-before.png' alt='Who are the parents of Homer Simpson?'/>
   </TabItem>
 
   <TabItem value="q3" label="After training" default>
-    <Image src='/img/screenshots/tuto-ui-text/where-homer-works-after-training.png' alt='Where does Homer work?'/>
+    After training the system, the first answer is now correct.
+    <Image src='/img/screenshots/tuto-ui-text/who-are-parents-of-homer-after.png' alt='Who are the parents of Homer Simpson?'/>
   </TabItem>
 </Tabs>
 
@@ -51,12 +67,15 @@ You can then see that the results changed.
 
 
 <Tabs>
-  <TabItem value="q1" label="Select right answer" default>
-    <Image src='/img/screenshots/tuto-ui-text/marge-hair-color-select.png' alt='what is the color hair of marge'/>
+  <TabItem value='q1' label='Select right answer' default>
+    The given answer to the question: <i>"Who are Bart's siblings?"</i> is <i>"Homer and Marge Simpson, and the older brother of Lisa and Maggie"</i>, which is wrong.
+    
+    Using the <b>selectionning tool</b> we indicate manually the right answer which is: <i>"Lisa and Maggie"</i>.
+    <Image src='/img/screenshots/tuto-ui-text/bart-siblings-select.png' alt="Who are Bart's siblings?"/>
   </TabItem>
 
-  <TabItem value="q3" label="Validate" default>
-    <Image src='/img/screenshots/tuto-ui-text/marge-hair-color-validate-selection.png' alt='what is the color hair of marge'/>
+  <TabItem value='q2' label='Validate' default>
+    <Image src='/img/screenshots/tuto-ui-text/bart-siblings-validate.png' alt="Who are Bart's siblings?"/>
   </TabItem>
 </Tabs>
 
