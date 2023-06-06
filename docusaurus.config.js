@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
     title: 'QAnswer',
     tagline: 'Ask your data!',
-    url: 'https://www.qanswer.ai',
+    url: 'https://doc.qanswer.ai',
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
