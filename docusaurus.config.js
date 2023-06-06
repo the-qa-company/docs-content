@@ -50,31 +50,37 @@ const config = {
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
+                sitemap: {
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                    trailingSlash: false,
+                    filename: 'sitemap.xml'
+                }
             }),
         ],
     ],
 
     themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+        /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
-        navbar: {
-            title: 'Docs',
-            logo: {
-                alt: 'The QA Company logo',
-                src: 'img/logo2.png',
-                href: 'https://qanswer.ai',
-                target: '_self',
+            navbar: {
+                title: 'Docs',
+                logo: {
+                    alt: 'The QA Company logo',
+                    src: 'img/logo2.png',
+                    href: 'https://qanswer.ai',
+                    target: '_self',
+                },
+                items: [],
             },
-            items: [],
-        },
-        footer: {
-            style: 'dark',
-            links: [{
+            footer: {
+                style: 'dark',
+                links: [{
                     title: 'Docs',
                     items: [{
                         label: 'Documentation',
                         to: '/',
-                    }, ],
+                    },],
                 },
                 {
                     title: 'Community',
@@ -92,52 +98,52 @@ const config = {
 
                     ],
                 },
+                ],
+                copyright: `Copyright © ${new Date().getFullYear()} The QA Company.`,
+            },
+            prism: {
+                theme: lightCodeTheme,
+                darkTheme: darkCodeTheme,
+                additionalLanguages: ['java'],
+            },
+            languageTabs: [
+                {
+                    highlight: "bash",
+                    language: "curl",
+                    logoClass: "bash",
+                },
+                {
+                    highlight: "python",
+                    language: "python",
+                    logoClass: "python",
+                },
+                {
+                    highlight: "go",
+                    language: "go",
+                    logoClass: "go",
+                },
+                {
+                    highlight: "javascript",
+                    language: "nodejs",
+                    logoClass: "nodejs",
+                },
+                {
+                    highlight: "ruby",
+                    language: "ruby",
+                    logoClass: "ruby",
+                },
+                {
+                    highlight: "csharp",
+                    language: "csharp",
+                    logoClass: "csharp",
+                },
+                {
+                    highlight: "php",
+                    language: "php",
+                    logoClass: "php",
+                },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} The QA Company.`,
-        },
-        prism: {
-            theme: lightCodeTheme,
-            darkTheme: darkCodeTheme,
-            additionalLanguages: ['java'],
-        },
-        languageTabs: [
-            {
-              highlight: "bash",
-              language: "curl",
-              logoClass: "bash",
-            },
-            {
-              highlight: "python",
-              language: "python",
-              logoClass: "python",
-            },
-            {
-              highlight: "go",
-              language: "go",
-              logoClass: "go",
-            },
-            {
-              highlight: "javascript",
-              language: "nodejs",
-              logoClass: "nodejs",
-            },
-            {
-              highlight: "ruby",
-              language: "ruby",
-              logoClass: "ruby",
-            },
-            {
-              highlight: "csharp",
-              language: "csharp",
-              logoClass: "csharp",
-            },
-            {
-              highlight: "php",
-              language: "php",
-              logoClass: "php",
-            },
-          ],
-    }),
+        }),
 };
 
 module.exports = config;
