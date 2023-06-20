@@ -84,6 +84,9 @@ const config = {
                 {
                     title: 'Community',
                     items: [{
+                        label: 'Discord',
+                        href: 'https://discord.com/invite/XqkNCB3ZEY'
+                    },{
                         label: 'Twitter',
                         href: 'https://twitter.com/TheQACompany',
                     }, {
