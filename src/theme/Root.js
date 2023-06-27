@@ -14,11 +14,11 @@ const iframeCode = `
 export default function Root({ children }) {
   return (
     <>
+      {children}
       <div
         style={{ position: 'absolute' }}
         dangerouslySetInnerHTML={{ __html: iframeCode }}
       />
-      {children}
     </>
   )
 }
