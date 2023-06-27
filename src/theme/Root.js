@@ -12,15 +12,13 @@ const iframeCode = `
 
 // Default implementation, that you can customize
 export default function Root({ children }) {
-  useEffect(() => {
-    document.body.innerHTML += iframeCode;
-  }, [])
-
-  return <>
-    {children}
-  </>;
-
-
-
-
+  return (
+    <>
+      <div
+        style={{ position: 'absolute' }}
+        dangerouslySetInnerHTML={{ __html: iframeCode }}
+      />
+      {children}
+    </>
+  )
 }
