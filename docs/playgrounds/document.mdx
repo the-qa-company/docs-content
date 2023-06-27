@@ -1,11 +1,27 @@
 ---
-id: try-it
-title: Try it out!
-sidebar_label: Try it out!
+id: document
+title: Playground document
+sidebar_label: Document
+sidebar_position: 3
 ---
-import Image from '../../src/components/Image';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Link from '@docusaurus/Link'
+import Image from '../../src/components/Image'
+
+The goal of this tutorial is to have fun using question answering over **your** pdf!
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/playground/textdoc'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: 'var(--ifm-color-aquamarine-light)', color: '#000', border: 'none' }}
+    >
+        Open document playground!
+    </Link>
+</div>
+
+## Description
 
 The playground is separated in two parts:
 - **Left** is your *Context*: the pdf you want to ask questions about;
@@ -15,6 +31,8 @@ The playground is separated in two parts:
 For this example we will use a pdf about *Lisa Simpson* coming from [the Simpsons Wiki](https://simpsons.fandom.com/wiki/Category:Simpson_family).
 
 <Image src='/img/screenshots/playground-document/playground-lisa-doc.png' alt='QA Systems'/>
+
+## Examples
 
 Here are some questions you can ask:
 1. How old is Lisa?

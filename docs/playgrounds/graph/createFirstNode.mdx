@@ -1,20 +1,25 @@
 ---
 id: first-node
-title: Create our first node
-sidebar_label: Create our first node
+title: Create your first node
+sidebar_label: Create your first node
+sidebar_position: 2
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Image from '../../src/components/Image';
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Image from '../../../src/components/Image'
 
-We want to encode the information about ourselfs into a small Knwoledge Graph ...
-
-Let's do that ...
+Let's see how to encode the information about ourselfs into a small Knwoledge Graph.
 
 ## Using rdfs:label
 
 We need a node in the graph representing ourselves, I call it `qa:node1`. 
 And since my name is QAnswer I want to call it like that. `rdfs:label` is the standard way to attach a name of a node using Semantic Web Standards.
+
+:::info
+It is important to give a label to a node.
+A URI will only be used to generate SPARQL queries if the question contains its label. (see [Requirements](/tutorial-ui-graph/requirements))
+:::
+
 Let's do it:
 
 <Tabs>
@@ -34,10 +39,6 @@ Let's do it:
 
 </TabItem>
 </Tabs>
-
-The playground is separated in two parts:
-- **Left** is your *Context*: the turtle code you want to ask questions on
-- **Right** is where you ask your questions: ask your question, the answers will appear below with the display types available
 
 
 We can already ask "QAnswer?" or "What is QAnswer?" and get:

@@ -16,6 +16,26 @@
     --ifm-color-primary-lighter: #4ea6e5;
     --ifm-color-primary-lightest: #56b8ff;
     --ifm-code-font-size: 95%;
+
+    --ifm-color-chip-blue-light: #88d0e792;
+    --ifm-color-chip-blue-dark: #2288aa92;
+
+    --ifm-color-chip-yellow-light: #FCDF7Bb1;
+    --ifm-color-chip-yellow-dark: #ffd7467b;
+
+    --ifm-color-chip-green-light: #88DA76b1;
+    --ifm-color-chip-green-dark: #64b95192;
+
+    --ifm-color-chip-red-light: #ff4b4bb7;
+    --ifm-color-chip-red-dark: #e72626bd;
+
+    --ifm-color-chip-orange-light: #ff7a3788;
+    --ifm-color-chip-orange-dark: #f26924a7;
+
+    --ifm-color-aquamarine-light: #03fcba8b;
+    --ifm-color-periwinkle-light: #cbbaedbe;
+    --ifm-color-blush-light: #e85676b6;
+    --ifm-color-citrine-light: #f2d918ab;
 }
 
 .docusaurus-highlight-code-line {
