@@ -4,10 +4,10 @@ title: 'Upload and index'
 sidebar_label: Upload and index
 ---
 
-import Image from '../../src/components/Image';
-import Link from '@docusaurus/Link';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Image from '../../../src/components/Image'
+import Link from '@docusaurus/Link'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
 
 :::info
 In this tutorial we are going to make a Question Answering (QA) system on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
@@ -38,35 +38,28 @@ Here you can access a demo based on this tutorial and try it yourself!
 </div>
 :::
 
-<p>
-    It's time to build your first QA system over textual documents! In the panel <a href='https://app.qanswer.ai/qa-systems'>QA Systems</a>, click on
-    <span style={{ whiteSpace: 'nowrap' }}>
-        <img src='/img/icons/add_circle.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
-        <b style={{ verticalAlign: 'middle', color: '#666666', marginRight: '10px' }}>Add</b>
-    </span>
-    button.
-</p>
+## Access
+:::note
+To access the creation page, check [Introduction and Access](/tutorial-ui/access) section!
+:::
 
-<Image src='/img/screenshots/qa-systems-empty.png' alt='Home'/>
-
-Here we are adding a free text dataset! So we will select the <b>Document based</b> option.
-
-<Image src='/img/screenshots/qa-systems-empty-add-btn.png' alt='Add system'/>
-
-You will be redirected to the creation page.
-
-Pick the name and language of your QA System, upload your files (click or drag and drop on the dedicated area) and click on the <kbd>Next</kbd> button.
+## Creation
+Pick the name and language of your QA System, upload your files (click or drag and drop on the dedicated area), you can click on:
+* <kbd>Settings</kbd> to personnalize them (default parameters are good for general use)
+* <kbd>Finish</kbd> to create your QA System (and use default parameters)
 
 
-<Image src='/img/screenshots/tuto-ui-text/creation-init.png' alt='Creation'/>
+<Image src='/img/screenshots/tutorial-ui/document-based/creation-init.png' alt='Creation'/>
 
 :::info
 You can also add an icon for your QA system. It will be displayed in the list of QA systems.
 :::
 
+## Settings (optional)
+
 Then you can customize your QA System parameters if needed (default parameters are good for general use).
 
-<Image src='/img/screenshots/tuto-ui-text/creation-settings.png' alt='Settings'/>
+<Image src='/img/screenshots/tutorial-ui/document-based/creation-settings.png' alt='Settings'/>
 
 After clicking on the <kbd>Finish</kbd> button, you will be redirected to the home page and you
 will have your newly built QA system appearing in the list.

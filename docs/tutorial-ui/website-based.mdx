@@ -1,0 +1,97 @@
+---
+id: website
+title: 'Website-based QA System'
+sidebar_label: Website-based
+sidebar_position: 5
+---
+
+import Image from '../../src/components/Image'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Admonition from '@theme/Admonition'
+
+You might have experienced searching for a particular question on a website and then going through the entire page to find the answer. This is a very tedious task and can be easily automated using a QA System. 
+
+:::tip
+Sometimes searching information through a website can be very tedious. So why don't you try our QA Systems over websites?
+Let's see how do to it!
+:::
+
+In this section we will learn how to create a website based QA System. 
+
+## Access
+:::note
+To access the creation page, check [Introduction and Access](/tutorial-ui/access) section!
+:::
+
+You will get [there](https://app.qanswer.ai/qa-systems/website):
+
+<Image src='/img/screenshots/tutorial-ui-website/website-empty.png' alt='Empty wizard'/>
+
+## Add your first website
+
+To add your first website, enter its URL in the input field and click on *Add* or press *Enter*.
+
+<Tabs>
+    <TabItem value='input' label='Input'>
+        <Image src='/img/screenshots/tutorial-ui-website/website-first-input.png' alt='Add first link'/>
+    </TabItem>
+    <TabItem value='added' label='Added' default>
+        <Image src='/img/screenshots/tutorial-ui-website/website-first-add.png' alt='Add first link'/>
+    </TabItem>
+</Tabs>
+
+You can see your website appearing in the list of websites.
+
+<Admonition type='info'>
+    <p>
+        At the left of your URL you can see a button 
+        <span style={{ whiteSpace: 'nowrap' }}>
+            <img src='/img/icons/search.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+            <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Explore and Extract</b>
+        </span>
+        button. Click it to extract the sub-pages of this website.
+    </p>
+</Admonition>
+
+<Tabs>
+    <TabItem value='g1' label='Group sub-pages'>
+        <Image src='/img/screenshots/tutorial-ui-website/website-after-extract.png' alt='Grouped sub-pages'/>
+    </TabItem>
+    <TabItem value='s1' label='Show sub-pages' default>
+        <Image src='/img/screenshots/tutorial-ui-website/website-show-extracted.png' alt='Show sub-pages'/>
+    </TabItem>
+</Tabs>
+
+As you can see, you now have a list of your website and its sub-pages, which can be grouped to see more clearly.
+
+## Handle sub-pages
+### Delete sub-pages
+
+Some sub-pages might not interest you, you can remove them by clicking on the delete button (in the *Action* column).
+
+<Image src='/img/screenshots/tutorial-ui-website/website-remove.png' alt='Remove'/>
+
+### Move sub-pages
+
+Your sub-pages are originally grouped but you can move them **out of their group** by clicking on the *Move* button (in the *Action* column).
+
+<Tabs>
+    <TabItem value='g1' label='Before' default>
+        <Image src='/img/screenshots/tutorial-ui-website/website-move-sub-url.png' alt='before moving'/>
+    </TabItem>
+    <TabItem value='s1' label='After'>
+        <Image src='/img/screenshots/tutorial-ui-website/website-after-moving-sub-url.png' alt='after moving'/>
+    </TabItem>
+</Tabs>
+
+Once your sub-page is moved out of its group, you can also *Explore and Extract* it like you did for the main website.
+
+## Creation
+Once you picked the name, language of your QA System and filtered your links, you can click on:
+* <kbd>Settings</kbd> to personnalize them (default parameters are good for general use)
+* <kbd>Finish</kbd> to create your QA System (and use default parameters)
+
+:::info
+The settings are the same as **Document-based** QA Systems. Check [Settings](/tutorial-ui/document-based/upload-index#settings-optional) section for more information.
+:::
