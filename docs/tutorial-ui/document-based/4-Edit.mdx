@@ -4,6 +4,7 @@ title: 'Edit collection'
 sidebar_label: Edit collection
 ---
 
+import ImageGrid from '../../../src/components/ImageGrid'
 import Image from '../../../src/components/Image'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -18,10 +19,20 @@ import Link from '@docusaurus/Link'
   button.
 </p>
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-text/status-bar-edit.png' alt='training button' width= '60%'/>
-    <img src='/img/screenshots/tuto-ui-text/qa-system-edit-btn.png' alt='training button' width= '60%'/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-text/status-bar-edit.png',
+            alt: 'training button',
+        }, {
+            src: '/img/screenshots/tuto-ui-text/qa-system-edit-btn.png',
+            alt: 'training button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
 
 On this page you can see all documents that are in your collection and their content. You can also delete files or add new ones to your collection.
 

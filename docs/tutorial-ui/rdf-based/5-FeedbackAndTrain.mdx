@@ -4,6 +4,7 @@ title: 'Feedback and train'
 sidebar_label: Feedback and train
 ---
 
+import ImageGrid from '../../../src/components/ImageGrid'
 import Image from '../../../src/components/Image'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -59,10 +60,20 @@ After asking a set of questions, and by giving feedback you will have created a 
   button.
 </p>
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-graph/status-bar.png' alt='training button' width= '60%'/>
-    <img src='/img/screenshots/tuto-ui-graph/qa-system-training-btn.png' alt='training button' width= '60%'/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-graph/status-bar.png',
+            alt: 'training button',
+        }, {
+            src: '/img/screenshots/tuto-ui-graph/qa-system-training-btn.png',
+            alt: 'training button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
 
 It can be uploaded from the [training page](https://app.qanswer.ai/qa-systems/training) using the "Upload Train" button (available either if you already have feedbacks or not).
 
@@ -127,9 +138,8 @@ You can filter your feedbacks and log depending on a column value.
 :::
 
 Let's add a filter related to users, click on the three-dot icon to open the menu:
-<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', justifyContent: 'center' }}>
-    <img src='/img/screenshots/tuto-ui-graph/filter-menu.png' alt='nav bar' style={{ height: '300px' }}/>
-</div>
+
+<Image src='/img/screenshots/tuto-ui-graph/filter-menu.png' alt='nav bar' width='180px' centered />
 
 Let's use the *Filter* option to filter the feedbacks by user.
 

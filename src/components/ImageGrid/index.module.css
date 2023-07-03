@@ -1,7 +1,23 @@
-.image {
-    transition: transform 0.3s;
+.grid {
+    display: grid;
+    justify-content: center;
+    grid-auto-rows: auto;
+    width: fit-content;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.image, .basicImage {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     border-radius: 5px;
+    height: 'auto';
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+}
+
+.image {
+    transition: transform 0.3s;
 }
 
 .imageWrapper:hover .image {

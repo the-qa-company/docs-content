@@ -6,6 +6,7 @@ sidebar_label: Contextual information
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Image from '../../../src/components/Image'
+import ImageGrid from '../../../src/components/ImageGrid'
 
 
 Up to now the result was always given by the "rdfs:label". But in an RDF dataset there are potentially many contextual information that can be shown like
@@ -17,10 +18,20 @@ a standard. QAnswer is using some common properties. So let's start.
 
 You can access the **UI Mapping** page using the button in the status bar (on the top of your screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *UI Mapping* button.
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-graph/status-bar-ui-mapping.png' alt='ui mapping button' width= '60%'/>
-    <img src='/img/screenshots/tuto-ui-graph/qa-system-ui-mapping-btn.png' alt='ui mapping button' width= '60%'/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-graph/status-bar-ui-mapping.png',
+            alt: 'ui mapping button',
+        }, {
+            src: '/img/screenshots/tuto-ui-graph/qa-system-ui-mapping-btn.png',
+            alt: 'ui mapping button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
 
 In the case of the cocktail KG you can add the following properties:
 

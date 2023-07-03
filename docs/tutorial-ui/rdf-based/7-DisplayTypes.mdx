@@ -4,6 +4,7 @@ title: 'Display types'
 sidebar_label: Display types
 ---
 
+import ImageGrid from '../../../src/components/ImageGrid'
 import Image from '../../../src/components/Image'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -12,16 +13,24 @@ import Admonition from '@theme/Admonition'
 
 Depending on the answer we get, we can display it in different ways. The types available are listed below the confidence bar on the answer page, for example:
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-graph/display-types.png' alt='display types' width='40%'/>
-</div>
+<Image src='/img/screenshots/tuto-ui-graph/display-types.png' alt='display types' width='40%' centered />
 
 You can personnalize the visualization order in the *Configuration page*. You can access it using the button in the status bar (on top of your screen) or in the **QA Systems** page by clicking on the QA system you are interested in and then the *Config* button.
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-graph/config-statusbar.png' alt='config button' width= '60%'/>
-    <img src='/img/screenshots/tuto-ui-graph/config-qasystems.png' alt='config button' width= '60%'/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-graph/config-statusbar.png',
+            alt: 'config button',
+        }, {
+            src: '/img/screenshots/tuto-ui-graph/config-qasystems.png',
+            alt: 'config button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
 
 You can order the display types depending on what you want. You can drag and drop the items of the list to order them differently and also hide some display types using the eye icon.
 
@@ -65,10 +74,21 @@ To have a better view you can display the table in fullscreen mode.
 
 You can hide/show columns, pin them to the left or right of your screen.
 
-<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-graph/menu-column.png' alt='display types' width='40%'/>
-    <img src='/img/screenshots/tuto-ui-graph/manage-columns.png' alt='display types' width='40%'/>
-</div>
+
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-graph/menu-column.png',
+            alt: 'display types',
+        }, {
+            src: '/img/screenshots/tuto-ui-graph/manage-columns.png',
+            alt: 'display types',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(2, 1fr)'
+    gridMaxWidth='90%'
+/>
 
 You also drag and drop columns to reorder them.
 <Image src='/img/screenshots/tuto-ui-graph/table-reorder-columns.png' alt='table'/>

@@ -60,8 +60,6 @@ You don't need an account to use the playgrounds.<br/>**✨Try them out now by c
   }
 ]}/>
 
-<div style={{ height: '20px' }} />
-
 ## Access from your account
 
 :::info
@@ -85,10 +83,21 @@ When you are logged in, you will enter in the <b>QA Systems</b> page:
 
 In the navigation bar at the left of the page, click <i>Instant Playgrounds</i> and then choose the one you want to use:
 
-<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', justifyContent: 'center' }}>
-    <img src='/img/screenshots/playgrounds/access-navbar-open.png' alt='nav bar' style={{ height: '300px' }}/>
-    <img src='/img/screenshots/playgrounds/access-navbar-closed.png' alt='nav bar closed' style={{ height: '300px' }}/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/playgrounds/access-navbar-open.png',
+            alt: 'nav bar',
+        }, {
+            src: '/img/screenshots/playgrounds/access-navbar-closed.png',
+            alt: 'nav bar closed',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(2, 1fr)'
+    columnHeight='300px'
+/>
+
 
 :::caution
 These are playgrounds so **the content will not be saved**.

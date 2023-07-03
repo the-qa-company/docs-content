@@ -6,6 +6,7 @@ sidebar_position: 6
 ---
 
 import Image from '../../src/components/Image'
+import ImageGrid from '../../src/components/ImageGrid'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition'
@@ -19,10 +20,20 @@ You can share both type of QA systems: based on **Graph** or **Text**.
 
 You can access it using the button in the status bar (on top of your screen) or in the QA Systems page by clicking on the QA system you are interested in and then the Share button.
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/share/status-bar-share-btn.png' alt='Share button' width= '60%'/>
-    <img src='/img/screenshots/share/qa-system-share-btn.png' alt='Share button' width= '60%'/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/share/status-bar-share-btn.png',
+            alt: 'Export page',
+        }, {
+            src: '/img/screenshots/share/qa-system-share-btn.png',
+            alt: 'Export page',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
 
 You will get here:
 

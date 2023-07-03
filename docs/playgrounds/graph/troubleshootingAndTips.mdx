@@ -6,6 +6,7 @@ sidebar_label: Troubleshooting and Tips
 
 import Admonition from '@theme/Admonition'
 import Image from '../../../src/components/Image'
+import ImageGrid from '../../../src/components/ImageGrid'
 import InfoSvgIcon from '../../../src/components/InfoSvgIcon'
 
 While writing down the Knwoledge Graph about myself, and asking questions, I noted that there were some problems, mainly two things happened:
@@ -57,16 +58,25 @@ I got:
 
 But I asked "where", not "when"! and the information in the Knowledge Graph was correct!
 In this case when I clicked on <i>show other SPARQL interpretations</i> (on the left of the current interpretation).
-<div style={{ display: 'flex', alignItems: 'center', gap: '30px', marginBottom: '20px', justifyContent: 'center' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <img src='/img/screenshots/playground-graph/born-at-interpretations-btn.png' alt='show more interpretations' width='200px'/>
-        Click to show more interpretations
-    </div>
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <img src='/img/screenshots/playground-graph/born-at-interpretations-open.png' alt='hide interpretations' width='200px'/>
-        Click to hide interpretations
-    </div>
-</div>
+
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/playground-graph/born-at-interpretations-btn.png',
+            alt: 'show more interpretations',
+            caption: 'Click to show more interpretations',
+        }, {
+            src: '/img/screenshots/playground-graph/born-at-interpretations-open.png',
+            alt: 'hide interpretation',
+            caption: 'Click to hide interpretations',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(2, 1fr)'
+    gap='30px'
+    gridMaxWidth='600px'
+/>
+
 I found the right interpretation:
 
 <Image src='/img/screenshots/playground-graph/where-born-sparql-interpretations.png' alt='interpretations' />

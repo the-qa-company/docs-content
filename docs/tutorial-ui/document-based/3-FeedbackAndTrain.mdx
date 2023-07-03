@@ -4,6 +4,7 @@ title: 'Feedback and Train'
 sidebar_label: Feedback and Train
 ---
 
+import ImageGrid from '../../../src/components/ImageGrid'
 import Image from '../../../src/components/Image'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -96,10 +97,20 @@ Give a negative feedback if the answer is **not correct** AND if the real answer
   button.
 </p>
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/tuto-ui-text/status-bar-train.png' alt='training button' width= '60%'/>
-    <img src='/img/screenshots/tuto-ui-text/qa-system-training-btn.png' alt='training button' width= '60%'/>
-</div>
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-text/status-bar-train.png',
+            alt: 'training button',
+        }, {
+            src: '/img/screenshots/tuto-ui-text/qa-system-training-btn.png',
+            alt: 'training button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
 
 This page allows you to see the feedbacks corresponding to your QA system. If you did not give feedbacks yet, a training set for the simpsons dataset can be downloaded here:
 

@@ -3,7 +3,8 @@ id: admin-page
 title: Admin page
 sidebar_label: Admin page
 ---
-import Image from '../../src/components/Image';
+import Image from '../../src/components/Image'
+import ImageGrid from '../../src/components/ImageGrid'
 
 In on premise mode, **only an administrator can create users**. The default admin login is:
 
@@ -14,9 +15,7 @@ See [Installation](install) to change the default configuration settings.
 
 The admin is also the only person that can access to the admin page. This page is accessible by the navigation bar or under /admin.
 
-<div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-    <img src='/img/screenshots/premise-mode/admin-navbar.png' alt='training button' width= '30%'/>
-</div>
+<Image src='/img/screenshots/premise-mode/admin-navbar.png' alt='training button' width= '30%' centered />
 
 The admin page contains a list of all users:
 

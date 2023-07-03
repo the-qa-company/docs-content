@@ -3,30 +3,38 @@ import React from 'react'
 import s from './index.module.css'
 
 
-export default function ImageGrid({images}) {
+export default function ImageGrid({images, templateColumns = 'repeat(2, 1fr)', gap = '10px', noTransformation = false, columnHeight = undefined, gridMaxWidth = '100%'}) {
+
+    const gridStyle = {
+        gridTemplateColumns: templateColumns,
+        gridGap: gap,
+        gridAutoRows: columnHeight || 'auto',
+        maxWidth: gridMaxWidth,
+    }
+
     const handleClick = (onClick) => {
         if (onClick) {
-            onClick();
+            onClick()
         }
     }
+
     return (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gridGap: '10px' }}>
-                {images.map((image, index) => (
-                    <div
-                        className={s.imageWrapper}
-                        key={index}
-                    >
-                        <img
-                            src={image.src}
-                            className={s.image}
-                            alt={image.alt || `Image ${index}`}
-                            onClick={() => handleClick(image.onClick)}
-                            style={{ cursor: image.onClick ? 'pointer' : 'default' }}
-                            // style={{ boxShadow: '0 0 3px rgba(0, 0, 0, 0.3)', borderRadius: '5px', cursor: image.onClick ? 'pointer' : 'default' }}
-                        />
-                        {image.caption && <div className={s.caption}>{image.caption}</div>}
-                    </div>
-                ))}
+        <div className={s.grid} style={gridStyle}>
+            {images.map((image, index) => (
+                <div
+                    className={noTransformation  ? '' : s.imageWrapper}
+                    key={index}
+                >
+                    <img
+                        src={image.src}
+                        className={noTransformation ? s.basicImage : s.image}
+                        alt={image.alt || `Image ${index}`}
+                        onClick={() => handleClick(image.onClick)}
+                        style={{ cursor: image.onClick ? 'pointer' : 'default' }}
+                    />
+                    {image.caption && <div className={s.caption}>{image.caption}</div>}
+                </div>
+            ))}
         </div>
     )
 }
