@@ -32,7 +32,10 @@ export default function ImageGrid({images, templateColumns = 'repeat(2, 1fr)', g
                         onClick={() => handleClick(image.onClick)}
                         style={{ cursor: image.onClick ? 'pointer' : 'default' }}
                     />
-                    {image.caption && <div className={s.caption}>{image.caption}</div>}
+                    <div className={image.caption || image.description ? s.descContainer : ''}>
+                        {image.caption}
+                        {image.description}
+                    </div>
                 </div>
             ))}
         </div>

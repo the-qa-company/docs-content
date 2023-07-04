@@ -4,8 +4,6 @@ export default function Chip ({ label, color }) {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
-    console.log(document)
-    console.log(document.body.classList)
     setIsDarkTheme(document.documentElement.getAttribute('data-theme') === 'dark');
   }, [document.documentElement.getAttribute('data-theme')]);
 
@@ -15,7 +13,7 @@ export default function Chip ({ label, color }) {
 
   return (
     <div
-    style={{
+      style={{
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
