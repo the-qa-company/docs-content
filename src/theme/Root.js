@@ -1,7 +1,15 @@
 import React, { useEffect } from 'react';
 
 const iframeCode = `
+<style>
+  @media print {
+    #qanswer-widget {
+      display: none !important;
+    }
+  }
+</style>
 <iframe
+  id='qanswer-widget'
   src='https://dev.qanswer.ai/widget?custom=%7B%22initialMsg%22%3A%22%22%7D&qaSystem=%7B%22name%22%3A%22qanswer-doc%22%2C%22owner%22%3A%22admin%22%2C%22type%22%3A%22text%22%7D'
   frameBorder='0'
   style='border:none;overflow:hidden;display:none;position:fixed;right:16px;bottom:16px;z-index:9999;'
