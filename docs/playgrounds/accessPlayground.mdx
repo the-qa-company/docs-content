@@ -11,10 +11,12 @@ import Admonition from '@theme/Admonition'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Image from '../../src/components/Image'
+import Link from '@docusaurus/Link'
+
 
 Playgrounds are interactive environments designed to allow users to experiment with different data types and gain hands-on experience with our platform.
 
-Experiment freely within the playgrounds without impacting live data or making permanent changes. Playgrounds provide a safe space to test and experiment without the fear of breaking anything.
+Experiment freely within the playgrounds without impacting live data or making permanent changes. Playgrounds provide a **safe space to test** and **experiment** without the fear of breaking anything.
 
 ## Open access
 
@@ -34,25 +36,25 @@ We have at your disposal four different playgrounds, each one designed to allow 
       alt: 'Text playground',
       caption: <><b>Text</b>: Write your own text.<br/></>,
       description: <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}><Chip label='Extractive' /><Chip label='Generative' color='green' /></div>,
-      onClick: () => window.open('https://app.qanswer.ai/playground/text', '_blank')
+      onClick: () => { window.location.href = '/playgrounds/text' }
   }, {
       src: '/img/screenshots/playgrounds/input-types/document.png',
       alt: 'Document playground',
       caption: <><b>Document</b>: Upload your own document.<br/></>,
       description: <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}><Chip label='Extractive' /><Chip label='Generative' color='green' /></div>,
-      onClick: () => window.open('https://app.qanswer.ai/playground/textdoc', '_blank')
+      onClick: () => { window.location.href = '/playgrounds/document' }
   }, {
       src: '/img/screenshots/playgrounds/input-types/kg.png',
       alt: 'Graph playground',
       caption: <><b>Knowledge Graph</b>: write your own graph.<br/></>,
       description: <Chip label='Extractive' />,
-      onClick: () => window.open('https://app.qanswer.ai/playground/kg', '_blank')
+      onClick: () => { window.location.href = '/playgrounds/graph/description' }
   }, {
       src: '/img/screenshots/playgrounds/input-types/chat.png',
       alt: 'Chatbot playground',
       caption: <><b>Chatbot</b>: discuss with our Chatbot about topics of your choice.<br/></>,
       description: <Chip label='Generative' color='green' />,
-      onClick: () => window.open('https://app.qanswer.ai/playground/chatbot', '_blank')
+      onClick: () => { window.location.href = '/playgrounds/chatbot' }
   }
 ]}/>
 
@@ -67,7 +69,7 @@ We have at your disposal four different playgrounds, each one designed to allow 
 ## Access from your account
 
 :::info
-If you don't have an account yet, you can [see the tutorial here](/introduction/register-login)
+If you don't have an account yet, you can [see the tutorial here](/tutorial-ui/register-login)
 :::
 
 Once your account is created, you can login and start discovering the platform!
