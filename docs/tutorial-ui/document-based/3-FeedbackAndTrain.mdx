@@ -1,0 +1,190 @@
+---
+id: feedback-train
+title: 'Feedback and Train'
+sidebar_label: Feedback and Train
+---
+
+import ImageGrid from '../../../src/components/ImageGrid'
+import Image from '../../../src/components/Image'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Link from '@docusaurus/Link'
+import Admonition from '@theme/Admonition'
+
+Each time you ask a question, the system tries to find best answers together with its confidence scores. The answers presented are ordered descendingly by confidence scores.
+
+:::caution
+Our backend model is evolving over time so the answers that you get might be different.
+
+If you have questions you can [contact us](mailto:info@the-qa-company.com). 
+:::
+
+## Giving feedbacks
+
+<div>
+    <Admonition type="tip">
+      <p>
+        By using the feedback functionality, i.e. by clicking on either
+        <img src='/img/icons/thumb_up.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        or
+        <img src='/img/icons/thumb_down.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        or by <b>selecting yourself</b> the right answer, the system can learn better to answer your questions.
+      </p>
+    </Admonition>
+</div>
+
+When asking "Who are the parents of Homer Simpson?" after creation of the QA system, the system is not able to find the correct answers for you. <br/>
+So we will have to collect some feedbacks to teach the AI what's the better answer for this question.
+
+You can then see that the results changed.
+
+<Tabs>
+  <TabItem value="q1" label="Giving feedbacks" default>
+    <p>
+      The first extractive answer (we do not consider the Summarized Answer here) is wrong but the second one is correct. So we give a 
+      <img src='/img/icons/thumb_up.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+      to the second answer and a 
+      <img src='/img/icons/thumb_down.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+      to the first one.
+    </p>
+    <Image src='/img/screenshots/tuto-ui-text/who-are-parents-of-homer-before.png' alt='Who are the parents of Homer Simpson?'/>
+  </TabItem>
+
+  <TabItem value="q3" label="After training" default>
+    After training the system, the first answer is now correct.
+    <Image src='/img/screenshots/tuto-ui-text/who-are-parents-of-homer-after.png' alt='Who are the parents of Homer Simpson?'/>
+  </TabItem>
+</Tabs>
+
+<div>
+    <Admonition type="info">
+    If the answer is wrong or incomplete but the right answer is in the same context, you can select it using the selectionning tool:
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <img src='/img/screenshots/tuto-ui-text/select-tool.png' alt='download' width='200px'/>
+    </div>
+    By default this tool is enabled so you just have to select the right answer.
+    </Admonition>
+</div>
+
+
+<Tabs>
+  <TabItem value='q1' label='Select right answer' default>
+    The given answer to the question: <i>"Who are Bart's siblings?"</i> is <i>"Homer and Marge Simpson, and the older brother of Lisa and Maggie"</i>, which is wrong.
+    
+    Using the <b>selectionning tool</b> we indicate manually the right answer which is: <i>"Lisa and Maggie"</i>.
+    <Image src='/img/screenshots/tuto-ui-text/bart-siblings-select.png' alt="Who are Bart's siblings?"/>
+  </TabItem>
+
+  <TabItem value='q2' label='Validate' default>
+    <Image src='/img/screenshots/tuto-ui-text/bart-siblings-validate.png' alt="Who are Bart's siblings?"/>
+  </TabItem>
+</Tabs>
+
+By collecting feedbacks, you are improving the AI models behind your QA systems. Theoritically, the more feedbacks you give, the smarter your QA system will be.
+
+:::tip
+Give a negative feedback if the answer is **not correct** AND if the real answer is **not in the context**. Otherwise select the right answer using the tool between the thumbs icons.
+:::
+
+## Training
+
+<p>
+  You can access the <b>Training</b> page using the button in the status bar (on top of your screen) or in the <b>QA Systems</b> page by clicking on the QA system you are interested in and then the
+  <span style={{ whiteSpace: 'nowrap' }}>
+    <img src='/img/icons/school.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+    <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Training</b>
+  </span>
+  button.
+</p>
+
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-text/status-bar-train.png',
+            alt: 'training button',
+        }, {
+            src: '/img/screenshots/tuto-ui-text/qa-system-training-btn.png',
+            alt: 'training button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
+
+This page allows you to see the feedbacks corresponding to your QA system. If you did not give feedbacks yet, a training set for the simpsons dataset can be downloaded here:
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target='_blank'
+        to='/simpson_train.jsonl'
+        download
+        className="button button--primary button--lg"
+    >
+        Download training set 🍩
+    </Link>
+</div>
+
+<Tabs>
+  <TabItem value="q2" label="No feedbacks yet">
+    <Image src='/img/screenshots/tuto-ui-text/training-empty.png' alt='new feedbacks'/>
+  </TabItem>
+
+  <TabItem value='q1' label='You already have some feedbacks' default>
+    <Image src='/img/screenshots/tuto-ui-text/training.png' alt='existing feedbacks'/>
+  </TabItem>
+</Tabs>
+
+:::info
+Your feedbacks are displayed using a color code:
+- Green: you gave 👍 and the system was correct
+- Red: you gave 👍 but the system was incorrect
+- Grey: you gave 👎
+:::
+
+<div>
+    <Admonition type="tip">
+    <p>To start training your system, you can click on the <i>Train</i> button.</p>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+      <img src='/img/screenshots/tuto-ui-text/train-btn.png' alt='training button' width= '300px'/>
+    </div>
+    The training process can take a few seconds depending on the size of your training set.
+    </Admonition>
+</div>
+
+When your system is training, your page will look like this:
+
+<Image src='/img/screenshots/tuto-ui-text/training-animation.png' alt='Training animation' style={{ marginBottom: '20px'}} />
+
+## Annotation
+
+To use *Annotation mode* you can go on your **Training Page** and click on the *Annotate* button. 
+
+The annotation mode allows you to give feedbacks on the system's answers, but also to search for an answer inside the document collection if the system did not find it.
+
+
+<Tabs>
+  <TabItem value="q1" label="Open annotation mode" default>
+    <Image src='/img/screenshots/tuto-ui-text/annotate.png' alt='annotate'/>
+  </TabItem>
+
+  <TabItem value="q3" label="Ask question" default>
+    <Image src='/img/screenshots/tuto-ui-text/annotate-instrument-lisa.png' alt='ask question'/>
+    You can give feedbacks on these answers, the same way as you do in the <b>Ask page</b>
+  </TabItem>
+
+  <TabItem value="q4" label="Browse documents" default>
+    <Image src='/img/screenshots/tuto-ui-text/annotate-instrument-lisa-docs.png' alt='ask question'/>
+    If you want to stop selecting text, you can click on the button next to the <i>Check system's answers</i> button.
+  </TabItem>
+</Tabs>
+
+
+The feedbacks you give by selecting the answer inside the document collection will have as type "Annotated by user" so you can find them easily in the **Training Page**.
+
+## Suggestions
+When you enter one QA system, you can see the suggestions of the system. These suggestions are based on the questions you asked and the feedbacks you gave.
+
+<Image src='/img/screenshots/tuto-ui-text/ask-suggestions.png' alt='suggestions'/>
+
+

@@ -1,0 +1,137 @@
+---
+id: chatbot
+title: Playground chatbot
+sidebar_label: Chatbot
+sidebar_position: 5
+---
+
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Link from '@docusaurus/Link'
+import Image from '../../src/components/Image'
+
+This chatbot allows you to have interactive conversations where you can ask questions, receive instant responses, and provide additional input, enabling personalized and dynamic interactions.
+
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/playground/chatbot'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: 'var(--ifm-color-citrine-light)', color: '#000', border: 'none' }}
+    >
+        Open chatbot playground!
+    </Link>
+</div>
+
+Curious about the types of questions it can handle? Take a glimpse into its capabilities with a sample response to the question "what kind of questions can I ask you?":
+
+<Image src='/img/screenshots/playgrounds/chatbot/chat-subjects.png' alt='What kind of questions can I ask?'/>
+
+:::info
+As you may have noticed in the previous screenshot, our chatbot demonstrates proficiency in addressing various types of questions, including:
+
+- General Knowledge Questions
+- Definition Questions
+- How-To Questions
+- Hypothetical Questions
+
+Feel free to engage with the chatbot further and explore its knowledge in these areas!
+:::
+
+## Edit message
+<p>
+    You can edit the message you sent by clicking on the
+    <img src='/img/icons/edit_note.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }} alt='edit' />
+    icon that appears when you hover one of your messages (top-right corner of the message).
+</p>
+
+:::info
+When you click *Apply changes* when editing a message, the chatbot will generate a new answer based on the edited message. The previous messages (questions and answers) will be kept in the chat history but the following ones will be deleted.
+:::
+
+<Tabs>
+    <TabItem value='q1' label='Ask'>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-movie.png' alt='Movies ideas'/>
+    </TabItem>
+    <TabItem value='q2' label='Edit' default>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-movie-edit-ui.png' alt='Edit message'/>
+    </TabItem>
+    <TabItem value='q3' label='Edited'>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-movie-edited-sci-fi.png' alt='New answer'/>
+    </TabItem>
+</Tabs>
+
+:::tip
+Sometimes the chatbot may not understand your question or may not be able to provide an answer. In this case, you can click on the *Edit* icon to edit your question and try to rephrase it or add more context.
+:::
+
+If the chatbot understood your question but the answer is not satisfactory, you can either edit your question to add more context or click on the *Re-generate answer* button (on top of the input field) to get a new answer.
+
+## Re-generate answer
+
+<p>
+    If you get an answer that does not satisfy you, you can click
+    <span style={{ whiteSpace: 'nowrap' }}>
+        <img src='/img/icons/replay_blue.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Re-generate answer</b>
+    </span>
+    (on top of the input field) to get a new answer.
+</p>
+
+<Tabs>
+    <TabItem value='q1' label='Snack ideas' default>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-snacks-1.png' alt='Snack ideas'/>
+    </TabItem>
+    <TabItem value='q2' label='Re-generated'>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-snacks-2.png' alt='Snack ideas'/>
+    </TabItem>
+</Tabs>
+
+
+
+
+## Continue conversation
+Sometimes the chatbot may stop answering your question due to a character limit. In this case it will display an information message on which you can click to get the end of the answer.
+
+<Tabs>
+    <TabItem value='q1' label='Limit reached' default>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-movie-limit-reached.png' alt='Limit reached'/>
+    </TabItem>
+    <TabItem value='q2' label='Continue'>
+        <Image src='/img/screenshots/playgrounds/chatbot/chat-movie-limit-reached-continue.png' alt='Continue answering'/>
+    </TabItem>
+</Tabs>
+
+## Clear chat
+<p>
+  You can click on the
+  <span style={{ whiteSpace: 'nowrap' }}>
+    <img src='/img/icons/clear.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+    <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Clear</b>
+  </span>
+  button (on top of the input field) to clear the chat history and start fresh.
+</p>
+
+You will get back to the initial state of the chatbot:
+
+<Image src='/img/screenshots/playgrounds/chatbot/chat-empty.png' alt='Cleared chat'/>
+
+## Stop generation
+
+When the chatbot is answering your question, you can see it typing and generating the answer. If you want it to stop answering, you can click on the <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Stop generation</b> button on top of the search bar.
+
+<Image src='/img/screenshots/playgrounds/chatbot/stop-generating.png' alt='Stop generation'/>
+
+## Corrections
+
+When the chatbot does not understand your question, or does a mistake, instead of re-generating the answer or editing your question, you can also tell what's wrong and ask it to correct itself.
+
+:::tip
+When the chatbot is wrong, you can:
+* add more context
+* explain what's wrong
+* ask it to correct itself
+The chatbot will then try to correct itself and give you a better answer.
+:::
+
+<Image src='/img/screenshots/playgrounds/chatbot/chat-correct.png' alt='Limit reached'/>

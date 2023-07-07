@@ -1,0 +1,65 @@
+---
+id: upload-index
+title: 'Upload and index'
+sidebar_label: Upload and index
+---
+
+import Image from '../../../src/components/Image'
+import Link from '@docusaurus/Link'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+:::info
+In this tutorial we are going to make a Question Answering (QA) system on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target="_blank"
+        to='/Simpson_Family.zip'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download Simpson dataset 🍩
+    </Link>
+</div>
+These documents are coming from <a href='https://simpsons.fandom.com/wiki/Category:Simpson_family'>the Simpsons wiki</a>
+:::
+
+
+:::tip
+Here you can access a demo based on this tutorial and try it yourself!
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/public-share?kb=The%20Simpson%20Family&type=text&user=demo&lang=en'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: '#fff9', color: '#000', border: 'none' }}
+    >
+        Open demo 🍩
+    </Link>
+</div>
+:::
+
+## Access
+:::note
+To access the creation page, check [Introduction and Access](/tutorial-ui/access) section!
+:::
+
+## Creation
+Pick the name and language of your QA System, upload your files (click or drag and drop on the dedicated area), you can click on:
+* <kbd>Settings</kbd> to personnalize them (default parameters are good for general use)
+* <kbd>Finish</kbd> to create your QA System (and use default parameters)
+
+
+<Image src='/img/screenshots/tutorial-ui/document-based/creation-init.png' alt='Creation'/>
+
+:::info
+You can also add an icon for your QA system. It will be displayed in the list of QA systems.
+:::
+
+## Settings (optional)
+
+Then you can customize your QA System parameters if needed (default parameters are good for general use).
+
+<Image src='/img/screenshots/tutorial-ui/document-based/creation-settings.png' alt='Settings'/>
+
+After clicking on the <kbd>Finish</kbd> button, you will be redirected to the home page and you
+will have your newly built QA system appearing in the list.

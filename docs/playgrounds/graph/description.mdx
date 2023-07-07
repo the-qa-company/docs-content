@@ -1,0 +1,53 @@
+---
+id: description
+title: Description
+sidebar_label: Description
+sidebar_position: 1
+---
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Link from '@docusaurus/Link'
+import Image from '../../../src/components/Image'
+import Admonition from '@theme/Admonition'
+
+
+The goal of this tutorial is to construct your own digital twin!
+
+It should be able to reply to questions about yourself like: 
+* "Where were you born?"
+* "What do you like to eat?"
+* "Who is your best friend?"
+* "What languages do you speak?"
+
+and other things you would like him to know or not 😉
+
+While you will create your digital twin, I will create mine 😀 so we are also going to know each other better!
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/playground/kg'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: 'var(--ifm-color-blush-light)', color: '#000', border: 'none' }}
+    >
+        Open knowledge graph playground!
+    </Link>
+</div>
+
+The playground is separated in two parts:
+- **Left** is your *Context*: the turtle code you want to ask questions on
+- **Right** is where you ask your questions: ask your question, the answers will appear below with the display types available
+
+<Image src='/img/screenshots/playground-graph/open-playground.png' alt='Open playground'/>
+
+You can remove the rdf example by clicking on <i>Clear</i>. You can bring the example back by clicking on <i>Example</i>.
+<div>
+    <Admonition type="tip">
+    <p>If you want to save it anyway you can <b>download your file</b> by clicking on the <i>download</i> icon of the editor.</p>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+        <img src='/img/screenshots/playground-graph/download-playground.png' alt='download' width='200px'/>
+    </div>
+    <p>Then you can use this file to <b>create a QA system</b> (do to that you need to be logged in).</p>
+    </Admonition>
+</div>
+
+Now let's start creating your digital twin!

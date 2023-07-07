@@ -1,0 +1,133 @@
+---
+id: export
+title: 'Export as widget'
+sidebar_label: Export as widget
+---
+
+import Image from '../../../src/components/Image'
+import ImageGrid from '../../../src/components/ImageGrid'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+
+If you want to integrate the QA System into your own website, you can export it as a widget or bookmarklet. This allows you to provide instant question-answering capabilities to your website visitors. First, go to the <b>Export</b> page.
+
+<p>
+    You can access the <b>Export</b> page using the button in the status bar (on top of your screen) or in the <b>QA Systems</b> page by clicking on the QA system you are interested in and then the
+    <span style={{ whiteSpace: 'nowrap' }}>
+        <img src='/img/icons/file_upload.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Export</b>
+    </span>
+    button.
+</p>
+
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tutorial-ui/document-based/export/status-bar.png',
+            alt: 'Export page',
+        }, {
+            src: '/img/screenshots/tutorial-ui/document-based/export/qasystem-export-button.png',
+            alt: 'Export page',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
+
+After accessing the Export page, you will see the following screen.
+
+<Image src='/img/screenshots/tutorial-ui/document-based/export/export-empty.png' alt='Export page'/>
+
+
+## Requirements
+
+In order to export a QA System, **it has to be open to public**, meaning people having its link can query it. This is indicated directly on the page. You can click:
+* **Go to settings**: You will be redirected to the **Share** page of this QA System
+:::note
+Find more information about sharing in the [Share](/tutorial-ui/document-based/share#public-access) section.
+:::
+* **Make public**: Use this option to make it public directly from this page.
+
+<Image src='/img/screenshots/tutorial-ui/document-based/export/export-update-access.png' alt='Add message'/>
+
+
+## Personalization
+
+You can personalize the widget by modifying the following parameters:
+
+* **Initial message**: add an initial message to the widget to give some context to the user (e.g. "Ask me anything about the company")
+
+<Image src='/img/screenshots/tutorial-ui/document-based/export/export-message.png' alt='Add message'/>
+
+* **Theme**: choose the default theme for your widget. You can choose between: light, dark, auto. You will still be able to change the theme when using the widget. 
+
+<ImageGrid images={[
+  {
+      src: '/img/screenshots/tutorial-ui/document-based/export/light-theme.png',
+      alt: 'Light theme',
+      caption: 'Light theme',
+  }, {
+      src: '/img/screenshots/tutorial-ui/document-based/export/dark-theme.png',
+      alt: 'Dark theme',
+      caption: 'Dark theme',
+  }]}
+  noTransformation={true}
+/>
+
+## Try it out
+
+You can try out the widget directly from the export page. You can ask a question and see the answer directly in the widget, the sources are also available.
+
+<Image src='/img/screenshots/tutorial-ui/document-based/export/test-widget.png' alt='Try it out'/>
+
+When you click on the sources the pdf viewer will open, this will look like this:
+
+<Image src='/img/screenshots/tutorial-ui/document-based/export/test-widget-sources.png' alt='Try it out'/>
+
+:::info
+The sources are the documents used to build the QA System.
+:::
+
+## Export
+
+You can export the widget in two ways:
+* HTML code: copy the HTML code and paste it [in your website](#include-the-widget-in-your-website)
+* Bookmarklet: drag and drop the bookmarklet [in your bookmarks bar](#use-a-bookmarklet) and click on it when you want to use the widget
+
+<Tabs>
+    <TabItem value='q1' label='HTML'>
+        <Image src='/img/screenshots/tutorial-ui/document-based/export/export-html.png' alt='HTML'/>
+    </TabItem>
+    <TabItem value='q2' label='Bookmarklet' default>
+        <Image src='/img/screenshots/tutorial-ui/document-based/export/export-bookmarklet.png' alt='Bookmarklet'/>
+    </TabItem>
+</Tabs>
+
+## Include the widget in your website
+
+You can include the widget in your website by copying the HTML code and pasting it in your website.
+
+:::info
+All users of your website will be able to use the widget.
+:::
+
+<Image src='/img/screenshots/tutorial-ui/document-based/export/qanswer-doc-widget.png' alt='Widget in QAnswer documentation'/>
+
+## Use a bookmarklet
+
+You can also use a bookmarklet to use the widget.
+
+:::tip
+1. Drag the link to your bookmark bar (also known as favorites bar)
+2. Click on the bookmarklet when you are on a page you want to ask questions about
+:::
+
+Here is an example of the widget used on the simpsons wiki:
+
+<img src='/img/screenshots/tutorial-ui/document-based/export/simpson-wiki-widget.png' alt='Use the widget while browsing on the simpsons wiki' />
+
+:::caution
+Please note that some websites may block the script from running.
+:::

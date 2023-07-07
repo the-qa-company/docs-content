@@ -1,0 +1,149 @@
+---
+id: combined
+title: 'Combine your QA Systems'
+sidebar_label: Combined
+sidebar_position: 4
+---
+
+import Image from '../../src/components/Image'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Admonition from '@theme/Admonition'
+
+
+You may have at your disposal RDF data and documents about a common subject. For example:
+
+* the cocktail RDF dataset we used in [Tutorial UI Graph](/tutorial-ui/rdf-based/rdf-to-qa)
+* a pdf about cocktails and their history (here we will use data from [Wikipedia](https://en.wikipedia.org/wiki/Cocktail))
+
+You would like to have answers on both those data sources. You can **combine** 2 QA Systems (one based on RDF data and one based on documents) so you can query both sources at once.
+
+
+## Access
+:::note
+To access the creation page, check [Introduction and Access](/tutorial-ui/access) section!
+:::
+
+## Create a combined QA System
+:::info
+You need two existing QA Systems (one of each type **RDF** and **Document**) to create a combined QA System.
+:::
+
+First click on the **Add** button and choose **Combined**. You will arrive here:
+
+<Image src='/img/screenshots/tuto-ui-combined/combined-wizard-empty.png' alt='Combined QA System creation'/>
+
+<p>
+  Here are the QA Systems you have access to, shared ones included. They can be differentiated by their 
+  <img src='/img/icons/shared.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+  icon. 
+</p>
+
+You can select one system of each type (RDF and Document). These two systems must have a common language, and it will be automatically filled in the language field.
+
+<Image src='/img/screenshots/tuto-ui-combined/combined-wizard-owned.png' alt='Combined QA System creation'/>
+
+<div>
+    <Admonition type='tip'>
+    <p>
+        You can also use 
+        <img src='/img/icons/shared.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        shared QA Systems to create your combined one.
+      </p>
+    </Admonition>
+</div>
+
+<Image src='/img/screenshots/tuto-ui-combined/combined-wizard-shared.png' alt='Combined QA System creation'/>
+
+:::caution
+If the owner of a shared QA System deletes it, your combined QA System will be deleted too.
+:::
+
+Once you have selected two QA Systems, you can click on **Finish**. Your combined QA System is now created and you can query it, it appears in your home page like the other QA Systems.
+
+<Image src='/img/screenshots/tuto-ui-combined/home-page-new-combined.png' alt='Here is your new combined QA System'/>
+
+You may have noticed that combined systems do not impact your quotas. You can create as many as you want.
+
+As you can see you can query it like any other QA System. You can also share it with other users.
+
+## Query
+
+You can now query 2 types of data at once meaning you can ask questions like:
+- What are margarita ingredients?
+- When was the term "cocktail" first mentioned as a beverage?
+
+You will get **answer from the most adapted** sub QA System. For example, if you ask "What are margarita ingredients?", you will get an answer from the RDF QA System because it has a better knowledge of ingredients. If you ask "When was the term 'cocktail' first mentioned as a beverage?", you will get an answer from the Document QA System because it has a better knowledge of history.
+
+<Image src='/img/screenshots/tuto-ui-combined/combined-kg-answer.png' alt='What are margarita ingredients?'/>
+
+<Image src='/img/screenshots/tuto-ui-combined/combined-text-answer-first-mention.png' alt='When was the term "cocktail" first mentioned as a beverage?'/>
+
+:::note
+We try to prioritize answers based on RDF data because they are more precise. If the answer's confidence exceeds 50%, we will display it. If not, we will display the answer from the Document based QA System.
+:::
+
+<div>
+    <Admonition type='tip'>
+    <p>
+        You can switch between the two answers by clicking on the button at the right of the search bar. It will look like this 
+        <img src='/img/icons/qa-system-default/text.svg' alt='text logo' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/> 
+        to show the text answer and like this
+        <img src='/img/icons/qa-system-default/graph.svg' alt='kg logo' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/> 
+        to show the RDF based answer.
+      </p>
+    </Admonition>
+</div>
+
+## Feedbacks and training
+
+You can give feedbacks on a combined QA System like you would on a normal QA System.
+
+:::info
+The feedbacks will be saved in the sub QA System corresponding to the answer you gave feedback on.
+:::
+
+There is no training page for a combined QA System, but you can train the sub QA Systems separately.
+
+:::tip
+To improve your results on your combined QA System it is recommended to give feedbacks and train both sub QA Systems.
+:::
+
+
+## Sharing
+
+You can also share your combined QA System like your other QA System. You may have sharing restrictions if you used shared QA Systems to create your combined one.
+
+:::info
+First, note that in order to share a combined QA System, **the same sharing options will be applied** to both QA Systems you used to create it (let's call them sub QA Systems).
+:::
+
+1. You own the 2 sub QA Systems **or** you have "Read and **Write**" access to both of them
+    - You can share your combined QA System with any user and choose their rights. They will have the same access to the sub QA Systems. 
+    - You can open your combined QA System to the public. The sub QA Systems will be open to the public too.
+
+<Image src='/img/screenshots/tuto-ui-combined/share-owned.png' alt='share'/>
+
+
+2. You have "Read **only**" access to one or both sub QA Systems
+    - You can share your combined QA System with any user but the rights are restricted to "Read only", this will be the same for the sub QA Systems.
+    - You cannot open your combined QA System to the public.
+
+<Image src='/img/screenshots/tuto-ui-combined/share-read.png' alt='share restricted'/>
+
+## Deletion / Unsharing
+
+A combined QA System is a combination of two sub QA Systems, and deleting or unsharing actions can have consequences on other systems.
+
+| Action | Effect on Combined QA System | Effect on Sub QA Systems |
+|--------|-----------------------------|--------------------------|
+| Deleting a combined system | *Deleted the combined system* | - |
+| Unsharing a combined system | *Unshares the combined system* | Sub systems stay shared |
+| Deleting a sub-system | Deletes the combined system | *Only deletes the specific sub-system* |
+| Unsharing a sub-system | Unshares the combined system | *Only unshares the specific sub-system* |
+
+Please note that when deleting a QA System that is used by one of your combined QA Systems, a confirmation step is added to prevent unintended deletion.
+
+However, if the QA System is shared, we do not check if it is being used by any of your shared users, so please exercise caution.
+
+<Image src='/img/screenshots/tuto-ui-combined/confirm-deletion.png' alt='Confirm deletion'/>

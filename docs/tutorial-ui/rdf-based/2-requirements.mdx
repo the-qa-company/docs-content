@@ -1,0 +1,86 @@
+---
+id: requirements
+title: Requirements
+sidebar_label: Requirements
+---
+
+In this section we are going to describe in detail what are the requirements that we make on the RDF datasets that can be indexed by QAnswer.
+
+## Label
+To be able to answer questions, QAnswer needs to know how to translate a question into a SPARQL query. To do so, QAnswer uses the labels attached to the URIs in the RDF dataset. 
+
+:::info
+A URI will only be used to generate SPARQL queries if the question contains (up to stemming) the literal attached via one of the following properties:
+- http://www.w3.org/2000/01/rdf-schema#label
+- http://purl.org/dc/elements/1.1/title
+- https://schema.org/name
+- http://www.w3.org/2004/02/skos/core#prefLabel
+- http://www.w3.org/2004/02/skos/core#altLabel
+:::
+
+:::tip
+If the literal has a language tag (like `@en`), it will only be searched in questions of that language. If no language tag is attached the corresponding label will be searched in questions of any language.
+:::
+
+For example for the following RDF graph:
+```
+PREFIX vsw: <http://vocabulary.semantic-web.at/cocktails>
+PREFIX vswo: <http://vocabulary.semantic-web.at/cocktail-ontology>
+PREFIX schema: <http://schema.org/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+vsw:2d85fb1b        rdfs:label "Margarita" ;
+                    rdfs:label "Upside Down Margarita"@en .
+vswo:consists-of    rdfs:label "consists of"@en ;
+                    rdfs:label "contains"@en ;
+                    rdfs:label "made up"@en ;
+                    rdfs:label "ingredients"@en .
+```
+The URI `vsw:2d85fb1b` will only be used in a SPARQL query if the question either contains *"Margarita"* or *"Upside Down Margarita"*. <br/>
+Moreover *"Margarita"* will be used for any language while *"Upside Down Margarita"* only for english questions.
+
+The URI `vswo:consists-of` will be used to construct SPARQL queries if the question contains *"consists of"*, *"contains"*, *"made up"*, *"ingredients"* and **expressions that are equal to them up to stemming**. This is for example the case for the expression *"contained"* which, up to stemming, is the same as *"contains"*.
+
+:::caution
+Note that in particular for the graph:
+```
+vsw:Margarita   vswo:consists-of   vsw:Cointreau .
+```
+
+it will **not be possible to answer any question since no labels are attached**.
+:::
+
+Even if for humans the name of the URI is meaningfull, according to RDF standard the above graph is equivalent to:
+```
+vsw:2d85fb1b   vswo:1234   vsw:1439e6c3 .
+```
+
+## Reification
+
+:::caution
+In QAnswer we assume that the **RDF dataset does not use any form of reification**.
+:::
+
+To recall, RDF is perfectly suited to represent binary statements like: *"Margarita contains Cointreau"* which can be represented as the triple *(Margarita,contains, Cointreau)*.<br />
+Reified statements are used when there is the need to speak about a binary statement like in: *"Margarita contains 50ml of Cointreau"*. In this case a triple is not enough to represent this piece of information. The Semantic Web Community proposed a series of models to represent these types of information. For a full overview of the presented models we refer to [this paper](https://www.emse.fr/~zimmermann/Papers/eswc2017b.pdf). One of the models is n-ary relations (the reification model used by Wikidata), where the knowledge would be represented as:
+```
+vsw:Margarita   vswo:consists-of_IN _:b1 .
+_:b1 vswo:consists-of_OUT vsw:Cointreau .
+vsw:blank vswo:quantity "50 ml" .
+```
+
+Another model is RDF reification which was , where the knowledge would be represented as:
+
+```
+vsw:Statement rdf:type rdf:Statement .
+vsw:Statement rdf:subject vsw:Margarita .
+vsw:Statement rdf:predicate vswo:consists-of .
+vsw:Statement rdf:object vsw:Cointreau .
+vsw:Statement vswo:quantity "50 ml" .
+```
+QAnswer was **not designed to cope with these representations** and it is not clear how it behaves when they are indexed in QAnswer.
+
+<div style={{ height: '20px' }} />
+
+Now let's see how to upload and index your dataset in QAnswer!

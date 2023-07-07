@@ -1,0 +1,142 @@
+---
+id: edit
+title: 'Edit collection'
+sidebar_label: Edit collection
+---
+
+import ImageGrid from '../../../src/components/ImageGrid'
+import Image from '../../../src/components/Image'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import Link from '@docusaurus/Link'
+import Admonition from '@theme/Admonition'
+
+<p>
+  It's possible to edit your document collection on the <b>Editing</b> page using the button in the status bar (on top of your screen) or in the <b>QA Systems</b> page by clicking on the QA system you are interested in and then the
+  <span style={{ whiteSpace: 'nowrap'}}>
+    <img src='/img/icons/edit.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+    <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginRight: '10px' }}>Edit</b>
+  </span>
+  button.
+</p>
+
+<ImageGrid
+    images={[
+        {
+            src: '/img/screenshots/tuto-ui-text/status-bar-edit.png',
+            alt: 'training button',
+        }, {
+            src: '/img/screenshots/tuto-ui-text/qa-system-edit-btn.png',
+            alt: 'training button',
+        }
+    ]}
+    noTransformation
+    templateColumns='repeat(1, 60%)'
+    gap='5px'
+/>
+
+On this page you will be able to see all documents that are in your collection and their content. You can also delete files or add new ones to your collection.
+
+## Add a file
+
+Let's add **Moe Szyslak** to our collection by using the <kbd>Add file</kbd> button. You can download the file here:
+
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target='_blank'
+        to='/Moe-Szyslak.pdf'
+        download
+        className="button button--primary button--lg"
+    >
+        Download Moe Szyslak file
+    </Link>
+</div>
+
+And then let's see the content of the document by clicking either on <kbd>View PDF</kbd> or <kbd>View raw text</kbd> button.
+
+<Tabs>
+  <TabItem value="q1" label="Edit page">
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/edit-page.png' alt='edit page'/>
+  </TabItem>
+
+  <TabItem value="q2" label="Add Moe" default>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/add-moe.png' alt='add file'/>
+  </TabItem>
+
+  <TabItem value="q3" label="View PDF">
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/moe-pdf.png' alt='view pdf'/>
+  </TabItem>
+
+  <TabItem value="q4" label="View raw text">
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/moe-raw-text.png' alt='view raw text'/>
+  </TabItem>
+</Tabs>
+
+## Add website
+
+You can also directly add a website link by clicking on <kbd>Add website</kbd>.
+:::note
+The sub-pages will not be extracted.
+:::
+
+Here let's add the link to the [Website-based](/tutorial-ui/website) QA Systems documentation to the **doc-qanswer** QA System.
+
+<Tabs>
+  <TabItem value='b1' value='Link input' default>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/add-link.png' alt='add URL'/>
+  </TabItem>
+  <TabItem value='b2' value='File added'>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/added-link.png' alt='file added'/>
+  </TabItem>
+  <TabItem value='b3' value='View content'>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/added-link-pdf.png' alt='file content'/>
+  </TabItem>
+</Tabs>
+
+
+## Remove a file
+
+To remove a file, you can click on the <kbd>Remove</kbd> button.
+
+## Filter files (tip)
+
+:::tip
+To **easily browse** your files, you can use the filter on the filename column.
+:::
+
+For example, if you want to see only the files that contain the word **Simpson**, you can type **Simpson** in the filter field.
+
+<Tabs>
+  <TabItem value='b1' value='Filter button'>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/filter-btn.png' alt='filter button'/>
+  </TabItem>
+  <TabItem value='b2' value='Filter "Simpson"'>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/filter-simpson.png' alt='filter "Simpson"'/>
+  </TabItem>
+  <TabItem value='b3' value='Filtered'>
+    <Admonition type='info'>
+      When your rows are filtered:
+      <ul>
+        <li>you can see the number of rows that are displayed (in the array footer, here 8 of 12)</li>
+        <li>there is a filter icon next to the filename column title</li>
+      </ul>
+    </Admonition>
+    <Image src='/img/screenshots/tutorial-ui/document-based/edit/filtered.png' alt='filtered'/>
+  </TabItem>
+</Tabs>
+
+<Admonition type='tip'>
+  You can sort your filenames alphabetically using this **shortcut**: click on the arrow that appears when hovering a column title. 
+  <ImageGrid
+      images={[
+          {
+              src: '/img/screenshots/tutorial-ui/document-based/edit/filter-alphabetically.png',
+              alt: 'filter button',
+          }
+      ]}
+      noTransformation
+      templateColumns='repeat(1, 50%)'
+  />
+</Admonition>
+
+You can also use <kbd>Sort by ASC</kbd> or <kbd>Sort by DESC</kbd> in the filter menu we saw above.
