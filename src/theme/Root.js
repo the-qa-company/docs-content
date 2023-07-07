@@ -23,7 +23,7 @@ export default function Root({ children }) {
 
   useEffect(() => {
     const div = document.createElement('div')
-    // div.innerHTML = iframeCode
+    div.innerHTML = iframeCode
     document.body.appendChild(div)
   }, [])
 
