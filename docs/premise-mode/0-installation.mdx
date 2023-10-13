@@ -1,70 +1,99 @@
 ---
 id: install
-title: Installation
+title: Installing QAnswer on premise
 sidebar_label: Installation
 ---
-import Image from '../../src/components/Image';
 
-:::caution Note
-This part of the documentation is only necessary if you recived an on-premise installation bundle of QAnswer.
-:::
 
-# Requirements
+## Requirements
 
 To run QAnswer you need:
 
 - a linux distribution (we use Ubuntu by default)
-- and java 11 installed.
+- A GPU with at least 8GB of memory
+- Docker
 
-# Specs
-
-For a graph of 100 million triples we reccomand a server with:
-
-- 4 CPUs
-- 8 GB of RAM
-- 100 GB of SSD
-
-# Installation bundle
-
-An on premise installation bundle contains 3 files:
-
-- a jar with the current $version of QAnswer named QAnswer-$version.jar
-- an application.properties file
-- a README
-
-You can ran QAnswer as:
-
- ```bash
-java -jar QAnswer-$version.jar -Dspring.config.location=application.properties
+## Install Nvidia Drivers
+1. Download and install the CUDA drivers from the NVIDIA website.
+If you are using a Ubuntu distribution you can use the following command to install the drivers
+```bash
+sudo ubuntu-drivers install --gpgpu
 ```
 
-and you will get:
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-keyring_1.0-1_all.deb 
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
+sudo apt-get update
+sudo apt-get -y install cuda-drivers
+```
 
-<Image src='/img/screenshots/premise-mode/qanswer-bash.png'/>
+## Install Docker container runtime
+You need to install Docker on your machine. You can follow the [official documentation](https://docs.docker.com/engine/install/ubuntu/) to install it on your machine.
 
-QAnswer will be available at [http://localhost:4567](http://localhost:4567).
-The swagger documentation will be availabe at [http://localhost:4567/swagger-ui.html](http://localhost:4567/swagger-ui.html).
+Then you need to install the nvidia container runtime by following the [official documentation](https://docs.docker.com/config/containers/resource_constraints/#gpu)
 
-# Configuration
+After that you need to restart docker by running the following command
+```bash
+sudo service docker restart
+```
 
-You can configure QAnswer by changing the application.properties file. The main properties are:
+## Install QAnswer
+Clone the [bundle](https://gitlab.the-qa-company.com/qanswer-app/bundle/)
 
-| Property      | Value | Default |
-| :---        |    :----   |   :----   | 
-| server.port      | port on which QAnswer will start | 4567 | 
-| qa.public.url   | public url under which you expose QAnswer  | http://localhost:4567 | 
-| qa.directory   | directory containing all data necessary to QAnswer | ./qanswer_data/ | 
-| qa.admin.username | username of the admin account | admin |
-| qa.admin.password | password of the admin account | 123456 | 
-| spring.datasource.username| username of the database used in QAnswer | sa |
-| spring.datasource.password | password of the database used in QAnswer | password | 
-| app.jwtSecret| secret to generate the JWT token | MySuperSecret |
+The first thing you have to do is from `template.env` create a `.env` file with the secret of your installation.
+In this file you have to fill the following field:
 
-:::caution Warning
-For security reasons in a production deployment you have to change the following properties:
-- qa.admin.password
-- spring.datasource.password
-- app.jwtSecret
-:::
+### Configuration overview
+
+#### System details
+The credential used to get the images of QAnswer (supplied by us)
+- USER
+- PASSWORD
+
+#### Application details
+| Property      | Value | 
+| ----------- | ----------- |
+| QA_KEY      | The Key to activate the application       | 
+| QA_PUBLIC_UI_URL   | The URL of the frontend        |
+| QA_PUBLIC_URL   | The URL of the backend for http/https        |
+| QA_PUBLIC_WSURL   | The URL of the backend for websocket        |
+| QA_ADMIN_USERNAME   | The username for the admin account        |
+| QA_ADMIN_PASSWORD   | the password for the admin account        |
+| FREETEXT_CREDENTIAL   | A secret key used for the backend        |
+| SPRING_DATASOURCE_PASSWORD   | The password of the database        |
+| APP_JWTSECRET   | A JWT secret token        |
+
+#### Email 
+The email that's is going to be used by the application to send mail if needed
+
+| Property      | Value | 
+| ----------- | ----------- |
+| SUPPORT_EMAIL      | The email of the support       |
+| SPRING_MAIL_HOST   | The host of the email server        |
+| SPRING_MAIL_PORT   | The port of the email server        |
+| SPRING_MAIL_USERNAME   | The username of the email server        |
+| SPRING_MAIL_PASSWORD   | The password of the email server        |
+ 
+#### Contact Email
+The email that people will be encourage to contact in case there is a problem
+
+| Property      | Value | 
+| ----------- | ----------- |
+| CONTACT_MAIL      | The email of the contact       |
 
 
+### Run QAnswer
+Then after filling everything you have to run to generate the configuration of QAnswer
+```bash
+./generate-config.sh
+```
+
+After that, pull all the image of QAnswer by running the following command
+```bash
+./init.sh
+```
+
+Then you can run finally the following command to have QAnswer running
+```bash 
+docker compose up -d
+```
