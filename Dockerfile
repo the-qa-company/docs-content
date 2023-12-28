@@ -16,7 +16,4 @@ COPY . /app/
 # Build for production version
 RUN npm run build
 
-FROM nginx:stable-alpine as deploy
-WORKDIR /home/node/app
-# Copy what we've installed/built from production
-COPY --chown=node:node --from=qanswer-doc-build /app/build /usr/share/nginx/html/
+CMD ["npm","run","serve","--","--build","--port","80","--host","0.0.0.0"]
