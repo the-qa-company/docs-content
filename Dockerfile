@@ -12,6 +12,7 @@ RUN npm install
 
 # Copy the React App to the container
 COPY . /app/
+COPY ./nginx.config /etc/nginx/
 
 # Build for production version
 RUN npm run build
