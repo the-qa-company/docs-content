@@ -12,15 +12,9 @@ RUN npm install
 
 # Copy the React App to the container
 COPY . /app/
-COPY ./nginx.config /etc/nginx/
 
 # Build for production version
 RUN npm run build
-
-EXPOSE 3000
-# CMD ["serve","-s","build"]
-
-#CMD ["npx", "http-server", "build", "-p", "3000"]
 
 FROM nginx:stable-alpine as deploy
 WORKDIR /home/node/app
