@@ -47,7 +47,7 @@ jobs:
             docker stop qanswer-doc-container-dev || true && docker rm qanswer-doc-container-dev || true
             docker pull ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
             docker rmi $(docker images -f dangling=true -q) || true
-            docker run -p 3002:3000 -d --name qanswer-doc-container-dev ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
+            docker run -p 3002:80 -d --name qanswer-doc-container-dev ghcr.io/the-qa-company/qanswer-doc:latest@${{ needs.build.outputs.digest }}
 
   deploy_main:
     name: Deploy (main) 🚀
