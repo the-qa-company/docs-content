@@ -19,4 +19,9 @@ RUN npm run build
 EXPOSE 3000
 # CMD ["serve","-s","build"]
 
-CMD ["npx", "http-server", "build", "-p", "3000"]
+#CMD ["npx", "http-server", "build", "-p", "3000"]
+
+FROM nginx:stable-alpine as deploy
+WORKDIR /home/node/app
+# Copy what we've installed/built from production
+COPY --chown=node:node --from=qanswer-doc-build /app/build /usr/share/nginx/html/
