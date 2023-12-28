@@ -16,7 +16,4 @@ COPY . /app/
 # Build for production version
 RUN npm run build
 
-EXPOSE 3000
-# CMD ["serve","-s","build"]
-
-CMD ["npx", "http-server", "build", "-p", "3000"]
+CMD ["npm","run","serve","--","--build","--port","80","--host","0.0.0.0"]
