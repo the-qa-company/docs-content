@@ -52,3 +52,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 main {
     padding: 15px 40px;
 }
+
+p {
+    margin: 0
+}

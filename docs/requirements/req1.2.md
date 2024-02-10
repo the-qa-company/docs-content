@@ -4,7 +4,7 @@ title: Requirement 2
 sidebar_label: Requirement 2
 ---
 
-We assume that the RDF dataset does not use any form of reification. To recall, RDF is perfectly suited to represent binary statements like: "Margarita contains Cointreau" which can be represented as the triple (Margarita,contains, Cointreau). Reified statements are used when there is the need to speak about a binary statement like in: "Margarita contains 50ml of Cointreau". In this case a triple is not enough to represent this piece of information. The Semantic Web Community proposed a series of models to represent these types of information. For a full overview of the presented models we refer to~\cite{gimenez2017ndfluents}. One of the models is n-ary relations (the reification model used by Wikidata), where the knowledge would be represented as:
+We assume that the RDF dataset does not use any form of reification. To recall, RDF is perfectly suited to represent binary statements like: "Margarita contains Cointreau" which can be represented as the triple (Margarita,contains, Cointreau). Reified statements are used when there is the need to speak about a binary statement like in: "Margarita contains 50ml of Cointreau". In this case a triple is not enough to represent this piece of information. The Semantic Web Community proposed a series of models to represent these types of information. One of the models is n-ary relations (the reification model used by Wikidata), where the knowledge would be represented as:
 ```
 vsw:Margarita   vswo:consists-of_IN _:b1 .
 _:b1 vswo:consists-of_OUT vsw:Cointreau .

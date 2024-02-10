@@ -1,49 +1,40 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
     title: 'QAnswer',
     tagline: 'Ask your data!',
+    favicon: 'img/favicon.png',
     url: 'https://doc.qanswer.ai',
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
-    favicon: 'img/favicon.png',
+
     organizationName: 'The QA Company',
     projectName: 'QAnswer',
-    // plugins: [
-    //     [
-    //       "docusaurus-plugin-openapi-docs",
-    //       {
-    //         id: "openapi",
-    //         docsPluginId: "classic", // e.g. "classic" or the plugin-content-docs id
-    //         config: {
-    //             cos: {
-    //                 specPath: "qanswer.json",
-    //                 outputDir: "docs/qanswer",
-    //                 sidebarOptions: {
-    //                   groupPathsBy: "tag",
-    //                 },
-    //               },
-    //         }
-    //       },
-    //     ]
-    //   ],
-    themes: ["docusaurus-theme-openapi-docs"],
+
+    // Even if you don't use internationalization, you can use this field to set
+    // useful metadata like html lang. For example, if your site is Chinese, you
+    // may want to replace "en" with "zh-Hans".
+    i18n: {
+        defaultLocale: 'en',
+        locales: ['en'],
+    },
+
     presets: [
         [
-            '@docusaurus/preset-classic',
+            'classic',
             /** @type {import('@docusaurus/preset-classic').Options} */
             ({
                 docs: {
                     sidebarPath: require.resolve('./sidebars.js'),
                     routeBasePath: '/',
-                    docLayoutComponent: "@theme/DocPage",
-                    docItemComponent: "@theme/ApiItem"
                 },
                 blog: false,
                 pages: false,
@@ -58,10 +49,10 @@ const config = {
             }),
         ],
     ],
-
     themeConfig:
         /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
+            // Replace with your project's social card
             tableOfContents: {
                 minHeadingLevel: 2,
                 maxHeadingLevel: 5,
@@ -97,59 +88,15 @@ const config = {
                         label: 'LinkedIn',
                         href: 'https://www.linkedin.com/company/qanswer/',
                     }],
-                },
-                {
-                    title: 'More',
-                    items: [
-
-                    ],
-                },
+                }
                 ],
                 copyright: `Copyright © ${new Date().getFullYear()} The QA Company.`,
             },
             prism: {
-                theme: lightCodeTheme,
-                darkTheme: darkCodeTheme,
-                additionalLanguages: ['java'],
+                theme: prismThemes.github,
+                darkTheme: prismThemes.dracula,
             },
-            languageTabs: [
-                {
-                    highlight: "bash",
-                    language: "curl",
-                    logoClass: "bash",
-                },
-                {
-                    highlight: "python",
-                    language: "python",
-                    logoClass: "python",
-                },
-                {
-                    highlight: "go",
-                    language: "go",
-                    logoClass: "go",
-                },
-                {
-                    highlight: "javascript",
-                    language: "nodejs",
-                    logoClass: "nodejs",
-                },
-                {
-                    highlight: "ruby",
-                    language: "ruby",
-                    logoClass: "ruby",
-                },
-                {
-                    highlight: "csharp",
-                    language: "csharp",
-                    logoClass: "csharp",
-                },
-                {
-                    highlight: "php",
-                    language: "php",
-                    logoClass: "php",
-                },
-            ],
         }),
 };
 
-module.exports = config;
+export default config;
