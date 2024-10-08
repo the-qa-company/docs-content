@@ -1,0 +1,55 @@
+---
+id: document
+title: 'Document based AI Assistant'
+sidebar_label: Document
+---
+
+import Image from '../../../src/components/Image'
+import Link from '@docusaurus/Link'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+:::info
+In this tutorial we are going to make a AI Assistant on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        target="_blank"
+        to='/Simpson_Family.zip'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none ' }}
+    >
+        Download Simpson dataset 🍩
+    </Link>
+</div>
+These documents are coming from <a href='https://simpsons.fandom.com/wiki/Category:Simpson_family'>the Simpsons wiki</a>
+:::
+
+
+:::tip
+Here you can access a demo based on this tutorial and try it yourself!
+<div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+    <Link
+        to='https://app.qanswer.ai/public-share?kb=The%20Simpson%20Family&type=text&user=demo&lang=en'
+        className="button button--primary button--lg"
+        style={{ textDecoration: 'none', backgroundColor: '#fff9', color: '#000', border: 'none' }}
+    >
+        Open demo 🍩
+    </Link>
+</div>
+:::
+
+## Access
+:::note
+To access the creation page, check [Introduction and Access](/tutorial-ui/createAiAssistant) section!
+:::
+
+## Creation
+Upload your files (click or drag and drop on the dedicated area), you can click on:
+* <kbd>Finish</kbd> to create your AI Assistant.
+
+<Image src='/img/screenshots/tutorial-ui/datasource-document.png' alt='documents add'/>
+
+After clicking on the <kbd>Finish</kbd> button, you will be redirected to the AI Assistant principal page with a topbar and you
+will have your newly built connector appearing in the list.
+
+<Image src='/img/screenshots/tutorial-ui/datasource-documents-list.png' alt='documents list'/>
