@@ -9,4 +9,96 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition'
 
+You might have experienced searching for a particular question on a website and then going through the entire page to find the answer. This is a very tedious task and can be easily automated using a AI Assistant. 
 
+:::tip
+Sometimes searching information through a website can be very tedious. So why don't you try our AI Assistants over websites?
+Let's see how do to it!
+:::
+
+In this section we will learn how to create a website based AI Assistant. 
+
+## Access
+:::note
+To access the creation page, check [Introduction and Access](/tutorial-ui/createAiAssistant) section!
+:::
+
+You will get [there](https://app.qanswer.ai/qa-systems/website):
+
+<Image src='/img/screenshots/tutorial-ui/data-source/website/website-empty.png' alt='Empty wizard'/>
+
+## Add your first website
+
+To add your first website, enter its URL in the input field and click on *Add Page* or press *Enter*.
+
+<Tabs>
+    <TabItem value='input' label='Input'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-first-input.png' alt='Add first link'/>
+    </TabItem>
+    <TabItem value='added' label='Added' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-first-add.png' alt='Add first link'/>
+    </TabItem>
+</Tabs>
+
+You can see your website appearing in the list of websites.
+
+<Admonition type='info'>
+    <p>
+        At the rigth of the *Add Page* button you can see 
+        <span style={{ whiteSpace: 'nowrap' }}>
+            <b style={{ verticalAlign: 'middle', color: '#3d82b3', padding: '0 15px', marginRight: '10px' }}>Add page and subpages</b>
+        </span>
+        button. Enter an url in the input and click it to extract the sub-pages of this website.
+    </p>
+</Admonition>
+
+<Tabs>
+    <TabItem value='g1' label='Group sub-pages'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-after-extract.png' alt='Grouped sub-pages'/>
+    </TabItem>
+    <TabItem value='s1' label='Show sub-pages' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-show-extracted.png' alt='Show sub-pages'/>
+    </TabItem>
+    <TabItem value='s2' label='Show skipped-links' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-show-skippedlinks.png' alt='Show skipped-links'/>
+    </TabItem>
+</Tabs>
+
+
+As you can see, you now have a list of your website and its sub-pages, which can be grouped to see more clearly.
+
+You may see a<b style={{ verticalAlign: 'middle', color: '#ff4b4bb7', borderRadius: '50%', border: '1px solid #ff4b4bb7', padding: '2px 8px', margin: '0 10px' }}>i</b>, by default the extraction may skip some url. You can click on it to select the url you want to add to the axtraction.
+
+## Handle sub-pages
+### Delete sub-pages
+
+Some sub-pages might not interest you, you can remove them by clicking on the delete button (in the *Action* column).
+
+<Image src='/img/screenshots/tutorial-ui/data-source/website/website-remove.png' alt='Remove'/>
+
+### Move sub-pages
+
+Your sub-pages are originally grouped but you can move them **out of their group** by clicking on the *Move* button (in the *Action* column).
+
+<Tabs>
+    <TabItem value='g1' label='Before' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-move-sub-url.png' alt='before moving'/>
+    </TabItem>
+    <TabItem value='s1' label='After'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-after-moving-sub-url.png' alt='after moving'/>
+    </TabItem>
+</Tabs>
+
+## Creation
+Once you picked the name, language of your AI Assistant and filtered your links, you can click on:
+* <kbd>Settings</kbd> to personnalize them (default parameters are good for general use)
+* <kbd>Finish</kbd> to create your AI Assistant (and use default parameters)
+
+## Settings (optional)
+
+Then you can customize your QA System parameters if needed (default parameters are good for general use).
+
+<Image src='/img/screenshots/tutorial-ui/data-source/website/creation-settings.png' alt='Settings'/>
+
+After clicking on the <kbd>Finish</kbd> button, you will be redirected to the home page and you
+will have your newly built QA system appearing in the list.
