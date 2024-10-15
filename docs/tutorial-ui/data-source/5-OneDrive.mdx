@@ -9,4 +9,59 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition'
 
+:::info
+In this tutorial we are going to create a OneDrive connector to an AI Assistant. You must have a Microsoft Account in order to go any further.
+:::
 
+## Connection
+First of all you have to click on <kbd>Authenticate with OneDrive</kbd> to start.
+
+<Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-init.png' alt='onedrive connect'/>
+
+The you have to enter your microsoft account email adress and click on <kbd>Next</kbd>.
+
+<Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-email.png' alt='onedrive connect'/>
+
+:::tip
+Depending on your usual connection mode, Microsoft will ask you to unlock your session by :
+- fingerprint, facial recognition, pin code or security key (the interface will depend on your device system)
+- sending a notification to your mobile via the Microsoft application
+- password
+
+If the default unlock mode does not suit you, you can click on **Other ways to connect**
+:::
+
+<Tabs>
+    <TabItem value='g1' label='Different Types'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-connection-type.png' alt='onedrive connection types'/>
+    </TabItem>
+    <TabItem value='s1' label='Password' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-connection-password.png' alt='onedrive connection by password'/>
+    </TabItem>
+    <TabItem value='s2' label='Microsoft Notification1' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-connection-microsoft-notification1.png' alt='onedrive connection by notification'/>
+    </TabItem>
+    <TabItem value='s3' label='Microsoft Notification2' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-connection-microsoft-notification2.png' alt='onedrive connection by notification'/>
+    </TabItem>
+</Tabs>
+
+:::info
+Microsoft will ask you if you want to stay connected. If you click on <kbd>Yes</kbd> you will not need to enter your Microsoft login details on this browser in order to acces your Microsoft session. This choice is not related to the connector in your QAnswer Ai Assistant.
+:::
+
+<Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-connection-stay-connected.png' alt='onedrive stay connected'/>
+
+## Your OneDrive Files
+
+Now you are able to see (on the QAnswer interface), the content of your OneDrive folder.
+
+<Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-linked.png' alt='onedrive linked'/>
+
+You have to select which documents you want to use to add it to your OneDrive Connector.
+
+<Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-choose-documents.png' alt='onedrive documents'/>
+
+Finaly, your documents are available on your AI Assistant.
+
+<Image src='/img/screenshots/tutorial-ui/data-source/onedrive/onedrive-connector-filled.png' alt='onedrive filled'/>
