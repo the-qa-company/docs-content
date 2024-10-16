@@ -8,3 +8,71 @@ import Image from '../../../src/components/Image'
 import Link from '@docusaurus/Link'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
+import Admonition from '@theme/Admonition'
+
+<p>
+  Now, you can start asking your first question to the AI Assistant you just built ! By clicking on the AI Assitant Tab
+  you will enter the <kbd>Search</kbd> section of the AI Assistant built on top of the documents you uploaded.
+</p>
+
+<Image src='/img/screenshots/tutorial-ui/ai-assistant-existing-sys.png' alt='search pages'/>
+
+You can also access the <kbd>Search</kbd> section by clicking on <kbd>AI Assitant</kbd> on the top bar then clicking on <kbd>Search</kbd>.
+
+<Image src='/img/screenshots/ai-task/ai-assistant-menu.png' alt='ai assistant menu'/>
+
+<Image src='/img/screenshots/ai-task/search/search-empty.png' alt='search pages'/>
+
+For "The Simpsons" AI Assistant, you can ask questions like:
+- "who are the children of the simpsons"
+- "what is the name of the dog of the simpsons"
+
+<Tabs>
+    <TabItem value='g1' label='Answer' default>
+        <Image src='/img/screenshots/ai-task/search/search-ai-answer1.png' alt='answer pages'/>
+    </TabItem>
+    <TabItem value='s1' label='Question 1' >
+        <Image src='/img/screenshots/ai-task/search/search-ai-answer1-zoomed.png' alt='answer pages'/>
+    </TabItem>
+    <TabItem value='s2' label='Question 2' >
+        <Image src='/img/screenshots/ai-task/search/search-ai-answer2-zoomed.png' alt='answer pages'/>
+    </TabItem>
+</Tabs>
+
+<div>
+    <Admonition type="tip">
+      <p>
+        The summarized answer is a synthesized answer based on all the answers and documents QAnswer has found.
+        The answer is based on a generative model, therefore each generated answer could be in different wording by will always try to deliver the some information. You can trigger re-summarise function by click on
+        <img src='/img/icons/replay.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        icon. <br/>
+        To further improve the summariser, you can always give feedback by clicking on
+        <img src='/img/icons/thumb_up.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        or
+        <img src='/img/icons/thumb_down.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        
+        You can also edit the answer by clicking on
+        <img src='/img/icons/edit.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+        .
+      </p>
+    </Admonition>
+</div>
+
+When the system gives you an answer it is highlighted inside its context. You can also see in which document it was found (at the beginning of the box).
+
+<p>
+  You can click on the
+  <span style={{ whiteSpace: 'nowrap' }}>
+    <b style={{ verticalAlign: 'middle', color: '#3d82b3', marginLeft: '10px' }}>pdf name</b>
+    <img src='/img/icons/open_in_new.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
+  </span>
+  button (at the top left), it will show you the answer highlighted in the PDF document.
+</p>
+
+<Image src='/img/screenshots/ai-task/search/search-ai-answer2-highlight.png' alt='answer pages'/>
+
+:::caution
+Our backend model is evolving over time so the answers that you get might be different.
+
+If you have questions you can [contact us](mailto:info@the-qa-company.com). 
+:::
