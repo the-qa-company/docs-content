@@ -1,6 +1,6 @@
 ---
 id: document
-title: 'Document based AI Assistant'
+title: 'Document data source AI Assistant'
 sidebar_label: Document
 ---
 
@@ -9,8 +9,33 @@ import Link from '@docusaurus/Link'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
+## Creation
+Upload your files (click or drag and drop on the dedicated area). There is the list of extention files supported by the AI Assitant :<br/>
+.txt, .html, .md, .ods, .docx, .xlsx, .doc, .rtf, .odt, .csv, .pdf, .pptx
+
+<Tabs>
+    <TabItem value='g1' label='Empty' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/document/documents-empty.png' alt='documents empty'/>
+    </TabItem>
+    <TabItem value='s1' label='Files selected'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/document/documents-init.png' alt='documents add'/>
+    </TabItem>
+</Tabs>
+
+Then you can click on:
+* <kbd>Finish</kbd> to create your AI Assistant and you will be redirected to the AI Assistant principal page with a topbar and you
+will have your newly built connector appearing in the list.
+
+<Image src='/img/screenshots/tutorial-ui/data-source/document/documents-list.png' alt='documents list'/>
+
+
+## Access
+:::note
+If you don't have created an AI Assistant you can check [Create an AI Assistant](/tutorial-ui/createAiAssistant) section!
+:::
+
 :::info
-In this tutorial we are going to make a AI Assistant on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
+We are making an AI Assistant on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
     <Link
         target="_blank"
@@ -37,19 +62,3 @@ Here you can access a demo based on this tutorial and try it yourself!
     </Link>
 </div>
 :::
-
-## Access
-:::note
-To access the creation page, check [Create an AI Assistant](/tutorial-ui/createAiAssistant) section!
-:::
-
-## Creation
-Upload your files (click or drag and drop on the dedicated area), you can click on:
-* <kbd>Finish</kbd> to create your AI Assistant.
-
-<Image src='/img/screenshots/tutorial-ui/data-source/document/creation-init.png' alt='documents add'/>
-
-After clicking on the <kbd>Finish</kbd> button, you will be redirected to the AI Assistant principal page with a topbar and you
-will have your newly built connector appearing in the list.
-
-<Image src='/img/screenshots/tutorial-ui/data-source/document/documents-list.png' alt='documents list'/>

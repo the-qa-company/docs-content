@@ -1,5 +1,5 @@
 ---
-id: search interface
+id: search-interface
 title: 'Search Interface'
 sidebar_label: Search Interface
 ---
@@ -9,3 +9,25 @@ import Link from '@docusaurus/Link'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
+The Search inteface allows you to share your AI Assistant with anyone you want.
+* You must choose if it is accessible for everyone or someone with a loggedin account.
+* You can write a description.
+* You have access to the link to share with somebody.
+
+<Image src='/img/screenshots/tutorial-ui/expose/search-interface/search-interface.png' alt='search interface'/>
+
+When someone clicks on the link, it will redirect them to your AI Assistant's search functionality, but without them accessing your account.
+They first see the description you enter, after closing the desciption popup they will be able to ask questions to the AI Assistant.
+
+<Tabs>
+    <TabItem value='g1' label='Access Type' default>
+        <Image src='/img/screenshots/tutorial-ui/expose/search-interface/search-interface-description.png' alt='access type'/>
+    </TabItem>
+    <TabItem value='s1' label='Share'>
+        <Image src='/img/screenshots/tutorial-ui/expose/search-interface/search-interface-share.png' alt='access type share'/>
+    </TabItem>
+</Tabs>
+
+:::info
+The shared Search Interface works exactly like the one when you are authenticated. Check [Search](/tutorial-ui/ai-task/search) section.
+:::

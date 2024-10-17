@@ -1,5 +1,5 @@
 ---
-id: chat interface
+id: chat-interface
 title: 'Chat Interface'
 sidebar_label: Chat Interface
 ---
@@ -9,3 +9,26 @@ import Link from '@docusaurus/Link'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
+
+The Chat inteface allows you to share your AI Assistant with anyone you want.
+* You must choose if it is accessible for everyone or someone with a loggedin account.
+* You can write a description.
+* You have access to the link to share with somebody.
+
+<Image src='/img/screenshots/tutorial-ui/expose/chat-interface/chat-interface.png' alt='chat interface'/>
+
+When someone clicks on the link, it will redirect them to your AI Assistant's chat functionality, but without them accessing your account.
+They first see the description you enter, after closing the desciption popup they will be able to interact with the AI Assistant.
+
+<Tabs>
+    <TabItem value='g1' label='Chat description' default>
+        <Image src='/img/screenshots/tutorial-ui/expose/chat-interface/chat-interface-description.png' alt='chat interface description'/>
+    </TabItem>
+    <TabItem value='s1' label='Chat shared'>
+        <Image src='/img/screenshots/tutorial-ui/expose/chat-interface/chat-interface-share.png' alt='chat inteface'/>
+    </TabItem>
+</Tabs>
+
+:::info
+The shared Chat Interface works exactly like the one when you are authenticated. Check [Chat](/tutorial-ui/ai-task/chat) section.
+:::
