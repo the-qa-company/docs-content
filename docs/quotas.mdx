@@ -8,26 +8,41 @@ import Image from '../src/components/Image'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-As you can see on your home page (on top of *My QA Systems* title), there are quotas for the number of QA Systems based on graph and text. 
-Both of these quotas' **default value is 5**. It can be changed by an administrator.
+As you can see on your home page, there are quotas for the number of AI Assistant available at the same time, the size of the files you import to the AI Assistants and the number of questions asked.
+Each of these quotas ** have a default value**. It can be changed by an administrator.
 
 
-<Image src='/img/screenshots/quotas/qasystems-quotas.png' alt='home page'/>
+<Image src='/img/screenshots/quotas/quotas-ai-assistant.png' alt='home page'/>
 
 :::info
-Shared QA Systems are not counted in the quotas.
+Shared AI Assistant are not counted in the quotas.
 :::
 
-If you have reached your quota, you will not be able to create new QA Systems. You can delete existing QA Systems (of the corresponding type: graph/text) to create new ones.
+## AI Assistant quotas
 
-You can also see these quotas on your profile page.
+If you have reached your quota, you will not be able to create new AI Assistant. You can delete existing AI Assistant to create new ones and remove provided documents to replace with others.
 
-<Image src='/img/screenshots/profile-page.png' alt='profile page'/>
+<Image src='/img/screenshots/quotas/quotas-ai-assitant-exceeded.png' alt='ai assistant exceeded'/>
 
-There are other quotas for the size of the files you import. The **default value is 5MB**. It can also be changed by an administrator.
+You can also see these quotas on your profile page and the diffirent plan you can subscrib to.
 
-For text-based QA Systems, since we can add several files, we want the collection size to be less than the quota. For example, if the quota is 5MB, we can add 5 files of 1MB each, or 1 file of 5MB. 
+<Image src='/img/screenshots/quotas/quotas-profil.png' alt='profile page'/>
 
-When you create your QA System, you can see the size of each files and chose accordingly which files you want to add/remove.
+## Datas source quotas
 
-<Image src='/img/screenshots/quotas/text-exceed-size-quota.png' alt='create a text QA System: upload page'/>
+For document data source AI Assistant, since we can add several files, we want the collection size to be less than the quota. For example in free plan, if the quota is 10MB for 1 AI Assistant, we can add 10 files of 1MB each, or 1 file of 10MB. 
+
+When you provide documents to your AI Assitant, you can see the total space remaining on your plan so you can chose accordingly which files you want to add/remove.
+
+<Tabs>
+    <TabItem value='s1' label='Quotas exceeded' default>
+        <Image src='/img/screenshots/quotas/quotas-exceeded1.png' alt='quotas exceeded'/>
+    </TabItem>
+    <TabItem value='s2' label='Quotas exceeded'>
+        <Image src='/img/screenshots/quotas/quotas-exceeded2.png' alt='quotas exceeded'/>
+    </TabItem>
+</Tabs>
+
+:::note
+If you want to learn how to add data source on an AI Assistant you can check [Data Source](/tutorial-ui/data-source-introduction) section!
+:::
