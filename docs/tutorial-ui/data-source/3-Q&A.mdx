@@ -1,6 +1,6 @@
 ---
 id: q&a
-title: 'Q&A data source AI Assistant'
+title: 'Q&A data source'
 sidebar_label: Q&A
 ---
 
@@ -9,15 +9,22 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition'
 
-## Creation
-Enter the question you may ask to the AI Assistant thenb enter its answer.
+Sometimes you want that your AI Assistant answers specific answers to specific questions. You can specify these via the Q&A data source. Click on "Q&A" to add a "Question & Answer" pair as a data source:
 
-<Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-empty.png' alt='Empty wizard'/>
+<Image src='/img/screenshots/tutorial-ui/data-source/data-source-empty.png' alt='data source menu'/>
 
-<Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-input-filled.png' alt='Input filled'/>
+You will get to the following page where you can enter the question you may ask to the AI Assistant and the corresponding answer:
 
+<Tabs>
+    <TabItem value='input' label='Input'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-empty.png' alt='Empty wizard'/>
+    </TabItem>
+    <TabItem value='added' label='Added' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-input-filled.png' alt='Input filled'/>
+    </TabItem>
+</Tabs>
 
-By clicking on <kbd>Finish</kbd> it will be added to the AI Assistant datasources.
+By clicking on <kbd>Finish</kbd> the Q&A pair will be added to the AI Assistant datasources.
 
 <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-first-question-added.png' alt='First question added'/>
 
@@ -29,17 +36,17 @@ A popup will appear and you will be able to enter a new Q&A.
 
 <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-add-popup-input-filled.png' alt='Add question popup'/>
 
-You may also click on <kbd>Add Q&A</kbd> of the popup to add several question in one row.
+You may also click on <kbd>Add Q&A</kbd> in the popup to add several questions and answer at the same time.
 
-<Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-add-popup-more-question.png' alt='Add question popup'/>
+<Tabs>
+    <TabItem value='input' label='One'>
+        <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-add-popup-more-question.png' alt='Add question popup'/>
+    </TabItem>
+    <TabItem value='added' label='Two' default>
+        <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-add-popup-more-question-filled.png' alt='Add question popup'/>
+    </TabItem>
+</Tabs>
 
-<Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-add-popup-more-question-filled.png' alt='Add question popup'/>
-
-Finaly, your Q&A are available on your AI Assistant.
+Finaly, your Q&Aa are available to your AI Assistant.
 
 <Image src='/img/screenshots/tutorial-ui/data-source/q&a/q&a-filled.png' alt='Q&A filled'/>
-
-## Access
-:::note
-To access the creation page, check [Create an AI Assistant](/tutorial-ui/createAiAssistant) section!
-:::

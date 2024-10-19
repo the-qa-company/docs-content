@@ -1,6 +1,6 @@
 ---
 id: document
-title: 'Document data source AI Assistant'
+title: 'Document data source'
 sidebar_label: Document
 ---
 
@@ -9,9 +9,17 @@ import Link from '@docusaurus/Link'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-## Creation
-Upload your files (click or drag and drop on the dedicated area). There is the list of extention files supported by the AI Assitant :<br/>
-.txt, .html, .md, .ods, .docx, .xlsx, .doc, .rtf, .odt, .csv, .pdf, .pptx
+Click on "Document" to add documents as a data source:
+
+<Image src='/img/screenshots/tutorial-ui/data-source/data-source-empty.png' alt='data source menu'/>
+
+## Upload
+
+Upload your files (click or drag and drop on the dedicated area):
+
+:::info
+The following file formats are currently supported: .txt, .html, .md, .ods, .docx, .xlsx, .doc, .rtf, .odt, .csv, .pdf, .pptx
+:::
 
 <Tabs>
     <TabItem value='g1' label='Empty' default>
@@ -22,20 +30,13 @@ Upload your files (click or drag and drop on the dedicated area). There is the l
     </TabItem>
 </Tabs>
 
-Then you can click on:
-* <kbd>Finish</kbd> to create your AI Assistant and you will be redirected to the AI Assistant principal page with a topbar and you
-will have your newly built connector appearing in the list.
+Once you specified all your documents click on "Finish". You will be redirected to data source page:
 
 <Image src='/img/screenshots/tutorial-ui/data-source/document/documents-list.png' alt='documents list'/>
 
 
-## Access
-:::note
-If you don't have created an AI Assistant you can check [Create an AI Assistant](/tutorial-ui/createAiAssistant) section!
-:::
-
-:::info
-We are making an AI Assistant on top of a collection of textual documents (PDFs) about the Simpsons that can be found here:
+:::tip
+If you need some files to try out this data source you can use this collection of PDFs about the Simpsons that can be found here:
 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
     <Link
         target="_blank"
@@ -47,11 +48,9 @@ We are making an AI Assistant on top of a collection of textual documents (PDFs)
     </Link>
 </div>
 These documents are coming from <a href='https://simpsons.fandom.com/wiki/Category:Simpson_family'>the Simpsons wiki</a>
-:::
 
+Here you can access a search interface based on this PDF collection, you can try it yourself!
 
-:::tip
-Here you can access a demo based on this tutorial and try it yourself!
 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
     <Link
         to='https://app.qanswer.ai/public-share?kb=The%20Simpson%20Family&type=text&user=demo&lang=en'

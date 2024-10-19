@@ -81,9 +81,6 @@ const config = {
                     items: [{
                         label: 'Discord',
                         href: 'https://discord.com/invite/XqkNCB3ZEY'
-                    },{
-                        label: 'Twitter',
-                        href: 'https://twitter.com/TheQACompany',
                     }, {
                         label: 'LinkedIn',
                         href: 'https://www.linkedin.com/company/qanswer/',
@@ -97,6 +94,9 @@ const config = {
                 darkTheme: prismThemes.dracula,
             },
         }),
+        stylesheets: [
+            "https://fonts.googleapis.com/icon?family=Material+Icons",
+        ],
 };
 
 export default config;

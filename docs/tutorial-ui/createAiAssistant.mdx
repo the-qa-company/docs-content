@@ -7,18 +7,17 @@ import Link from '@docusaurus/Link'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Image from '../../src/components/Image'
+import AddIcon from '@mui/icons-material/Add';
 
-Welcome to our AI Assistant documentation, where you can effortlessly explore your data using natural language queries. Enhance the performance of your AI Assistants through training and share them with peers.
-
-## Access
+In the following we will guide you through the steps to create an AI Assistant on your data.
 
 :::info
-You have to be connected to create and access your AI Assistant (you can use AI Assistant without being connected if it is open to public and you have the link).
-
-If you don't have an account yet, you can [see the tutorial here](/tutorial-ui/register-login)
+You have to be connected to create and access your AI Assistants. If you don't have an account yet, you can [see the tutorial here](/tutorial-ui/register/register-login-email)
 :::
 
-Once your account is created, you can login and start discovering the platform!
+## List AI Assistants
+
+When you are logged in, you will enter in the **AI Assistant** page. The page is directly available here:
 
 <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
     <Link
@@ -29,7 +28,7 @@ Once your account is created, you can login and start discovering the platform!
     </Link>
 </div>
 
-When you are logged in, you will enter in the **AI Assistant** page:
+The page will be empty or contain the AI Assistants that you have already created:
 
 <Tabs>
     <TabItem value='s1' label='Empty page' default>
@@ -40,17 +39,11 @@ When you are logged in, you will enter in the **AI Assistant** page:
     </TabItem>
 </Tabs>
 
-:::note
-Independently to their type, all AI Assistant will be listed in this [page](https://app.qanswer.ai/qa-systems).
-:::
+## Create
 
 <p>
-    It's time to build your first AI Assistant! In the panel <a href='https://app.qanswer.ai/qa-systems'>AI Assistant</a>, click on
-    <span style={{ whiteSpace: 'nowrap' }}>
-        <img src='/img/icons/add_circle.svg' style={{ width: '30px', padding: '0 5px', verticalAlign: 'middle' }}/>
-        <b style={{ verticalAlign: 'middle', color: '#666666', marginRight: '10px' }}>CREATE</b>
-    </span>
-    button and choose the type of AI Assistant you want to create.
+    It's time to build your an AI Assistant! In the panel <a href='https://app.qanswer.ai/'>AI Assistant</a>, click on the "CREATE"
+    button and choose the name of AI Assistant you want to create as well the language it should support.
 </p>
 
 <Image src='/img/screenshots/tutorial-ui/ai-assistant-empty-add-btn.png' alt='Home page, add button'/>

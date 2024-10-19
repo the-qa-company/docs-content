@@ -1,6 +1,6 @@
 ---
 id: website
-title: 'Website data source AI Assistant'
+title: 'Website data source'
 sidebar_label: Website
 ---
 
@@ -9,20 +9,23 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition'
 
-You might have experienced searching for a particular question on a website and then going through the entire page to find the answer. This is a very tedious task and can be easily automated using a AI Assistant. 
+You can use as a data source a webpage or an entire website. In this section we describe how to use a website as a data source.
 
-:::tip
-Sometimes searching information through a website can be very tedious. So why don't you try our AI Assistants over websites?
-Let's see how do to it!
+:::info
+Note that we support both server and client side rendered web pages!
 :::
 
-In this section we will learn how to create a website based AI Assistant.
+Click on "Website" to add a web page or a website as a data source:
+
+<Image src='/img/screenshots/tutorial-ui/data-source/data-source-empty.png' alt='data source menu'/>
+
+You will get to the following page:
 
 <Image src='/img/screenshots/tutorial-ui/data-source/website/website-empty.png' alt='Empty wizard'/>
 
-## Add your first website
+## Add manually selected URLs
 
-To add your first website, enter its URL in the input field and click on *Add Page* or press *Enter*.
+Enter the URLs of the pages you want to add and click on *Add Page* or press *Enter*. Your URLs will be appearing in the list below:
 
 <Tabs>
     <TabItem value='input' label='Input'>
@@ -33,17 +36,10 @@ To add your first website, enter its URL in the input field and click on *Add Pa
     </TabItem>
 </Tabs>
 
-You can see your website appearing in the list of websites.
+## Crawl an entire website
 
-<Admonition type='info'>
-    <p>
-        At the rigth of the *Add Page* button you can see 
-        <span style={{ whiteSpace: 'nowrap' }}>
-            <b style={{ verticalAlign: 'middle', color: '#3d82b3', padding: '0 15px', marginRight: '10px' }}>Add page and subpages</b>
-        </span>
-        button. Enter an url in the input and click it to extract the sub-pages of this website.
-    </p>
-</Admonition>
+Enter the URL a website you want to add and click on *Add Page and Subpages*. You will extract all the sub-pages under the particular URL.
+You now have a list of all URLs under the website you specified which might be grouped.
 
 <Tabs>
     <TabItem value='g1' label='Group sub-pages'>
@@ -52,17 +48,13 @@ You can see your website appearing in the list of websites.
     <TabItem value='s1' label='Show sub-pages' default>
         <Image src='/img/screenshots/tutorial-ui/data-source/website/website-show-extracted.png' alt='Show sub-pages'/>
     </TabItem>
-    <TabItem value='s2' label='Show skipped-links' default>
-        <Image src='/img/screenshots/tutorial-ui/data-source/website/website-show-skippedlinks.png' alt='Show skipped-links'/>
-    </TabItem>
 </Tabs>
 
+:::info
+You may see a<b style={{ verticalAlign: 'middle', color: '#ff4b4bb7', borderRadius: '50%', border: '1px solid #ff4b4bb7', padding: '2px 8px', margin: '0 10px' }}>i</b> symbol. By default the extraction skips link that do not contain the original url since this might be pages from another website. You can click on symbol to select additional urls you want to add as a data source.
+<Image src='/img/screenshots/tutorial-ui/data-source/website/website-show-skippedlinks.png' alt='Show skipped-links'/>
+:::
 
-As you can see, you now have a list of your website and its sub-pages, which can be grouped to see more clearly.
-
-You may see a<b style={{ verticalAlign: 'middle', color: '#ff4b4bb7', borderRadius: '50%', border: '1px solid #ff4b4bb7', padding: '2px 8px', margin: '0 10px' }}>i</b>, by default the extraction may skip some url. You can click on it to select the url you want to add to the axtraction.
-
-## Handle sub-pages
 ### Delete sub-pages
 
 Some sub-pages might not interest you, you can remove them by clicking on the delete button (in the *Action* column).
@@ -82,21 +74,22 @@ Your sub-pages are originally grouped but you can move them **out of their group
     </TabItem>
 </Tabs>
 
-## Creation
-Once you picked the name, language of your AI Assistant and filtered your links, you can click on:
-* <kbd>Settings</kbd> to personnalize them (default parameters are good for general use)
-* <kbd>Finish</kbd> to create your AI Assistant (and use default parameters)
+## Advanced Settings (optional)
 
-## Settings (optional)
+You can customize the website crwaling parameters if needed (default parameters are good for general use). This include for example:
 
-Then you can customize your QA System parameters if needed (default parameters are good for general use).
+- the deepth until which the crawling will be performed
+- the maximal time the url extraction will be executed
+- cookies or tokens to crawl a secured website or web application
 
 <Image src='/img/screenshots/tutorial-ui/data-source/website/creation-settings.png' alt='Settings'/>
 
-After clicking on the <kbd>Finish</kbd> button, you will be redirected to the home page and you
-will have your newly built QA system appearing in the list.
+## Create
 
-## Access
-:::note
-To access the creation page, check [Create an AI Assistant](/tutorial-ui/createAiAssistant) section!
-:::
+After clicking on the <kbd>Finish</kbd> button, you will be redirected to the data source page and the selected pages will be 
+crawled:
+
+<Image src='/img/screenshots/tutorial-ui/data-source/website/website-crawling.png' alt='Crwaling'/>
+
+
+

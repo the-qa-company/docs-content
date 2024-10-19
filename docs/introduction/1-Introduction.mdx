@@ -6,15 +6,58 @@ slug: /
 ---
 
 import Image from '../../src/components/Image';
+import { Icon } from '@mui/material'
+import TextSnippet from '@mui/icons-material/TextSnippet'
+import CloudIcon from '@mui/icons-material/Cloud'
+import LanguageIcon from '@mui/icons-material/Language'
+import QuizIcon from '@mui/icons-material/Quiz'
+import SharePointIcon from '../../src/components/SharePointIcon/'
+import RDFLogo from '../../src/components/RDFLogo'
+import OneNoteIcon from '../../src/components/OneNoteIcon.svg'
+import SearchIcon from '@mui/icons-material/Search'
+import ChatIcon from '@mui/icons-material/Chat'
+import DataUsageIcon from '@mui/icons-material/DataUsage'
+import EditNoteIcon from '@mui/icons-material/EditNote'
+import LinkIcon from '@mui/icons-material/Link'
+import NotesIcon from '@mui/icons-material/Notes'
 
-<h3>A Platform to access your data via Natural Language</h3>
+<h3>Create Enterprise AI Assistants in a breeze</h3>
 
-QAnswer is a AI Assistant platform, i.e., a platform that allows to find answers accross your data. You can query several data sources and formats, 
-such as **collections of documents** (txt, pdf, docx, ...) and **RDF data**. It makes your data accessible via natural language!
+QAnswer is a platform that allows to combine the power of Large Language Models (LLMs) with enterprise data. QAnswer enables organizations to build intelligent AI assistants directly on top of their existing data, making information instantly accessible and actionable. Its three-step approach simplifies the deployment process:
 
-It is a combination of semantic technologies, information retrieval and machine learning techniques. This makes QAnswer the first AI driven platform to query your data in natural language.
+1. **Connect Your Data**: Integrate QAnswer with your data repositories. Currently supported data sources include:
+    <ul style={{'list-style-type': 'disc'}}>
+    <li>[<TextSnippet sx={{verticalAlign:"middle"}}/> **Documents** (PDFs, txt, docx, ..)](tutorial-ui/data-source/document)</li>
+    <li>[<LanguageIcon sx={{verticalAlign:"middle"}}/> **Websites** (server and client side rendered)](tutorial-ui/data-source/website)</li>
+    <li>[<QuizIcon sx={{verticalAlign:"middle"}}/> **Q&A**](tutorial-ui/data-source/q&a)</li>
+    <li>[<SharePointIcon sx={{verticalAlign:"middle"}}/> **Sharepoint**](tutorial-ui/data-source/sharepoint)</li>
+    <li>[<CloudIcon sx={{verticalAlign:"middle"}}/> **OneDrive**](tutorial-ui/data-source/onedrive)</li>
+    <li>[<Icon sx={{verticalAlign:"middle"}}><OneNoteIcon/></Icon> **OneNote**](tutorial-ui/data-source/onenote)</li>
+    <li>[<RDFLogo size={20} color={'#148FBF'} color2={'#148FBF'}/> **Knowledge Graphs**: RDF data formats (.TTL, .NT)](tutorial-ui/data-source/rdf)</li>
+    </ul>
+   
+2. **Choose Your AI Task**: Select the functionality best suited to your needs:
+    <ul style={{'list-style-type': 'disc'}}>
+    <li>[<ChatIcon sx={{verticalAlign:"middle"}}/> **Chatbot Creation**](tutorial-ui/ai-task/chat): Design conversational agents to interact with users, answer questions, and guide them through processes.</li>
+    <li>[<SearchIcon sx={{verticalAlign:"middle"}}/> **Semantic Search**](tutorial-ui/ai-task/search): Go beyond keywords and retrieve precise answers based on the meaning and context of queries.</li>
+    <li>[<DataUsageIcon sx={{verticalAlign:"middle"}}/> **Data Extraction**](tutorial-ui/ai-task/data-extractor): Automatically identify and extract specific pieces of information from your documents.</li>
+    <li>[<EditNoteIcon sx={{verticalAlign:"middle"}}/> **Report Generation**](tutorial-ui/ai-task/report-generator): Summarize key findings and generate insightful reports from your data.</li>
+    </ul>
 
+3. **Expose Your Assistant**: Make your AI assistant readily available through multiple channels:
+    <ul style={{'list-style-type': 'disc'}}>
+    <li>[**Web Widgets**](tutorial-ui/expose/classical-integrations/website-chatbot): Embed interactive chatbots seamlessly into your website or intranet pages.</li>
+    <li>[**Integrations**](/tutorial-ui/expose/third-party-integrations/bubble): Leverage existing platforms like Microsoft Teams, Slack, or other collaboration tools.</li>
+    <li>**Native APIs**: Develop custom integrations and workflows tailored to your specific requirements.</li>
+    </ul>
 
+Potential Use Cases include:
+    <ul style={{'list-style-type': 'disc'}}>
+<li>**Website Chatbots**: Quickly create chatbots for your websites</li>
+<li>**Internal Employee Assistants**: Streamline HR processes, facilitate policy lookups, and offer personalised guidance to staff members.</li>
+<li>**Support**: Elevate customer service by offering 24/7 access to information.</li>
+<li>**Legal Research**: Accelerate research by enabling direct access to legal precedents, regulations, and historical records.</li>
+</ul>
 <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '30px', marginBottom: '20px' }}>
     Go ahead to start using QAnswer!
     <img src='/img/illustrations/search-text.png' alt='training button' width= '40%'/>
