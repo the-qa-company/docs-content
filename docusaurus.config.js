@@ -26,7 +26,7 @@ const config = {
         defaultLocale: 'en',
         locales: ['en'],
     },
-
+    plugins: ['docusaurus-plugin-sass', 'docusaurus-node-polyfills'],
     presets: [
         [
             'classic',
@@ -37,7 +37,6 @@ const config = {
                     routeBasePath: '/',
                 },
                 blog: false,
-                pages: false,
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
                 },
@@ -58,14 +57,17 @@ const config = {
                 maxHeadingLevel: 5,
               },
             navbar: {
-                title: 'Docs',
+                title: '',
                 logo: {
                     alt: 'The QA Company logo',
                     src: 'img/logo2.png',
                     href: 'https://qanswer.ai',
                     target: '_self',
                 },
-                items: [],
+                items: [
+                    {to: '/', label: 'Docs', position: 'left'},
+                    {to: '/api', label: 'APIs', position: 'left'},
+                ],
             },
             footer: {
                 style: 'dark',
